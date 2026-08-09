@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+.venv-youtube/
+venv/
+env/
+*.egg-info/
+pip-wheel-metadata/
+
+# Node / Remotion
+node_modules/
+out/
+dist/
+*.tsbuildinfo
+.remotion/
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Media (générés / lourds — décommentez si besoin)
+# *.mp3
+# *.mp4
+# *.wav
+# *.webm
+
+# Misc
+*.tmp
+*.bak

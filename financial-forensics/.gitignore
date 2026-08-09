@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Remotion output
+out/
+dist/
+
+# Build artifacts
+*.tsbuildinfo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Remotion cache
+.remotion/

@@ -1,0 +1,38 @@
+export const theme = {
+  colors: {
+    bg: "#0A0E1A",
+    bgAlt: "#111827",
+    surface: "#1A2035",
+    gold: "#D4AF37",
+    goldDim: "#8B7423",
+    red: "#E63946",
+    redDim: "#9D2A33",
+    blue: "#4A9EFF",
+    blueDim: "#2A6BB0",
+    green: "#2ECC71",
+    white: "#F5F5F5",
+    gray: "#8B92A8",
+    grayDim: "#4A5060",
+    gridLine: "#1E2740",
+  },
+  fonts: {
+    heading: "Georgia, serif",
+    body: "Helvetica Neue, Arial, sans-serif",
+    mono: "Courier New, monospace",
+  },
+  sizes: {
+    titleLarge: 96,
+    titleMedium: 64,
+    titleSmall: 44,
+    body: 34,
+    bodySmall: 28,
+    label: 24,
+    caption: 20,
+  },
+  animation: {
+    defaultDurationInFrames: 150,
+    fps: 30,
+    width: 1920,
+    height: 1080,
+  },
+} as const;
