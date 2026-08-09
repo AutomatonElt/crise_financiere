@@ -1,0 +1,16 @@
+[
+  { "date": "2014-10", "price": 0.01, "label": "Launch" },
+  { "date": "2014-12", "price": 0.10, "label": "" },
+  { "date": "2015-03", "price": 0.29, "label": "" },
+  { "date": "2015-06", "price": 0.44, "label": "" },
+  { "date": "2015-09", "price": 0.79, "label": "" },
+  { "date": "2015-12", "price": 1.10, "label": "" },
+  { "date": "2016-03", "price": 1.55, "label": "" },
+  { "date": "2016-06", "price": 2.18, "label": "" },
+  { "date": "2016-09", "price": 2.92, "label": "" },
+  { "date": "2016-12", "price": 3.85, "label": "" },
+  { "date": "2017-03", "price": 4.98, "label": "" },
+  { "date": "2017-06", "price": 5.55, "label": "" },
+  { "date": "2017-09", "price": 6.15, "label": "" },
+  { "date": "2017-10", "price": 6.40, "label": "Ruja disappears" }
+]

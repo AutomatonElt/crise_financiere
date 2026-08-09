@@ -1,0 +1,67 @@
+Here's what almost nobody understood in 2016 — and it's the entire key to how this scam worked.
+
+A real cryptocurrency, like Bitcoin, runs on a public blockchain. That means the ledger recording every transaction is decentralized — it lives on thousands of computers around the world, nobody controls it, and anyone can verify it. The price is set the same way any market sets a price: buyers and sellers trading against each other on an open exchange. When you buy Bitcoin, you're buying something whose value is determined by millions of independent decisions, every single day.
+
+OneCoin had none of that.
+
+There was no public blockchain. Investigators who later examined the company's systems found what looked more like an internal spreadsheet than a functioning cryptocurrency ledger. A SQL database, sitting on a server in Sofia, that OneCoin employees could edit manually. If they wanted to show a user that their coins had been "mined," they could simply type a number into a field. If they wanted to increase the total supply, they could change a value. There was no cryptographic proof of anything. No distributed consensus. No immutability. Just a database with a login.
+
+And the "mining" that OneCoin advertised — the computational process that's supposed to generate new coins — didn't actually happen the way it was described. In Bitcoin, mining is a real, energy-intensive process where computers compete to solve cryptographic puzzles. The difficulty of those puzzles adjusts automatically based on how many miners are participating. It's what makes Bitcoin scarce and verifiable.
+
+OneCoin's mining was, according to investigators, essentially a button. Press it, and new coins appear in your account. No computation. No puzzles. No scarcity. The total number of OneCoins in existence was whatever the company decided it was, on any given day.
+
+And the price? On a real exchange, price moves because of supply and demand — thousands of independent trades happening every second. OneCoin's price was set by OneCoin itself. Every two weeks, the company simply announced a new, slightly higher value for its own coin.
+
+Think about what that means for a second. It's not a currency finding its market value. It's a company grading its own homework — and giving itself an A every single time.
+
+That smooth, uninterrupted line is, on its own, a red flag no real market could ever produce. Real markets go up and down. They crash. They recover. They react to news, to regulation, to panic. This one only ever went up — because "up" was a decision, not a result.
+
+There's a second layer to this, and it's the part that made OneCoin spread faster than almost any fraud in history: the referral structure.
+
+Every person who bought a package got a percentage commission for every new person they recruited — and a smaller cut from whoever their recruits brought in after that. This is a textbook multi-level-marketing structure. It's the same mechanical shape as a chain letter or a classic pyramid scheme. The product being "sold" — the educational packages — barely mattered. The real product was the recruitment bonus.
+
+And selling "educational packages" instead of "coins" wasn't a random choice, either. Regulators typically scrutinize the sale of investment products and securities very closely. But if you're technically selling online courses that happen to include some digital tokens as a bonus, you slip into a much murkier legal category — one that's slower and harder for regulators to act on. It's the same regulatory arbitrage that lets certain supplement companies operate in the gray space between food and medicine. You're not selling the thing that matters. You're selling the wrapper around it.
+
+And there was one more layer of deception that's worth understanding: the fake marketplace.
+
+OneCoin claimed it had a partner platform called DealShaker — an online marketplace where merchants would accept OneCoin in exchange for real goods and services. This was critical to the narrative, because it gave the coin the appearance of utility. If you can buy a coffee with it, it's real, right?
+
+But DealShaker was, by most accounts, largely a facade. Many of the "merchants" were OneCoin promoters themselves, listing products at inflated prices. Real businesses weren't accepting OneCoin. The platform existed to create the illusion that OneCoin had real-world value — to give investors a story they could tell themselves and their recruits about why this coin was different.
+
+So here's the mechanism, stripped down to its bones: a currency with a fake ledger, a price set by the company that benefits from it rising, a commission structure that turns every customer into a salesperson, and a fake marketplace to create the illusion of real-world utility. No exchange could ever independently verify the coin's worth, because there was never an exchange to verify it on in the first place.
+
+The genius — if you can call it that — wasn't the technology. There wasn't any. The genius was making three and a half million people believe there was.
+
+Let's put actual numbers on this.
+
+Between the last quarter of 2014 and the end of 2016 alone, prosecutors say OneCoin took in more than four billion dollars from investors. Some independent estimates, factoring in the years after, put the total closer to four and a half to five billion.
+
+More than three and a half million victims. In over a hundred and seventy-five countries.
+
+To understand the scale, think about it this way: four billion dollars is more than the annual GDP of several small nations. It's more than the entire budget of the FBI's investigative division. And it was collected not from billionaires or hedge funds, but largely from ordinary people — many of them in developing economies — investing a few hundred or a few thousand dollars at a time.
+
+For comparison: Bernie Madoff's Ponzi scheme — the largest in U.S. history — defrauded roughly thirty-seven thousand investors of sixty-five billion dollars. Madoff moved more total money, but he needed decades and a curated list of wealthy clients to do it.
+
+OneCoin did it in roughly two years, and reached almost a hundred times more people. That's the real signature of a multi-level-marketing fraud versus a classic Ponzi scheme: it doesn't need trust in one person. It needs a chain of ordinary people trusting each other.
+
+Now let's look at where the money went.
+
+Of the roughly four billion dollars that went missing, investigators have only ever recovered a small fraction — estimates generally put recovered and frozen assets somewhere in the low hundreds of millions. Which means, even after every arrest, every guilty plea, every prison sentence in this case, well over ninety percent of the money victims put in has simply never been found.
+
+Three point four billion dollars, unaccounted for. That's not a rounding error. That's not a few hidden bank accounts. That's a sum large enough to buy a private island, fund a small army, or — as some investigators believe — buy the kind of protection that makes a person disappear permanently.
+
+Now, the reward money.
+
+When the FBI first added Ignatova to its Ten Most Wanted list in June 2022, the reward for information leading to her arrest was one hundred thousand dollars. By May 2023, that had jumped to two hundred fifty thousand. By June 2024, the U.S. State Department pushed it all the way to five million dollars.
+
+Five million dollars is an extraordinary number for a financial crime. To put it in perspective, the standard FBI reward for a Top Ten fugitive is one hundred thousand dollars. Five million is fifty times that. It puts her in the same reward bracket as major drug cartel leaders and international terrorism suspects — a tier usually reserved for people the U.S. government considers an active, ongoing danger, not just a fugitive from an old case.
+
+And here's something else worth noting about those numbers. The reward has increased fivefold in two years. That's not normal. Rewards typically stay flat or increase modestly. A jump from two hundred fifty thousand to five million in a single year signals that the U.S. government believes Ignatova is not just hiding — she's actively being protected by people with significant resources, and they want her found urgently.
+
+Now let's talk about the victims for a moment — because in fraud at this scale, the human cost gets buried under the numbers.
+
+The victims weren't just numbers on a spreadsheet. They were a teacher in Uganda who invested her year's salary. A construction worker in Pakistan who put in his family's savings. A retiree in Germany who was persuaded by her own grandson. A pastor in Nigeria who brought his entire congregation into OneCoin, believing he was giving them a path to financial freedom.
+
+When OneCoin collapsed, there was no bankruptcy proceeding that returned their money. There was no insurance fund. There was no government bailout. The money was simply gone. And for many of these victims, reporting the fraud was practically impossible — they lived in countries with limited legal recourse, and the people who'd recruited them were friends and family members who'd also lost everything.
+
+That's the cruelty of an MLM fraud that a Ponzi scheme doesn't have: in a Ponzi, you lose your money and you're angry at the fraudster. In an MLM, you lose your money, and you've also destroyed relationships with the people you recruited — because you're the one who convinced them to invest.

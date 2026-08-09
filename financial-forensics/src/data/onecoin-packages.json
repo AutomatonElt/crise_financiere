@@ -1,0 +1,8 @@
+[
+  { "name": "Starter", "price": 110, "tokens": 1000 },
+  { "name": "Trader", "price": 550, "tokens": 5000 },
+  { "name": "Pro Trader", "price": 1100, "tokens": 10000 },
+  { "name": "Executive Trader", "price": 3300, "tokens": 30000 },
+  { "name": "Tycoon Trader", "price": 5500, "tokens": 50000 },
+  { "name": "Diamond", "price": 27500, "tokens": 250000 }
+]

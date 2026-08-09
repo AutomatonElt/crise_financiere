@@ -1,0 +1,61 @@
+In October 2017, a woman boarded a Ryanair flight from Sofia to Athens.
+
+She never got off.
+
+No body. No arrest. No trace.
+
+Six years later, the FBI put five million dollars on her head. That's more than the reward for most of the world's top terrorist financiers.
+
+Her crime? She invented a cryptocurrency that had no blockchain, no exchange, and no value — and convinced over three and a half million people across a hundred and seventy-five countries that it was real. She walked away with more money than most countries' national budgets.
+
+This is the story of Ruja Ignatova. The Cryptoqueen.
+
+And nobody — not the FBI, not Interpol, not the journalists who've spent seven years chasing her — actually knows if she's still alive.
+
+Let's rewind.
+
+Ruja Ignatova wasn't a random con artist. She was, on paper, one of the most credentialed people in the room.
+
+Born in Bulgaria in 1980, raised partly in Germany, she held a PhD in law from the University of Konstanz, worked for McKinsey & Company, and later joined a private equity firm. By her early thirties, she had built a reputation as a sharp, articulate entrepreneur who understood finance from the inside. She spoke multiple languages. She dressed impeccably. She didn't look like a scammer. She looked like the kind of person banks send to speak at conferences.
+
+And that's the first thing to understand about this case: credibility is a weapon. When someone looks like an insider, talks like an insider, and has the resume of an insider, people stop checking whether the product is real. They start checking whether they can afford to get in before it's too late.
+
+In 2014, together with a British-Swedish businessman named Sebastian Greenwood — a man who'd already been investigated for involvement in a previous MLM scheme called BigCoin — she founded a company in Sofia called OneCoin.
+
+The pitch was simple, and it landed at the perfect moment. Bitcoin was exploding. Everyone had heard of cryptocurrency, almost nobody understood how it actually worked. The idea of getting in early on the "next Bitcoin" was the most powerful financial fantasy of the decade. Ignatova positioned OneCoin as the accessible alternative — easy to buy, easy to understand, marketed directly at people who'd never touch a crypto exchange. She called it, in her own words, the "Bitcoin killer."
+
+But OneCoin wasn't sold the way Bitcoin was sold. It was sold the way Tupperware is sold.
+
+Investors didn't buy coins on an exchange. They bought "educational packages" — bundles of trading courses, priced anywhere from a hundred and ten euros for the starter package to twenty-seven thousand five hundred euros for the top-tier "Diamond" package — and each package came loaded with OneCoin tokens. The more you paid, the more tokens you got. The more tokens you got, the richer you'd be when OneCoin inevitably "went public" on a real exchange.
+
+That promise — the promise of an eventual public listing where tokens would trade freely — was the hook. It was always just around the corner. And it never came.
+
+And here's the part that made it spread like wildfire: every buyer got a commission for recruiting the next buyer. Friends recruited friends. Families recruited families. Entire churches and immigrant communities in Africa, Asia, and Eastern Europe got pulled in, sometimes investing their life savings.
+
+In Uganda, OneCoin was pitched at church gatherings. In Pakistan, it was sold in marketplaces. In Vietnam, local promoters held recruitment events in hotel ballrooms. In Germany and the UK, it spread through immigrant communities who trusted the people introducing it to them — because those people were their friends, their neighbors, their relatives.
+
+By 2016, OneCoin had members in over a hundred and seventy-five countries. The company claimed it had processed more transactions than Bitcoin itself — a claim that was, to put it generously, unverifiable.
+
+That same year, Ignatova walked onto the stage at Wembley Arena in London wearing a floor-length red gown, in front of thousands of investors who'd flown in on their own money to see her speak. She talked about revolutionizing global finance. She talked about becoming a billionaire. The crowd cheered like she was a rock star.
+
+She was, by every public metric, at the peak of her power. OneCoin was sponsoring football matches. It was buying billboard space in major cities. It was running full-page ads in financial publications. Ignatova was giving keynote speeches at conferences alongside legitimate fintech executives who had no idea what was actually happening behind the curtain.
+
+Nobody in that room at Wembley asked the one question that would have ended everything: where is the blockchain?
+
+Because there wasn't one. Not really. And we'll get to exactly what that means in a moment.
+
+But first, let's talk about what was happening inside the company while the money was pouring in — because the internal story is just as important as the external one.
+
+In early 2016, a man named Bjorn Bjercke was hired as OneCoin's Chief Information Officer. His job was to build a real blockchain for OneCoin — the technical infrastructure that would make the coin legitimate. After months of work, Bjercke realized something disturbing: there was nothing to build on. The system OneCoin was running wasn't a blockchain at all. It was, in his words, a database. A centralized server the company controlled entirely. There was no mining, no distributed ledger, no cryptographic proof of anything.
+
+Bjercke raised the issue internally. He was ignored. He tried again. He was pressured to stay quiet. Eventually, he resigned.
+
+He wasn't the only one. Over the course of 2016 and 2017, multiple insiders — including a former compliance officer and a blockchain developer — raised alarms or quietly left. Some of them would later become witnesses for law enforcement. But at the time, the machine was generating too much money to stop.
+
+For three years, the money kept flowing in. Then, on October 12th, 2017, U.S. prosecutors in the Southern District of New York filed a sealed indictment against Ruja Ignatova — wire fraud, securities fraud, money laundering.
+
+Somehow, she found out before the arrest warrant could be executed.
+
+Thirteen days later, she boarded that flight to Athens.
+
+She has not been seen in public since.
