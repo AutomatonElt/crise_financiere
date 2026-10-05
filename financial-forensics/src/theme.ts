@@ -19,6 +19,7 @@ export const theme = {
     heading: "Georgia, serif",
     body: "Helvetica Neue, Arial, sans-serif",
     mono: "Courier New, monospace",
+    display: "Impact, 'Arial Black', sans-serif",
   },
   sizes: {
     titleLarge: 96,

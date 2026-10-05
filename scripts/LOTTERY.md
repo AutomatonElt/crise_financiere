@@ -1,191 +1,340 @@
 # THE LOTTERY HACKERS — Three People Who Beat The System Without Breaking The Law
-### Script narratif — Format ~22-23 min — "Financial Forensics" — Épisode 6-7 (repositionné, voir note ci-dessous)
+### Script narratif v2 — Format ~18-20 min — "Financial Forensics" — Épisode 6-7
+### Version retravaillée avec la grille narrative « Spaggiari »
 
-> **Note de production — repositionné dans le calendrier :** initialement prévu en Ép.4, décalé en Ép.6-7 pour ne pas casser la dynamique true-crime pendant la fenêtre de boost algorithmique des 3 premières vidéos (section 8.3 de la stratégie de chaîne) — l'épisode 4 est désormais FTX. Le teaser de fin de Madoff pointe maintenant vers FTX, pas vers cette vidéo ; vérifier qu'un autre épisode de la série pointe bien vers celle-ci une fois sa position définitive fixée.
->
-> **Note de production — variation structurelle vs épisodes 1-3 :**
-> - Format anthologie : trois récits courts et indépendants au lieu d'un protagoniste unique, réunis par un mécanisme commun.
-> - Hook en adresse directe / question posée au spectateur, pas une scène ni une statistique-choc.
-> - Nouveau pilier "The Line" : un quatrième cas, réel mais criminel (Eddie Tipton), utilisé comme contre-exemple pour tracer la frontière légal/illégal — aucun épisode précédent n'a fait ça.
-> - Ton général plus léger que les 3 précédents : c'est la première histoire de la série où les trois cas principaux (Mandel, Selbee, Ginther) n'ont commis ni mensonge ni crime avéré — seul "The Line" introduit un contre-exemple criminel (Tipton) pour tracer la frontière. Seul le mécanisme d'exploitation d'un système mal conçu reste commun au reste de la chaîne.
+> **Note de production — ce qui change par rapport à la v1 :**
+> - **Hook en scène** (le tirage du 15 février 1992) au lieu d'une question abstraite : tension binaire (78 % de chances de gagner / 22 % de tout perdre), puis la question au spectateur *après* la tension, pas avant.
+> - **Recadrage « la vraie question »** placé dès 1:15 (et non en milieu de vidéo) : *pourquoi personne, à l'intérieur, n'a vu la faille ?* Cette question devient la colonne vertébrale de la vidéo et trouve sa réponse dans "The Pattern".
+> - **Boucles ouvertes à distances variées** : le tirage de Mandel (moyenne), Ginther inexpliquée (longue), le « quatrième homme » (très longue, révélé à 13:15).
+> - **Ironie dramatique** : la loterie vend elle-même chaque billet à Mandel ; des employés installent des machines supplémentaires pour les Selbee ; le « gardien de l'aléatoire » truque l'aléatoire.
+> - **Mini-crises** dans chaque cas : le temps qui manque (Mandel), la fermeture du jeu du Michigan (Selbee), la zone grise juridique (Ginther), la règle de preuve d'achat qui piège Tipton.
+> - **Rythme** : phrases courtes dans les moments de tension, phrases longues pour l'immersion.
+> - **"The Breakdown" et "The Numbers" supprimés en tant que sections autonomes** : la mécanique est expliquée *dans* chaque cas, au moment où elle sert le récit. Les chiffres comparatifs sont devenus un bref montage dans "The Pattern".
+> - **Une seule thèse** (la curiosité manquante, pas la loi) au lieu de deux concurrentes.
+> - **Callback final** à la question du hook ("Would you have bought them all?") et au 78 %. **Teaser "next time" supprimé** : il rouvrait une boucle déjà utilisée par Tipton.
 
 ---
 
-## HOOK — 0:00–0:50
+## HOOK — 0:00–1:15
 
-Quick question. A lottery jackpot is twenty-seven million dollars. Every possible number combination costs one dollar to buy. There are roughly seven million combinations.
+Saturday, February 15th, 1992. In a few minutes, six numbers will be drawn for the Virginia lottery. The jackpot: twenty-seven million dollars.
 
-If you had seven million dollars sitting around, would you buy every single one?
+[VISUEL : plan fixe sombre, un chronomètre qui décompte — 00:05:00. Aucun visage.]
 
-[VISUEL : calculatrice géante, chiffres qui s'alignent — $27M jackpot, $7M coût total]
+Somewhere, a man is about to find out whether he just made the smartest bet in lottery history... or the most expensive mistake of his life.
 
-Most people's instinct says no — that feels like cheating, or illegal, or both. It's neither. Nothing in the rules says you can't. Nothing in the law says you can't. And in February 1992, a Melbourne insurance agent did exactly that to the state of Virginia, and walked away with the jackpot.
+Here's why. In this game, you pick six numbers out of forty-four. That makes exactly 7,059,052 possible combinations. One dollar a ticket. Buy every single one, and you hold the winning ticket. Guaranteed. Seven million dollars in. Twenty-seven million out.
 
-He wasn't the only one. Over the next two decades, a retired Michigan shopkeeper and his wife would quietly extract tens of millions of dollars from two different state lotteries using nothing but arithmetic a sixth-grader could follow. And a Stanford-trained statistics professor would win the Texas lottery four separate times, at odds so small that mathematicians publicly questioned whether it was even possible.
+But he ran out of time. His team managed to buy roughly five and a half million tickets.
 
-None of them hacked a computer. None of them bribed an official. They just read the rules more carefully than the governments that wrote them.
+Five and a half million, out of seven million. About seventy-eight percent.
+
+Four chances in five. And if the winning numbers are hiding in that missing fifth, he has just thrown away millions of dollars.
+
+[VISUEL : grille de points représentant les 7 millions de combinaisons — 78 % s'allument en blanc, 22 % restent sombres. Un point sombre clignote.]
+
+So here's my question. If you had seven million dollars, and a twenty-seven million dollar prize at the end of it... would you?
+
+Your instinct says no. It feels like cheating. It feels illegal. It isn't. Not one rule forbids it. Not one law.
+
+And he was only the first. There was a retired couple from Michigan who did it with a car and a motel room. There was a Stanford statistician who won the Texas lottery four times, and no one has ever been able to explain how. And there was a fourth man, who looked at the same games and decided that reading the rules wasn't enough.
+
+He's the reason this story has a line in it. We'll get to him.
 
 [VISUEL : titre animé "THE LOTTERY HACKERS"]
 
 ---
 
-## CASE ONE — THE FUND MANAGER — 0:50–5:00
+## THE REAL QUESTION — 1:15–2:10
 
-Stefan Mandel grew up in communist Romania, where he first worked out, on paper, that certain lotteries could be beaten mathematically if the jackpot ever grew large enough relative to the cost of covering every possible combination. He couldn't act on it there — he didn't have the capital, and the regime wasn't exactly friendly to citizens organizing large pools of cash. He eventually emigrated to Australia, where the laws, and the lotteries, were more accommodating.
+Before we find out how that night ended, you need to understand what you're really looking at.
+
+Every lottery on Earth is built on one promise: the house always wins. Buy a ticket, and on average, you get back less than you paid. That's not a flaw. That's the business model. It's how lotteries pay for everything they advertise.
+
+But a promise like that has fine print. And under certain conditions (rare, specific, and printed in public) the promise breaks. For one drawing, the math flips. A ticket is suddenly worth more than a dollar.
+
+[VISUEL : une ligne plate sous $1 — la "valeur espérée" d'un ticket normal — qui fait un pic brutal au-dessus de $1, puis retombe]
+
+Here's the real question. It isn't how three people found that moment. It's why nobody on the inside did. Why didn't the people who designed these games (who ran the numbers, who certified the odds) see what a retired shopkeeper saw in three minutes?
+
+The answer turns out to be stranger than luck. And more uncomfortable.
+
+To get there, we start with the man still waiting for those six numbers.
+
+---
+
+## CASE ONE — THE FUND MANAGER — 2:10–5:35
+
+Stefan Mandel didn't start in Virginia. He started in communist Romania, with a pencil.
+
+There, he worked out something that should have been impossible: certain lotteries could be beaten on paper, the moment the jackpot grew large enough compared to the cost of covering every combination. But he had no capital. And a regime that watched its citizens closely was not going to let one man gather a large pile of cash without asking questions.
+
+So the idea sat there. For years. It needed a country that would let him.
 
 [VISUEL : carte — Roumanie → Australie, ligne de migration]
 
-In 1986, he tested the idea for real: a Sydney lottery with a jackpot large enough that buying every combination would still turn a profit. He organized a syndicate, covered the field, and won — a little over a million dollars. It worked exactly as the math predicted.
+He found one in Australia. In 1986 he tested it for real: a Sydney lottery, a syndicate, every combination covered. They won a little over a million dollars. Exactly what the math had predicted.
 
-By 1992, Mandel had built something more ambitious: the International Lotto Fund, a Melbourne-based investment vehicle that pooled money from hundreds of shareholders specifically to hunt for lotteries around the world where the jackpot had grown disproportionately large. That February, they found one: the Virginia state lottery, jackpot twenty-seven million dollars, six numbers from a field of forty-four, exactly 7,059,052 possible combinations, tickets at one dollar each.
+By 1992, the experiment had become a machine. The International Lotto Fund: a Melbourne-based investment vehicle, hundreds of shareholders, pooling money for one purpose. To hunt the world for lotteries where the jackpot had grown too big for its own good.
 
-[VISUEL : équation simple — $27,000,000 jackpot ÷ 7,059,052 combinaisons × $1 = profit garanti si couverture totale]
+Think about that. In the country he'd left, a pile of cash like that would have drawn the wrong kind of attention. In Melbourne, hundreds of strangers handed it over voluntarily.
 
-The math was almost embarrassingly favorable. Even buying literally every combination would cost about seven million dollars against a twenty-seven million dollar prize — and Mandel didn't need every combination to guarantee a win, just enough to make one nearly certain.
+That February, they found their target. Virginia. Twenty-seven million dollars. Six numbers from forty-four. 7,059,052 combinations. A dollar a ticket.
 
-His team scrambled. An American logistics coordinator based in Illinois organized dozens of people fanning out across Virginia convenience stores, buying tickets in bulk, running the lottery terminals for hours at a stretch. In the few days they had, they managed to purchase roughly five and a half million of the seven million possible combinations — not all of them, but enough.
+[VISUEL : équation — $27,000,000 ÷ 7,059,052 combinaisons × $1 = profit si couverture totale]
+
+The math wasn't just favorable. It was almost embarrassing.
+
+There was only one problem. Time.
+
+An American logistics coordinator, based in Illinois, starts moving people. Dozens of buyers fan out across Virginia. Convenience stores. Terminals running for hours at a stretch. Ticket after ticket after ticket.
 
 [VISUEL : montage de tickets qui s'empilent, terminaux de loterie qui tournent sans arrêt]
 
-On February 15th, 1992, the numbers came up: 8, 11, 13, 15, 19, 20. Somewhere in that pile of five and a half million tickets, one of them matched. Virginia lottery officials spent weeks investigating whether anything illegal had occurred before confirming what the math already guaranteed: nothing had. The International Lotto Fund collected its twenty-seven million dollars.
+Day after day, the pile grows. Two million tickets. Three. Four. Five.
 
-Virginia changed its rules shortly afterward, limiting how many tickets could be purchased through a single retailer in a short window. Mandel, for his part, said he intended to keep hunting for the next mispriced lottery, anywhere in the world.
+And the whole time, the lottery cheerfully takes their money. Every single ticket is sold to them by the state itself. Virginia isn't Mandel's victim. In those days, it's his best customer.
+
+They run out of time before they run out of combinations. Five and a half million tickets. Not seven.
+
+February 15th. The numbers come up: 8, 11, 13, 15, 19, 20.
+
+[VISUEL : les six numéros qui apparaissent un par un, très lentement]
+
+Somewhere in that pile of five and a half million tickets... one of them matches.
+
+The four-in-five bet had landed.
+
+[VISUEL : la grille de points du hook — le point gagnant s'illumine parmi les 78 %]
+
+But the story doesn't end there. Virginia lottery officials spend weeks investigating, convinced something illegal must have happened. Nothing had. The International Lotto Fund collects its twenty-seven million dollars.
+
+Virginia changes its rules, limiting how many tickets one retailer can sell to a single buyer in a short window. Mandel says he'll keep hunting for the next mispriced lottery, anywhere in the world.
+
+But look at what he needed. A fund. Hundreds of shareholders. A logistics chief. Dozens of buyers.
+
+Now imagine you needed none of that. Imagine you needed a car, a motel room, and your wife.
 
 ---
 
-## CASE TWO — THE RETIREES — 5:00–10:30
+## CASE TWO — THE RETIREES — 5:35–9:25
 
-Jerry Selbee ran a corner store in Evart, Michigan, for years before retiring. He had a math degree, decades old, that he'd never had much use for. In 2003, a brochure for a new state game called Winfall landed on his counter, and out of habit, he read the fine print.
+Jerry Selbee ran a corner store in Evart, Michigan. Then he retired. He had a head for numbers that he'd never really had a use for.
+
+In 2003, a brochure for a new state game lands on his counter. Winfall. Out of habit, he reads the fine print.
 
 [VISUEL : silhouette d'un homme âgé qui lit un dépliant derrière un comptoir de magasin]
 
-Winfall had a feature most lottery games don't: a roll-down. If nobody won the jackpot once it passed five million dollars, instead of carrying over to the next drawing, all that money rolled down into the smaller prize tiers — meaning anyone who matched even three or four numbers on that particular drawing would suddenly be splitting a much bigger pot than usual.
+And in the fine print, there's a rule most lottery games don't have. A roll-down.
 
-Jerry did the math in his head, by his own account, in about three minutes. On a normal drawing, a lottery ticket is a bad bet — the state keeps a cut, and the odds are brutal. But on a roll-down drawing, for every dollar you spent, there was reliably more than a dollar sitting in the prize pool waiting to be split among ticket holders. The bet had, structurally, flipped from negative to positive.
+Here's how it works. If nobody wins the jackpot once it passes five million dollars, the money doesn't carry over to the next drawing. It falls. Into the smaller prizes. Which means that, on that one drawing, matching just three or four numbers pays far more than it ever should.
+
+Jerry works it out in his head. By his own account, it takes about three minutes.
+
+On a normal drawing, a ticket is a bad bet. The state keeps its cut. The odds are brutal. But on a roll-down drawing, for every dollar you spend, there is reliably more than a dollar sitting in the prize pool waiting to be shared out. The bet doesn't just improve. It flips.
 
 [VISUEL : balance — "tirage normal" (perte structurelle) vs "tirage roll-down" (gain structurel), la balance bascule]
 
-He formed a small investment group with family members, bought tickets by the tens of thousands whenever a roll-down was announced, and won. Michigan shut the game down in 2005 — officially over low regular sales — but by then Jerry had already found the next one: Massachusetts had launched a nearly identical game called Cash WinFall.
+A retired shopkeeper has just found the same crack a Melbourne fund spent years hunting for. All he needed was a brochure.
 
-For the next six years, Jerry and his wife Marge drove nine hundred miles round-trip to two small convenience stores in Massachusetts every time a roll-down was coming, sometimes buying over three hundred thousand dollars in tickets in a single visit. They didn't stay at a casino resort. They sorted hundreds of thousands of tickets by hand in a room at the Red Roof Inn, ten hours a day, for over a week at a stretch, treating it less like gambling and more like a seasonal job with unusually good math behind it.
+He forms a small investment group with family members. Whenever a roll-down is coming, they buy tickets by the tens of thousands. And they win.
+
+Then, in 2005, the game disappears. Michigan shuts Winfall down. Officially, because regular sales were low. The thing Jerry had built a second career around is gone.
+
+He doesn't quit. He finds the same game under a different name. Cash WinFall. Massachusetts.
+
+For the next six years, Jerry and his wife Marge make the long drive from Michigan every time a roll-down is coming. They go to two small convenience stores. Sometimes they buy more than three hundred thousand dollars' worth of tickets in a single visit.
+
+They don't stay at a casino resort. They stay at a Red Roof Inn. And for over a week at a stretch, ten hours a day, they sort hundreds of thousands of tickets by hand.
 
 [VISUEL : montage — trajet Michigan-Massachusetts sur carte, puis chambre de motel avec tickets triés en piles]
 
-They weren't the only ones who'd found the loophole. A rival group led by a young MIT graduate, running the numbers with considerably more computing power, eventually bet upward of seventeen million dollars on the same game over roughly the same stretch of years.
+It looks less like gambling than like a seasonal job. A job with unusually good math behind it.
 
-In 2011, a Boston Globe investigation exposed just how dominated the game had become by a handful of high-volume players — and, more awkwardly for state officials, revealed that lottery employees had known for years and had, according to Selbee, quietly encouraged it by installing extra ticket machines for his group. Massachusetts discontinued Cash WinFall later that year. An inspector general's report afterward confirmed the obvious: nothing the Selbees had done broke any law. Over roughly nine years, across two states, Jerry and Marge's small operation had turned lottery arithmetic into something like twenty-six million dollars.
+They aren't alone. A rival group, led by a young MIT graduate with far more computing power, eventually bets more than seventeen million dollars on the same game. The crack is getting crowded.
+
+Then, in 2011, the Boston Globe breaks the story.
+
+And it gets uncomfortable. Not for the Selbees. For the state.
+
+The Globe shows a game dominated by a handful of high-volume players. And according to Selbee, lottery employees had known for years. They had quietly encouraged it, installing extra ticket machines for his group.
+
+Read that again. The state didn't just fail to stop them. According to Selbee, it made it easier.
+
+[VISUEL : un terminal de loterie supplémentaire qui s'allume dans un petit magasin]
+
+Massachusetts discontinues Cash WinFall later that year. An inspector general's report confirms what the Selbees had said from the start: nothing they did broke any law.
+
+Roughly nine years. Two states. Twenty-six million dollars.
+
+Mandel explained his method. The Selbees answered every reporter's question. The third winner never gave anyone that satisfaction. And that's what makes her the hardest case to tell.
 
 ---
 
-## CASE THREE — THE PROFESSOR — 10:30–14:00
+## CASE THREE — THE PROFESSOR — 9:25–12:05
 
-Joan Ginther holds a PhD in statistics from Stanford University. Between 1993 and 2010, she won a major Texas Lottery prize four separate times — five point four million dollars in a standard drawing, then two million, three million, and finally ten million dollars, all three of the later wins on scratch-off tickets.
+Joan Ginther holds a PhD in statistics from Stanford University. Between 1993 and 2010, she won a major Texas Lottery prize four separate times. Five point four million dollars. Then two million. Then three. Then ten.
 
 [VISUEL : ligne temporelle — 1993, 2006, 2008, 2010 — quatre gains qui apparaissent]
 
-Statisticians consulted by the press at the time calculated the odds of one person winning that specific combination of prizes purely by chance at somewhere around one in eighteen septillion — a number so large it's functionally meaningless to say out loud. Other statisticians pushed back, noting that Ginther bought an enormous volume of tickets over many years, which meaningfully changes the math; buying more tickets doesn't just multiply your odds, it changes which question you're even asking.
+Four wins. Three of them on scratch-off tickets.
 
-Here's where this case has to be handled differently than the first two, and it's worth saying plainly: nobody has ever proven Ginther did anything beyond buy a very large number of lottery tickets, and Texas lottery officials have consistently maintained that all four wins were legitimate, random results. She was never charged with any crime.
+Statisticians consulted by the press at the time put the odds of one person pulling that off by pure chance at roughly one in eighteen septillion. A number so large it stops meaning anything when you say it out loud.
+
+Other statisticians pushed back. Ginther bought an enormous number of tickets, over many years. And that changes the question you're even asking.
+
+Now I need to be careful, because this case is different from the first two, and it would be wrong to pretend otherwise. Nobody has ever proven that Ginther did anything beyond buy a very large number of lottery tickets. Texas lottery officials have consistently maintained that all four wins were legitimate, random results. She was never charged with anything.
 
 [VISUEL : mention explicite — "Aucune accusation. Gains reconnus comme légitimes par l'État du Texas."]
 
-What's fueled two decades of speculation is a theory, popularized by journalists at the Houston Press and Harper's Magazine, that scratch-off games aren't purely random the way a numbered drawing is — they're printed in predetermined batches to guarantee the state a certain number of big winners across a certain number of tickets, and shipped to stores on a schedule. The theory holds that with enough public data — sales figures, a hobbyist newsletter that tracked which top prizes had already been claimed in which games — a sufficiently determined statistician could estimate, not with certainty but with a meaningful edge, when and roughly where a large unclaimed prize was likely to still be sitting on a shelf.
+So what fueled twenty years of speculation? A theory. Popularized by journalists at the Houston Press and Harper's Magazine.
+
+The theory goes like this. A scratch-off game isn't random the way a numbered drawing is. The tickets are printed in predetermined batches, built to guarantee the state a certain number of big winners across a certain number of tickets, and shipped to stores on a schedule. With enough public data (sales figures, a hobbyist newsletter tracking which top prizes had already been claimed) a sufficiently determined statistician might estimate where a large unclaimed prize was likely still sitting on a shelf.
+
+Not with certainty. With an edge.
 
 [VISUEL : schéma théorique — lots de tickets imprimés par lot, distribution géographique, un "gros lot" positionné dans le lot]
 
-Two of Ginther's biggest wins came from the same small convenience store in her hometown. She bought enormous quantities of tickets there, in specific games, in the weeks before each win. Is that a sophisticated exploitation of how scratch-off games are manufactured and distributed — or an extraordinarily lucky, extraordinarily persistent gambler who happened to like buying tickets at her hometown store? The state of Texas has one answer. Independent statisticians who've studied the case are considerably less sure.
+And here's the detail people can't let go of. Two of her biggest wins came from the same small convenience store in her hometown. In the weeks before each one, she bought enormous quantities of tickets there. In specific games.
+
+Is that the sophisticated exploitation of how scratch-offs are made and distributed? Or an extraordinarily lucky, extraordinarily persistent gambler who liked buying tickets close to home?
+
+Texas has one answer. Independent statisticians are considerably less sure.
+
+Here is what is certain. Whatever Joan Ginther did, she never had to lie to cash a winning ticket.
+
+And that's why the next story is different. Everyone so far played the game as it was designed.
+
+The next man played the game as he designed it.
 
 ---
 
-## THE BREAKDOWN — 14:00–17:30
-*Décortication technique, débit qui ralentit.*
+## THE LINE — 12:05–15:10
+*Le contre-exemple criminel. Ton plus sec, débit qui ralentit.*
 
-Two very different mechanisms are doing the work in these stories, and it's worth separating them clearly.
+December 2010. Des Moines, Iowa. A security camera in a convenience store records a man in a hooded sweatshirt buying a Hot Lotto ticket.
 
-Mandel and the Selbees exploited the same underlying flaw: a lottery's expected value — the average amount you'd win back per dollar spent, over infinite plays — is supposed to always favor the house. That's how every lottery on Earth funds itself. But both Virginia's jackpot structure and the Winfall roll-down created rare, specific, publicly knowable moments where that inequality flipped. When Virginia's jackpot grew large enough relative to the cost of covering the field, buying combinations stopped being a gamble and became closer to an arbitrage trade. When Winfall's unclaimed jackpot rolled down into lower prize tiers, the expected return on a ticket, for that one drawing only, spiked above a dollar.
+[VISUEL : image de vidéosurveillance stylisée, silhouette à capuche, visage jamais visible]
 
-[VISUEL : graphique — valeur espérée par ticket, ligne plate sous $1 (normal), pic soudain au-dessus de $1 (moment roll-down / jackpot surdimensionné)]
+The ticket wins. A jackpot worth more than fourteen million dollars in cash.
 
-Neither man needed inside information. Both pieces of math were sitting in publicly published odds tables and lottery rules, available to literally anyone willing to read them closely and do the arithmetic. That's the detail that separates this episode from the first three on this channel: there was no lie here, no falsified statement, no hidden ledger. The flaw was hiding in plain sight, in documents the lottery itself printed and handed out for free.
+And the man never claims it. Not himself.
 
-[VISUEL : deux icônes côte à côte — "document caché / falsifié" (Ignatova, Holmes, Madoff) barré d'une croix, vs "règlement public, non lu" (Mandel, Selbee) coché]
+A year later, someone tries to cash it anonymously, through intermediaries. And Iowa says no. Because Iowa has a rule. No jackpot without proof of who bought the ticket.
 
-Ginther's case, if the theory holds, is mechanically different — it isn't about the odds published on the back of the ticket, it's about exploiting the manufacturing and distribution process behind the game, which was never meant to be public information in the same way. That's a meaningfully greyer area, and it's exactly why her case remains a theory and not a settled fact, while Mandel and Selbee's methods have been openly published, studied, and even taught in statistics courses since.
+Remember that rule. It's about to matter more than any security system ever built.
 
-Why did none of this get caught in advance? Because the people who designed these games were building for the average player, not the extreme one. Lottery commissions run the numbers assuming a population of casual bettors buying a few tickets a week. Nobody on the design side stress-tested what happens if a single, sufficiently funded, sufficiently patient actor treated the game as a math problem instead of a wish.
+The man in the hood is Eddie Tipton. He works for the Multi-State Lottery Association: the organization that builds and runs the computers that pick the numbers for lotteries in more than thirty states. He joined in 2003 as a programmer. By 2013, he was its director of information security. The man responsible for making sure no one could do exactly what he was doing.
 
----
+[VISUEL : organigramme simple — MUSL → serveurs RNG → tirages dans plus de 30 États ; Tipton placé au centre]
 
-## THE NUMBERS — 17:30–19:30
+Because the numbers weren't random. Prosecutors said the numbers on that ticket matched numbers he'd programmed into the lottery's computer a month earlier. Tipton would later admit rigging games in Colorado in 2005, Wisconsin in 2007, Kansas and Iowa in 2010, and Oklahoma in 2011.
 
-Put the three cases side by side, and the contrast is almost comedic in how differently sized they are.
+[VISUEL : schéma — code caché dans le RNG → numéros connus à l'avance → tickets achetés par lui ou par des proches → gains encaissés]
 
-Mandel's Virginia play: roughly five to seven million dollars invested, twenty-seven million dollars returned, in a single drawing, over a matter of days.
+Mandel read the rules. The Selbees read the rules. Tipton rewrote them.
 
-[VISUEL : comparaison — $7M investi → $27M récupéré, en une seule opération]
+Here's what's remarkable about how he got caught. It wasn't a brilliant audit. Nobody had audited the software. Years later, his own lawyer would point out that, for a decade, nobody had shown much interest in actually examining the program that picked the numbers.
 
-Selbee's operation: an estimated twenty-six million dollars extracted across roughly nine years and two states, in increments as small as a few hundred thousand dollars per trip, requiring physical presence, thousands of hours of manual ticket-sorting, and zero computing power beyond Jerry's own memory of sixth-grade math.
+What stopped him was a rule about paperwork. No proof of purchase, no jackpot. The ticket sat there, unclaimed. In 2014, investigators released the video of the hooded man. People recognized him. In January 2015, Tipton was arrested.
 
-Ginther's total: a little over twenty million dollars across four separate prizes over seventeen years — the smallest total of the three, but arguably the most statistically implausible outcome ever recorded in a state lottery, proven or not.
+He denied everything for two years. In 2017, he pleaded guilty, and was sentenced to up to twenty-five years in prison.
 
-[VISUEL : trois barres — Mandel $27M / Selbee $26M / Ginther ~$20M, avec sous chaque barre le "coût en temps" respectif : jours / années / décennies]
+[VISUEL : dossier — Tipton, 5 États, 2005–2011, jusqu'à 25 ans]
 
-And here's a number that puts all three in perspective: American lotteries collectively sell over one hundred billion dollars in tickets every year. Even the largest of these three operations — Mandel's twenty-seven million dollar Virginia jackpot — is a rounding error against that total. These weren't attacks that threatened to bankrupt a state lottery system. They were narrow, temporary cracks that a small number of people noticed before anyone patched them.
+Now line the four of them up.
 
----
+Mandel and the Selbees played games whose randomness nobody tampered with. They calculated, correctly, when the payout structure temporarily favored the player. Ginther, at worst under the unproven theory, exploited a pattern the lottery itself created and never hid. Tipton didn't exploit a flaw in the rules. He broke the one thing every lottery depends on to mean anything at all: that the numbers are random, and that the person running the machine doesn't already know the answer.
 
-## THE LINE — 19:30–21:30
-*Un contre-exemple, volontairement bref, pour tracer la frontière légal/illégal.*
+That's the whole legal and ethical distance in this video, in one sentence.
 
-To see exactly where the legal line sits, it helps to look at someone who crossed it doing something that looks, on the surface, almost identical.
-
-[VISUEL : silhouette distincte — "Eddie Tipton, Directeur de la sécurité informatique, Association multi-états des loteries"]
-
-Eddie Tipton was the information security director for the Multi-State Lottery Association — the organization that builds and certifies the random number generators used by lottery drawings across more than a dozen states. Starting around 2005, prosecutors say, Tipton secretly installed code in that software allowing him to predict winning numbers on specific days each year, then had associates purchase tickets and claim the prizes to keep his own name off the paperwork. He was finally caught in 2015 after investigators noticed a suspicious pattern of winning claims tied back to people connected to him, and was eventually sentenced to twenty-five years in prison.
-
-[VISUEL : schéma — RNG truqué → prédiction connue à l'avance → tickets achetés par des complices]
-
-Line it up against the other three. Mandel and the Selbees played games whose randomness nobody tampered with — they simply calculated, correctly, when the payout structure temporarily favored the player. Ginther, at worst under the unproven theory, exploited a distribution pattern the lottery itself created and never bothered to obscure. Tipton didn't exploit a flaw in the rules. He broke the one thing every lottery depends on to mean anything at all: that the numbers are actually random, and that the person running the machine doesn't already know the answer.
-
-That's the entire legal and ethical distance in this episode, in one sentence: reading the fine print isn't a crime. Rewriting it in secret is.
+Reading the fine print isn't a crime. Rewriting it in secret is.
 
 ---
 
-## THE PATTERN — 21:30–23:00
+## THE PATTERN — 15:10–17:30
 
-Every case this channel has covered so far involved someone lying — a fake blockchain, a fake blood test, a fake trading strategy running for two decades. This one doesn't. Which makes it, in some ways, the more uncomfortable story, not the less.
+Remember the question from the beginning? Why did nobody on the inside see it?
 
-[VISUEL : quatre portraits-silhouettes en ligne — Ignatova, Holmes, Madoff, puis Mandel/Selbee/Ginther regroupés — la ligne qui les sépare visuellement]
+Look at what was missing in all four stories. Not intelligence. Not rules. Not regulators. Something much simpler.
 
-Every institution in this series so far failed the same way: it trusted that people would behave roughly the way it expected them to, and it never seriously tested what happens when someone doesn't. A crypto board that never asked to see the blockchain. A medical board that never asked for an independent demo. A regulator that filed away a fraud memo five times without reading it closely. And here, a lottery commission that built odds tables assuming nobody would ever have the patience, the capital, or the math background to actually read them properly.
+Curiosity.
 
-The difference is what happens after the flaw gets found. Ignatova, Holmes, and Madoff all chose to keep the lie running rather than let it collapse honestly. Mandel published his method. The Selbees answered every reporter's question. When Texas lottery officials looked hard at Ginther's wins, they found nothing to prosecute, because — provable theory or not — she never had to lie about anything to cash a winning ticket.
+The people who designed these games built them for a certain kind of player. The casual one. A few tickets a week. A wish, not a calculation. Nobody stress-tested what happens when someone treats the game like a math problem. And nobody checked what happens when the person guarding the machine isn't honest.
 
-Reading the rules more carefully than the people who wrote them isn't a loophole exploit unique to lotteries. It's the same skill, pointed in a more honest direction.
+[VISUEL : quatre silhouettes en ligne — Mandel, Selbee, Ginther, Tipton — avec sous chacune un mot : "a lu", "a lu", "a calculé", "a réécrit"]
+
+Put the numbers side by side, and the gap between them is almost absurd.
+
+Mandel: days. Twenty-seven million dollars.
+
+The Selbees: nine years. Twenty-six million.
+
+Ginther: seventeen years. A little over twenty million. Proven or not.
+
+[VISUEL : trois barres — Mandel $27M / Selbee $26M / Ginther ~$20M, avec sous chaque barre le "coût en temps" : jours / années / décennies]
+
+And against more than a hundred billion dollars in tickets that American lotteries sell every year, even the biggest of these wins is a rounding error. These weren't attacks that threatened to bankrupt a lottery. They were narrow, temporary cracks that a few people noticed before anyone patched them.
+
+Every case this channel has covered so far involved someone lying. A fake blockchain. A fake blood test. A fake trading strategy that ran for two decades. Three of these stories have no lie in them at all. Which makes this, in some ways, the more uncomfortable story. Not the less.
+
+[VISUEL : trois portraits-silhouettes — Ignatova, Holmes, Madoff — d'un côté d'une ligne verticale ; Mandel, Selbee, Ginther de l'autre]
+
+Because the difference is what happens after the flaw is found. Ignatova, Holmes and Madoff kept the lie running rather than let it collapse honestly. Mandel published his method. The Selbees answered every reporter's question. And Tipton did the one thing the others never did. He hid.
 
 ---
 
-## OUTRO — 23:00–23:30
+## OUTRO — 17:30–18:30
 
-Virginia rewrote its lottery rules within months of Mandel's win. Massachusetts killed Cash WinFall within months of the Globe's story. Nobody has ever managed to shut down whatever Joan Ginther was or wasn't doing, because nobody has ever proven there was anything to shut down.
+Virginia rewrote its lottery rules within months of Mandel's win. Massachusetts killed Cash WinFall the same year the Globe broke its story. Tipton went to prison. And nobody has ever shut down whatever Joan Ginther was or wasn't doing, because nobody has ever proven there was anything to shut down.
 
-[VISUEL : trois lois/règlements qui s'affichent brièvement, se referment comme des dossiers, puis fondu au noir]
+[VISUEL : trois règlements qui s'affichent brièvement, se referment comme des dossiers, puis fondu au noir]
 
-Three very different outcomes, for three people who all did the same basic thing: they read a public document more carefully than anyone expected them to, and the math simply did the rest.
+Which brings us back to a Saturday in February 1992, and the question I asked you at the start.
 
-[VISUEL : un dossier se referme, un nouveau dossier vierge s'ouvre à côté, sans titre encore visible]
+Would you have bought every ticket?
 
-Reading the fine print won every case in this video. Next time, someone reads it just as carefully — and decides it would be more profitable to rewrite it instead.
+Now you know the answer was never about nerve. It was about who bothered to read. Seventy-eight percent of the combinations. Four chances in five. And a state that sold every one of those tickets, cheerfully, because it never imagined anyone would try.
+
+[VISUEL : la grille de points du hook, tous les points s'éteignent un à un, sauf le point gagnant]
+
+Seven million dollars in. Twenty-seven million out. Nothing in the rules to stop it.
+
+All it ever took was reading.
 
 ---
 
 ## Notes de production
 
-- **Durée estimée :** ~3 400 mots de narration hors directions visuelles ≈ 22-23 min à 150-155 mots/minute.
-- **Point de vigilance légal — cas Ginther :** aucune accusation n'a jamais été portée contre Joan Ginther, et la loterie du Texas a toujours confirmé la légitimité de ses quatre gains. Le script traite explicitement cette section comme une théorie journalistique non prouvée ("if the theory holds", "unproven theory", "nobody has ever proven") et non comme un fait établi — à ne jamais durcir au montage ou à la voix off.
-- **Continuité de série :** "The Pattern" fait le lien avec Ignatova, Holmes et Madoff en les opposant explicitement à ce cas. Comme cette vidéo est désormais repositionnée plus tard dans le calendrier, vérifier avant publication si FTX (Ép.4) doit aussi être ajouté à cette liste de contraste.
-- **Teaser de fin :** reformulé pour ne pas réutiliser la structure "Next time... Subscribe if you want to..." déjà bannie sur les épisodes 1-3 — ici le teaser reste volontairement générique (thème "réécrire les règles" plutôt que nommer un cas précis), le sujet exact de l'épisode 5 n'étant pas encore arbitré.
-- **Visuels prioritaires à produire :** (1) l'équation simple $27M ÷ 7M combinaisons, (2) la balance qui bascule sur le roll-down, (3) le triptyque de gains Mandel/Selbee/Ginther avec coût en temps, (4) le schéma RNG truqué de Tipton (contraste net avec les 3 autres), (5) le quadriptyque des 4 gains de Ginther sur une ligne temporelle 1993-2010.
+- **Durée estimée :** ~3 200 mots de narration hors directions visuelles. À ~182 mots/min (débit réel observé en TTS sur les épisodes précédents), cela donne **~17-18 min**, et non 22-23 min (les 22-23 min de la v1 étaient calculés à 150 mots/min). Je recommande de garder cette durée : une vidéo plus serrée retient mieux. Si vous tenez à ~20 min, ajouter 400 mots dans les cas Ginther (plus de détails sur l'enquête journalistique) ou Selbee, plutôt que de rallonger le hook. **À reconfirmer après génération TTS.**
+- **Faits corrigés ou précisés par rapport à la v1 :**
+  - **Tipton, titre :** il est entré au MUSL en 2003 comme programmeur ; il n'est devenu directeur de la sécurité informatique qu'en 2013, après avoir truqué les premiers jeux (2005). La v1 laissait entendre qu'il était déjà directeur en 2005.
+  - **Tipton, comment il a été pris :** pas par un "motif suspect de gains" mais par le ticket Hot Lotto de décembre 2010 jamais encaissé (règle de l'Iowa : pas de jackpot sans preuve d'achat), puis la vidéo de surveillance diffusée en 2014. Arrêté en janvier 2015.
+  - **Tipton, peine :** condamnation en 2015 (10 ans), puis plaidoyer de culpabilité en juin 2017 et condamnation à **jusqu'à 25 ans** (libération conditionnelle possible après quelques années, selon la presse). La v1 disait simplement « 25 ans ».
+  - **Tipton, jeux truqués :** 5 États (Colorado 2005, Wisconsin 2007, Kansas 2010, Iowa 2010, Oklahoma 2011), selon son propre aveu. Le montant du jackpot Hot Lotto varie selon les sources (14,3 M$ en valeur comptant, 16,5 M$ en rente) : le script dit « plus de quatorze millions en cash ».
+- **Points à vérifier avant publication :**
+  1. **Le 78 %** est un calcul (5,5 M / 7 059 052 ≈ 0,78). Le chiffre « environ 5,5 millions de tickets » vient de la v1 ; certaines sources parlent d'environ 5 millions. Dans ce cas le pourcentage tombe à ~71 %. À confirmer et à ajuster dans le hook, la section Mandel et l'outro.
+  2. **« Roughly five to seven million dollars invested »** (v1) : supprimé du script faute de source précise.
+  3. **Distance Selbee :** la v1 disait « 900 miles aller-retour ». Michigan-Massachusetts fait bien plus que cela. Le script dit maintenant simplement « the long drive ». À ne pas rechiffrer sans source.
+  4. **Diplôme de Jerry Selbee :** la v1 mentionnait un « math degree ». Je l'ai remplacé par « a head for numbers » en attendant confirmation.
+  5. **Employés de la loterie du Massachusetts :** l'accusation d'avoir installé des machines supplémentaires vient de Selbee. Le script l'attribue explicitement (« according to Selbee »). À ne pas durcir.
+- **Point de vigilance légal — cas Ginther :** inchangé. Aucune accusation, gains toujours reconnus comme légitimes par la loterie du Texas. Le script la traite comme une théorie journalistique non prouvée, et le dit à voix haute. **Ne jamais durcir au montage ou à la voix off.**
+- **Continuité de série :** "The Pattern" oppose ce cas à Ignatova, Holmes et Madoff. Comme l'épisode FTX est désormais publié avant celui-ci, vérifier s'il faut l'ajouter à la liste de contraste (FTX = mensonge, donc côté "a menti"). **Incohérence à régler :** la note de production de la v1 place FTX en Ép.4, mais le script FTX est étiqueté Ép.2. À harmoniser.
+- **Hook B (en réserve, si le hook en scène du tirage ne convainc pas) :**
+  > *Massachusetts. A room at a Red Roof Inn. A retired couple from Michigan sit on a motel bed with hundreds of thousands of dollars in lottery tickets spread around them. They will do this ten hours a day, for more than a week. No one is watching. No one is coming to stop them. Because what they're doing isn't a crime. It's exactly what the rules allow. So here is the question that should bother you: how did the people who wrote those rules not see this coming?*
+  > À utiliser avec le même enchaînement ("THE REAL QUESTION"), mais perd le chiffre 78 % et le callback final.
+- **Titres alternatifs à tester (miniature) :** « They Bought Every Lottery Ticket. It Was Legal. » / « The Lottery Loophole Nobody Fixed » / « 78 % : The Bet That Beat A Lottery ».
+- **Visuels prioritaires à produire :** (1) la grille de points 78 % / 22 % (revient au hook, au tirage et à l'outro : c'est le visuel signature), (2) la balance normale vs roll-down, (3) la silhouette à capuche de Tipton en vidéosurveillance, (4) le schéma RNG truqué, (5) la ligne temporelle des 4 gains de Ginther.
+
+## Cartographie des boucles ouvertes
+
+| Boucle | Plantée | Fermée | Distance |
+|---|---|---|---|
+| Le tirage du 15 février : 78 % ou 22 % ? | Hook (0:00) | Case One (~5:00) | Moyenne |
+| « Would you have bought every ticket ? » | Hook (~1:00) | Outro (~17:45) | Très longue |
+| « Le quatrième homme » / la ligne | Hook (~1:10) | The Line (12:05) | Longue |
+| Ginther : « no one has ever been able to explain how » | Hook | Case Three (reste volontairement ouverte, légalement) | Longue, assumée |
+| « Pourquoi personne à l'intérieur n'a vu la faille ? » | The Real Question (~1:30) | The Pattern (15:10) : réponse = la curiosité manquante | Très longue |
 
 ## Sources principales
 - The New York Times — Group Invests $5 Million To Hedge Bets in Lottery (1992) : https://www.nytimes.com/1992/02/25/us/group-invests-5-million-to-hedge-bets-in-lottery.html
@@ -198,4 +347,6 @@ Reading the fine print won every case in this video. Next time, someone reads it
 - Harper's Magazine — The Luckiest Woman on Earth, Nathaniel Rich (2016) : https://harpers.org/2016/01/the-luckiest-woman-on-earth
 - The Philadelphia Inquirer — 16 schemes lottery legend Joan Ginther likely didn't use : https://inquirer.com/philly/news/16_schemes_lottery_legend_Joan_Ginther_likely_didnt_use.html
 - Houston Press — Joan Ginther, Serial Lottery Winner: Lucky Or a Genius Who Gamed the System? : https://www.houstonpress.com/news/joan-ginther-serial-lottery-winner-lucky-or-a-genius-who-gamed-the-system-6733030/
-- Associated Press / DOJ reporting — Eddie Tipton multi-state lottery rigging case (2015 conviction)
+- CBS News — Former lottery official sentenced for trying to rig $14M win (2015) : https://www.cbsnews.com/amp/news/former-iowa-lottery-official-eddie-tipton-sentenced-for-trying-rig-jackpot-win
+- AP via Fox Business — Mastermind of lottery fraud faces 25-year prison sentence (2017) : https://foxbusiness.com/features/mastermind-of-lottery-fraud-faces-25-year-prison-sentence
+- Bitdefender / Des Moines Register — Man gets 25 years in prison for Iowa Lottery fraud (2017) : https://www.bitdefender.com/en-gb/blog/hotforsecurity/man-gets-25-years-in-prison-for-iowa-lottery-fraud

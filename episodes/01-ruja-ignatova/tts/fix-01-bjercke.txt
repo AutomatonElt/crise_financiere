@@ -1,0 +1,11 @@
+But first, let's talk about something that happened quietly inside the company in 2016 — because it's one of the clearest pieces of evidence that OneCoin was never what it claimed to be.
+
+Two years after launching its "cryptocurrency," OneCoin went looking for someone to finally build it a real blockchain. A recruiting agency approached a Norwegian blockchain specialist named Bjorn Bjercke with an offer for a top technical position — global CTO, a salary well above what a partner at a major accounting firm would make. Bjercke didn't say yes right away. He asked questions first.
+
+What he found stopped him cold. OneCoin didn't have a blockchain to improve or maintain. It didn't have one at all. Two years after telling millions of investors they owned a real cryptocurrency, the company was quietly trying to hire someone to build, after the fact, the thing it had already claimed to have. Bjercke concluded the company was almost certainly a Ponzi scheme, and turned the job down.
+
+He didn't stop there. Bjercke went public with what he'd found, describing OneCoin's system as little more than a SQL database where staff could manually type in numbers to credit users with "mined" coins. OneCoin threatened him with a lawsuit unless he retracted his statements. He refused, offered to countersue instead, and the threat quietly went nowhere. Bjercke would later go on to help investigators and journalists — including the team behind the BBC's "The Missing Cryptoqueen" — understand exactly how the technology had been faked from day one.
+
+He wasn't alone in noticing something was wrong. But he remains one of the clearest examples of what almost happened, and didn't: OneCoin came within one signature of hiring the person best positioned to expose it — and instead created its own whistleblower by asking him to look too closely.
+
+For three years, the money kept flowing in anyway.

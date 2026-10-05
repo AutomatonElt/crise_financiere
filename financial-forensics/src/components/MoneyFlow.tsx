@@ -59,11 +59,13 @@ export const MoneyFlow: React.FC<MoneyFlowProps> = ({ startFrame = 15 }) => {
     { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.inOut(Easing.ease) }
   );
 
-  // Output boxes
+  // Output boxes — data from DOJ press releases
+  // Note: amounts may overlap (funds that transited through multiple channels)
   const outputs = [
-    { label: "Recovered", amount: "$300M", color: theme.colors.green, width: 300 },
-    { label: "Frozen", amount: "$100M", color: theme.colors.blue, width: 300 },
-    { label: "Missing", amount: "$3.4B", color: theme.colors.red, width: 500 },
+    { label: "Greenwood", amount: "$300M", color: theme.colors.green, width: 280 },
+    { label: "Armenta", amount: "$300M", color: theme.colors.blue, width: 280 },
+    { label: "Scott", amount: "$400M", color: theme.colors.gold, width: 280 },
+    { label: "Unaccounted", amount: "~$3B+", color: theme.colors.red, width: 420 },
   ];
 
   const outputStartFrame = startFrame + 70;
@@ -286,7 +288,7 @@ export const MoneyFlow: React.FC<MoneyFlowProps> = ({ startFrame = 15 }) => {
         {/* Giant "?" over the Missing box */}
         {questionOpacity > 0 && (
           <text
-            x={outputPositions[2].x}
+            x={outputPositions[3].x}
             y={outputY - 90}
             textAnchor="middle"
             fill={theme.colors.red}
@@ -326,7 +328,7 @@ export const MoneyFlow: React.FC<MoneyFlowProps> = ({ startFrame = 15 }) => {
               fontWeight: "bold",
             }}
           >
-            Over 90% — never found.
+            est. $3B+ still unaccounted for.
           </div>
         </div>
       )}

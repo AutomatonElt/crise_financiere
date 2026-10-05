@@ -68,9 +68,13 @@ def main():
         "--keep-chunks", action="store_true",
         help="Ne pas supprimer les fichiers MP3 intermédiaires après concaténation",
     )
+    parser.add_argument(
+        "--seed-request-ids", nargs="*", default=[],
+        help="Request IDs d'un précédent run pour continuer le stitching (ex: --seed-request-ids abc123 def456)",
+    )
     args = parser.parse_args()
 
-    request_ids = []
+    request_ids = list(args.seed_request_ids)
     chunk_files = []
 
     for i, block_path in enumerate(args.blocks):

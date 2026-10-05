@@ -1,0 +1,26 @@
+[
+    {
+        "label": "HOOK_01",
+        "track": "V1_BACKGROUND",
+        "asset_path": "assets/hook_background.mp4",
+        "start_time": 0.0,
+        "end_time": 5.5,
+        "mode": "HOLD"
+    },
+    {
+        "label": "HISTOIRE_01",
+        "track": "V2_MAIN",
+        "asset_path": "assets/story_graphic.mp4",
+        "start_time": 5.5,
+        "end_time": 15.0,
+        "mode": "INTERCUT"
+    },
+    {
+        "label": "OVERLAY_01",
+        "track": "V3_OVERLAYS",
+        "asset_path": "assets/text_title.png",
+        "start_time": 1.0,
+        "end_time": 4.0,
+        "mode": "HOLD"
+    }
+]

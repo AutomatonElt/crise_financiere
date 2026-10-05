@@ -9,13 +9,22 @@
   },
   "dependencies": {
     "@remotion/cli": "4.0.292",
+    "@remotion/google-fonts": "^4.0.292",
     "@remotion/shapes": "4.0.292",
+    "@remotion/three": "^4.0.292",
+    "@types/three": "^0.186.0",
+    "d3-geo": "^3.1.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "remotion": "4.0.292"
+    "remotion": "4.0.292",
+    "three": "^0.186.1",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
   },
   "devDependencies": {
+    "@types/d3-geo": "^3.1.1",
     "@types/react": "19.0.0",
+    "@types/topojson-client": "^3.1.5",
     "typescript": "5.7.3"
   }
 }

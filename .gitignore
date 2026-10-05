@@ -1,49 +1,114 @@
-# Python
+# ==============================================================================
+# Python & Virtual Environments
+# ==============================================================================
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
 .venv/
-.venv-youtube/
+.venv*/
 venv/
 env/
 *.egg-info/
 pip-wheel-metadata/
 
-# Node / Remotion
+# ==============================================================================
+# Node / Remotion / Web
+# ==============================================================================
 node_modules/
 out/
 dist/
+build/
 *.tsbuildinfo
 .remotion/
+.npm/
 
-# Environment & secrets
+# ==============================================================================
+# Environment & Secrets
+# ==============================================================================
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 
-# OS
+# ==============================================================================
+# Operating System & IDEs
+# ==============================================================================
 .DS_Store
 Thumbs.db
 desktop.ini
-
-# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
+.cache/
+.windsurf/
+\$LOG
 
-# Logs
+# ==============================================================================
+# Logs & Temporary Files
+# ==============================================================================
 *.log
 npm-debug.log*
-
-# Media (générés / lourds — décommentez si besoin)
-# *.mp3
-# *.mp4
-# *.wav
-# *.webm
-
-# Misc
+yarn-debug.log*
+yarn-error.log*
 *.tmp
 *.bak
+*.bak.*
+*.pre_*
+*.autosave*
+scratch/
+_shared/music/
+
+# ==============================================================================
+# Media Files — Video, Audio, Heavy Assets (Too large for GitHub)
+# ==============================================================================
+*.mp4
+*.mov
+*.webm
+*.avi
+*.mkv
+*.m4v
+*.mp3
+*.wav
+*.aac
+*.flac
+*.ogg
+*.m4a
+*.aiff
+
+# Sound effects conservés dans le dépôt s'ils sont légers :
+!_shared/sfx/whoosh/whoosh_*.wav
+!_shared/sfx/camera-shutter/shutter_*.wav
+!_shared/sfx/beats/stab_*.wav
+
+# ==============================================================================
+# Dossiers lourds d'assets, de rushs, d'enregistrements et de rendus
+# ==============================================================================
+**/assets/footage-reel/
+**/assets/footage-animated/
+**/assets/real-footage/
+**/assets/stock_video/
+**/assets/ia-video/
+**/assets/ia-image/
+**/assets/image-ai/
+**/assets/texte_card/
+**/assets/footage/
+**/montage/rendus/
+**/rendus/
+**/tmp_api/
+**/*-backup*/
+**/ancien/
+**/legacy*/
+phsycologie_motivation/
+episodes/*/tts/*.mp3
+episodes/*/tts/*.wav
+
+# ==============================================================================
+# Fichiers 3D, Blender & Kdenlive Auto-backs
+# ==============================================================================
+*.blend1
+*.blend2
+*.blend@
+*.kdenlive~*

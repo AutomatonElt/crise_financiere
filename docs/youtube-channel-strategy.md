@@ -423,12 +423,20 @@ Pas juste "il est allé en prison" mais l'impact réel.
 - Ce que les régulateurs ont (ou n'ont pas) appris
 - Les victimes : qui sont-elles, combien ont-elles perdu
 
-#### Pilier 5 : Identité visuelle forte
-- **Palette de couleurs** : sombre, finance (bleu nuit, or, rouge accent)
-- **Style graphique** : schémas minimalistes type Bloomberg/FT
-- **Intro custom** : 5-10 secondes, reconnaissable
-- **Lower thirds** : montants, dates, noms affichés proprement
-- **Outro** : "Next case" teaser
+#### Pilier 5 : Identité visuelle et sonore forte
+- **Palette de couleurs** : sombre, finance (bleu nuit `#060A12`, or pur gravé `#D4AF37`, rouge alerte, blanc craie)
+- **Style graphique** : schémas minimalistes type Bloomberg / Financial Times / Dossier d'instruction
+- **Transition Hook → Acte 1 ("Beat-Through Title Drop")** :
+  - La voix off s'interrompt net sur le mot clé du hook (ex: *"The Cryptoqueen"*).
+  - La musique de suspense (`A2_MUSIC_BED`) **continue de battre sans coupure** pour maintenir la dynamique et l'urgence.
+  - Le titre monumental gravé or jaillit avec un `whoosh_long` pur sans grondement.
+  - La voix reprend dès le début de l'Acte 1 (*"Let's rewind"*), enchaînant sans temps mort.
+- **Sound Design Signature** :
+  - Bruits de clavier mécanique / machine à écrire synchronisés avec les TitleCards de dates et lieux.
+  - Déclencheur photo iPhone instantané calé à la première image des fiches suspects (EvidenceCard).
+  - Absence totale de drones ou bruits parasites sourds : un son clair, net et incisif.
+- **Lower thirds** : montants, dates, noms affichés proprement sans cadre obstruant.
+- **Outro** : "Next case" teaser + SubscribeCTA interactif.
 
 ### 6.5 Format type (15-18 min)
 
