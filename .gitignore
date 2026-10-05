@@ -59,7 +59,7 @@ yarn-error.log*
 *.pre_*
 *.autosave*
 scratch/
-_shared/music/
+_shared/music/*
 
 # ==============================================================================
 # Media Files — Video, Audio, Heavy Assets (Too large for GitHub)
@@ -86,17 +86,17 @@ _shared/music/
 # ==============================================================================
 # Dossiers lourds d'assets, de rushs, d'enregistrements et de rendus
 # ==============================================================================
-**/assets/footage-reel/
-**/assets/footage-animated/
-**/assets/real-footage/
-**/assets/stock_video/
-**/assets/ia-video/
-**/assets/ia-image/
-**/assets/image-ai/
-**/assets/texte_card/
-**/assets/footage/
-**/montage/rendus/
-**/rendus/
+**/assets/footage-reel/*
+**/assets/footage-animated/*
+**/assets/real-footage/*
+**/assets/stock_video/*
+**/assets/ia-video/*
+**/assets/ia-image/*
+**/assets/image-ai/*
+**/assets/texte_card/*
+**/assets/footage/*
+**/montage/rendus/*
+**/rendus/*
 **/tmp_api/
 **/*-backup*/
 **/ancien/
@@ -104,6 +104,13 @@ _shared/music/
 phsycologie_motivation/
 episodes/*/tts/*.mp3
 episodes/*/tts/*.wav
+_shared/music/*
+
+# ==============================================================================
+# Préservation de l'arborescence complète (sur toute nouvelle machine)
+# ==============================================================================
+!**/.gitkeep
+
 
 # ==============================================================================
 # Fichiers 3D, Blender & Kdenlive Auto-backs
