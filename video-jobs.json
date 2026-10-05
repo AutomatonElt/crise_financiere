@@ -1,0 +1,19 @@
+[
+  {
+    "prompt": "Camera slowly pushes forward toward a lone woman in a floor-length deep red gown standing center stage in a massive dark arena, spotlights blazing behind her, thousands of silhouetted audience members barely visible in the darkness below, she raises her arms slightly as if addressing the crowd, dramatic chiaroscuro lighting, blue-black shadows, golden spotlight beams, cinematic documentary footage, film grain, 4 seconds",
+    "out": "episodes/01-ruja-ignatova/assets/ia-video/01-wembley-push-in.mp4",
+    "model": "kling-video-3-0",
+    "mode": "professional",
+    "aspect_ratio": "16:9",
+    "duration": 4,
+    "ref_image": "episodes/01-ruja-ignatova/assets/ia-image/01-wembley-red-gown.png"
+  },
+  {
+    "prompt": "A featureless silhouette of a woman standing in a dark room, her face slowly morphs and shifts through subtle changes — cheekbones, jawline, hair color — as passport photos and identity documents briefly flash and overlay on her figure, dark cinematic atmosphere, blue-black color grade, film grain, documentary style, 5 seconds",
+    "out": "episodes/01-ruja-ignatova/assets/ia-video/02-identity-morph.mp4",
+    "model": "kling-video-3-0",
+    "mode": "professional",
+    "aspect_ratio": "16:9",
+    "duration": 5
+  }
+]

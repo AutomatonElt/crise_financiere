@@ -1,0 +1,6 @@
+# ElevenLabs request IDs — FTX voiceover stitching
+# Modèle : eleven_multilingual_v2
+
+block-01-hook-nine-days-rise: omPNJPP7Rl1mQ7pTIwFa
+block-02-breakdown-numbers: 642YcehtmMPgTWeFlC2K
+block-03-reckoning-pattern-outro: ppOnBikgYhoyNomyXMwa

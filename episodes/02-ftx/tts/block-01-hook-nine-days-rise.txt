@@ -1,0 +1,37 @@
+At its lowest point, in the final hours before it collapsed, FTX — a company that had been valued at thirty-two billion dollars ten months earlier — had, according to internal messages later reviewed by investigators, the equivalent of about one bitcoin in immediately available reserves to cover customer withdrawals.
+
+One coin, worth roughly twenty thousand dollars at the time, standing behind more than eight billion dollars that customers believed was sitting safely in their accounts.
+
+It took nine days for one of the largest cryptocurrency exchanges on Earth to go from that thirty-two billion dollar valuation to bankruptcy. It took about the same nine days for its twenty-nine-year-old founder to go from a Super Bowl commercial to a criminal indictment.
+
+His name was Sam Bankman-Fried. This is what those nine days actually looked like from the inside.
+
+November 2nd. A crypto news outlet called CoinDesk publishes a leaked internal balance sheet from Alameda Research, a trading firm also founded by Bankman-Fried. Alameda claims fourteen point six billion dollars in assets. Look closer, and roughly six billion of that is FTT — the exchange token FTX itself had invented, out of nothing, and largely still controlled. Alameda wasn't just close to FTX. Its entire financial foundation was built out of FTX's own paper.
+
+November 6th. Changpeng Zhao — CZ, the CEO of Binance, FTX's biggest rival and a former investor in the company — tweets that Binance will liquidate its entire FTT holding, citing "recent revelations." Within minutes, Alameda's own CEO, Caroline Ellison, publicly offers to buy CZ's tokens directly at twenty-two dollars each — an offer that reads less like confidence and more like damage control in real time.
+
+November 7th and 8th. The panic is no longer contained to Twitter. In the seventy-two hours before things reach a breaking point, customers pull an estimated six billion dollars out of FTX. Hedge funds that had parked capital on the platform start pulling out. Crypto influencers who'd promoted FTX for years begin deleting old posts. FTT's price collapses below twenty-two dollars — meaning even Ellison's own offer is now underwater. By the morning of the 8th, FTX suspends withdrawals entirely. Later that day, Binance signs a non-binding letter of intent to acquire its collapsing rival outright.
+
+November 9th. Binance's own team spends less than two days actually looking at FTX's books. They walk away — and this time, Zhao doesn't stay quiet about why. In a tweet, Binance points to what it calls corporate due diligence, along with fresh reports that customer funds had been mishandled and that U.S. regulators were already circling. The message lands immediately across the industry: whatever Binance saw inside was bad enough that even a direct competitor, sitting on the rescue deal of the year, decided it wasn't worth the risk.
+
+November 10th. Bankman-Fried announces Alameda is being wound down. The Bahamian securities regulator, moving faster than anyone expected, freezes FTX's remaining assets in the country.
+
+November 11th. FTX, Alameda, and nearly a hundred and thirty affiliated entities file for Chapter 11 bankruptcy in the United States. Bankman-Fried resigns as CEO. The man appointed to replace him and oversee the wreckage is John Ray the Third — the same restructuring lawyer who'd spent years cleaning up after Enron.
+
+Nine days. Thirty-two billion dollars on paper, to a bankruptcy filing overseen by the guy who'd already done this once before, for one of the most infamous corporate collapses in American history.
+
+When Ray took over, his first public assessment was blunt. In forty years of corporate restructurings, he wrote, he'd never seen such a complete failure of corporate controls — or such an absence of trustworthy financial information. The exchange that had marketed itself as the responsible face of crypto, he said, had essentially kept its books on a spreadsheet.
+
+To understand how nine days could unravel something that big, you have to see what "big" actually looked like from the outside, eleven months earlier.
+
+Sam Bankman-Fried founded Alameda Research in 2017, a quantitative trading firm that made its first real money exploiting a simple, boring inefficiency: Bitcoin was trading at a meaningfully higher price in Japan and South Korea than in the rest of the world, and Alameda made millions just moving crypto between those markets before the gap closed. In 2019, he built FTX, an exchange for trading crypto derivatives, on top of that early trading expertise.
+
+By January 2022, FTX had raised money at a thirty-two billion dollar valuation from a roster of investors that reads like a checklist of legitimacy: SoftBank, Sequoia Capital, Temasek, BlackRock — roughly eighty-six investors putting in close to two billion dollars combined.
+
+Due diligence, in practice, looked a lot like brand validation. Sequoia published a glowing profile — since deleted from the firm's website — that described Bankman-Fried playing a video game during the actual pitch call, barely looking up as he described turning FTX into a super-app for money. The partners on that call didn't see a red flag. They saw genius, and put in over two hundred million dollars. SoftBank led a funding round at the peak. Almost nobody asked the simplest question a bank would ask before holding customer deposits: can we independently verify that the money is actually there? The answer, it turned out, was no — and the people with the most resources to ask never did.
+
+Bankman-Fried's public image did enormous work here, arguably more than the technology itself. He drove a modest Toyota Corolla. He was photographed asleep at his desk under a blanket, still in a t-shirt and cargo shorts, in the middle of a workday. He publicly committed to "earning to give" — a philosophy, borrowed from the effective altruism movement, that framed making enormous amounts of money as a moral good, as long as most of it eventually went to charity. Journalists loved the contrast: a scruffy math nerd who didn't care about money, somehow running one of the most valuable private companies on Earth.
+
+That image bought him access most finance executives spend careers trying to earn. He testified in front of Congress on crypto regulation. He donated close to forty million dollars across the 2022 U.S. election cycle, to candidates in both parties. FTX's logo appeared on NBA arenas and Formula 1 cars. In a Super Bowl commercial that aired in February 2022, comedian Larry David played a string of history's great skeptics — of the wheel, the toilet, the light bulb — rejecting each one, before the ad cut to: "Don't be like Larry. Don't miss out on FTX."
+
+Nobody watching that ad, or reading those glowing profiles, had any way of knowing that behind the balance sheet, FTX and Alameda had never really been two separate companies at all.

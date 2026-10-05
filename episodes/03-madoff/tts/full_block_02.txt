@@ -1,0 +1,67 @@
+**Sometime in that blurred window** — a second business quietly stops being real. Alongside his legitimate trading operation, Madoff also ran a private investment advisory arm — the one that took money from friends, country clubs, charities, and eventually banks and pension funds worldwide. At some point, prosecutors say, it simply stopped making real trades. It kept sending statements. It kept reporting steady returns. It just stopped being connected to any actual market.
+
+**Through the 2000s**, the fraud scales globally through feeder funds — investment vehicles based in Europe and the Caribbean, names like Fairfield Greenwich, that funneled money from wealthy clients, universities, and charitable foundations into Madoff's firm. Investors in Geneva or Madrid may never have heard Madoff's name directly. They just knew their fund manager had access to "Bernie" — the ultimate status symbol in certain circles.
+
+**[VISUEL : flowchart — investisseurs européens → feeder funds → Madoff → statement fictif qui revient]**
+
+Victims eventually included Steven Spielberg's charitable foundation, actors Kevin Bacon and Kyra Sedgwick, Nobel laureate Elie Wiesel's foundation, along with thousands of retirees, small pension funds, and Jewish charities that had trusted Madoff for decades.
+
+**Fall 2008.** The financial crisis hits. Panicked clients everywhere start asking for their money back, all at once. By early December, roughly twelve billion dollars in withdrawal requests had piled up. Almost no new money was coming in to cover them.
+
+The clock that had been running since the 1970s — or the 1990s, depending which version you believe — finally hit zero.
+
+**Which brings us back to that kitchen table.** By December 10th, 2008, there was nothing left to fake with.
+
+---
+
+**[FLASH-FORWARD — 20 secondes]**
+
+**[NARRATION]**
+One more thing happens before we go back further. The next morning, two FBI agents show up at his door. They ask if there's an innocent explanation. His answer leaves no room for doubt: "There is no innocent explanation. I've been running a massive Ponzi scheme."
+
+**[VISUEL/AVATAR — front door, morning light. Avatar Bernie facing camera, motionless. Hard cut right after the line.]**
+
+No hesitation. No negotiation. Nine words, and thirty-eight years of construction come down. Now rewind — because someone had already handed the FBI this exact conclusion, in writing, nine years earlier.
+
+---
+
+## THE WHISTLEBLOWER — 7:00–10:45
+
+**[NARRATION]**
+Here's what makes this case different: someone figured it out nearly a decade before it collapsed. Nobody with the power to stop it listened.
+
+**[VISUEL : portrait-silhouette "Harry Markopolos, 1999"]**
+
+In November 1999, Boston derivatives analyst Harry Markopolos was assigned by his own firm to reverse-engineer a rival's investment strategy that beat the market year after year with almost no volatility. The manager behind it: Bernie Madoff.
+
+Madoff claimed to use a "split-strike conversion" strategy — buying a basket of stocks, then using options to smooth out the highs and lows. It's real. It just cannot produce the results he was reporting.
+
+**[VISUEL : graphique — la courbe de Madoff à 45 degrés vs S&P 500 réel]**
+
+Out of eighty-seven months of reported returns, Madoff's fund was down in only three. The S&P 500, same stretch, was down in twenty-six. Markopolos also calculated that the volume of options Madoff claimed to trade simply didn't exist on the market.
+
+In May 2000, Markopolos walked his findings into the SEC's Boston office. Nothing happened. 2001 — more evidence. Nothing happened. November 2005 — a 19-page memo: "The World's Largest Hedge Fund is a Fraud." Twenty-nine red flags, including one that should have ended the story alone: Madoff's firm cleared its own trades internally. No independent custodian ever verified a single transaction.
+
+**[VISUEL : le mémo qui se déroule, red flags en fondu]**
+
+The SEC opened a file. Made a few calls. Closed it. Markopolos submitted again in 2007, again in 2008. Five submissions across eight years. Five times, largely ignored.
+
+**[NARRATION — years later]**
+Testifying before Congress, he sums it up in one line: "I stand before you a fifty billion dollar failure."
+
+**[VISUEL/AVATAR — Markopolos seated at the hearing table, eyes down, while the line plays.]**
+
+He didn't mince words about why: the SEC understood the mechanics of a Ponzi scheme far less than the social weight of the man running one. The fraud wasn't invisible. It was overlooked, for nine straight years, by the one agency whose entire job was to catch exactly this.
+
+---
+
+## THE BREAKDOWN — 10:45–14:30
+
+**[NARRATION]**
+So mechanically — how do you fake a fifty-billion-dollar fund for decades without anyone catching it? Three pillars.
+
+**[VISUEL : trois piliers, style architecture]**
+
+**First: no independent custodian.** Normally, the firm managing your money and the institution holding your securities are separate — a built-in check. Madoff's firm did both. It managed the money, and it "cleared" — verified and recorded — its own trades. Nobody outside was ever in a position to confirm a single transaction happened.
+
+**Second: the auditor.** A fund this size should be audited by a major global firm. Madoff's auditor was a three-person storefront operation — one active accountant, one semi-retired partner living in Florida, and a secretary.

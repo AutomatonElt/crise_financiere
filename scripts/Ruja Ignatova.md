@@ -72,17 +72,23 @@ Nobody in that room at Wembley asked the one question that would have ended ever
 
 Because there wasn't one. Not really. And we'll get to exactly what that means in a moment.
 
-But first, let's talk about what was happening inside the company while the money was pouring in — because the internal story is just as important as the external one.
+But first, let's talk about something that happened quietly inside the company in 2016 — because it's one of the clearest pieces of evidence that OneCoin was never what it claimed to be.
 
-In early 2016, a man named Bjorn Bjercke was hired as OneCoin's Chief Information Officer. His job was to build a real blockchain for OneCoin — the technical infrastructure that would make the coin legitimate. After months of work, Bjercke realized something disturbing: there was nothing to build on. The system OneCoin was running wasn't a blockchain at all. It was, in his words, a database. A centralized server the company controlled entirely. There was no mining, no distributed ledger, no cryptographic proof of anything.
+Two years after launching its "cryptocurrency," OneCoin went looking for someone to finally build it a real blockchain. A recruiting agency approached a Norwegian blockchain specialist named Bjorn Bjercke with an offer for a top technical position — global CTO, a salary well above what a partner at a major accounting firm would make. Bjercke didn't say yes right away. He asked questions first.
 
-Bjercke raised the issue internally. He was ignored. He tried again. He was pressured to stay quiet. Eventually, he resigned.
+[VISUEL : silhouette d'un homme qui prend des notes en visioconférence, dossiers et écran de code en arrière-plan]
 
-[VISUEL : silhouette d'un employé face à un écran montrant un simple tableur, puis se levant et partant]
+What he found stopped him cold. OneCoin didn't have a blockchain to improve or maintain. It didn't have one at all. Two years after telling millions of investors they owned a real cryptocurrency, the company was quietly trying to hire someone to build, after the fact, the thing it had already claimed to have. Bjercke concluded the company was almost certainly a Ponzi scheme, and turned the job down.
 
-He wasn't the only one. Over the course of 2016 and 2017, multiple insiders — including a former compliance officer and a blockchain developer — raised alarms or quietly left. Some of them would later become witnesses for law enforcement. But at the time, the machine was generating too much money to stop.
+[VISUEL : document contractuel qui se referme, "DECLINED" tamponné dessus]
 
-For three years, the money kept flowing in. Then, on October 12th, 2017, U.S. prosecutors in the Southern District of New York filed a sealed indictment against Ruja Ignatova — wire fraud, securities fraud, money laundering.
+He didn't stop there. Bjercke went public with what he'd found, describing OneCoin's system as little more than a SQL database where staff could manually type in numbers to credit users with "mined" coins. OneCoin threatened him with a lawsuit unless he retracted his statements. He refused, offered to countersue instead, and the threat quietly went nowhere. Bjercke would later go on to help investigators and journalists — including the team behind the BBC's "The Missing Cryptoqueen" — understand exactly how the technology had been faked from day one.
+
+[VISUEL : capture stylisée d'un forum/déclaration publique, logo BBC en incrustation discrète]
+
+He wasn't alone in noticing something was wrong. But he remains one of the clearest examples of what almost happened, and didn't: OneCoin came within one signature of hiring the person best positioned to expose it — and instead created its own whistleblower by asking him to look too closely.
+
+For three years, the money kept flowing in anyway. Then, on October 12th, 2017, U.S. prosecutors in the Southern District of New York filed a sealed indictment against Ruja Ignatova — wire fraud, securities fraud, money laundering.
 
 Somehow, she found out before the arrest warrant could be executed.
 
@@ -131,7 +137,7 @@ Every person who bought a package got a percentage commission for every new pers
 
 [VISUEL : animation — le flowchart MLM se transforme visuellement en pyramide classique, les cases "educational packages" disparaissent pour révéler la structure nue d'une pyramide]
 
-And selling "educational packages" instead of "coins" wasn't a random choice, either. Regulators typically scrutinize the sale of investment products and securities very closely. But if you're technically selling online courses that happen to include some digital tokens as a bonus, you slip into a much murkier legal category — one that's slower and harder for regulators to act on. It's the same regulatory arbitrage that lets certain supplement companies operate in the gray space between food and medicine. You're not selling the thing that matters. You're selling the wrapper around it.
+And selling "educational packages" instead of "coins" wasn't a random choice, either. Regulators typically scrutinize the sale of investment products and securities very closely. But if you're technically selling online courses that happen to include some digital tokens as a bonus, you slip into a much murkier legal category — one that's slower and harder for regulators to act on.It 's the same regulatory arbitrage that lets certain supplement companies operate in the gray space between food and medicine. You're not selling the thing that matters. You're selling the wrapper around it.
 
 [VISUEL : deux panneaux côte à côte — "Selling an investment" (drapeau rouge régulateur, SEC) vs "Selling an educational package" (zone grise, régulation floue)]
 
@@ -228,35 +234,35 @@ Ruja Ignatova has not.
 
 And this is where the story stops being a courtroom drama and starts becoming something closer to an unsolved mystery.
 
-There are, as of 2026, three competing theories about what happened to the Cryptoqueen. And each one, if you follow it to its logical end, leads somewhere deeply unsettling.
+There are, as of the most recent reporting, three competing theories about what happened to the Cryptoqueen. They no longer carry equal weight — and the story connecting them has grown darker since it first broke.
 
-[VISUEL : trois branches qui partent de la disparition d'Ignatova — octobre 2017 — chacune avec une icône distincte : un crâne, une ombre, une tasse de café]
+[VISUEL : trois branches qui partent de la disparition d'Ignatova — octobre 2017 — chacune avec une icône distincte]
 
 **Theory one: she's dead.**
 
-In 2023, a Bulgarian investigative outlet called BIRD published documents allegedly recovered from the home of a murdered Bulgarian police official — a man named Lubomir Ivanov, who was shot dead in 2018 in what appeared to be a professional hit. According to those documents, Ignatova was killed in November 2018 — on a yacht in the Ionian Sea, on the orders of a Bulgarian organized crime figure known as "Taki," reportedly a man who had been providing her with protection after her flight from Sofia. The account, still unconfirmed, claims her body was cut into pieces and thrown overboard. It was never recovered.
+In 2023, a Bulgarian investigative outlet called BIRD published documents allegedly recovered from the home of a murdered Bulgarian police commander — a man named Lyubomir Ivanov, shot dead in Sofia on March 25th, 2022, in what investigators treated as a targeted killing. Among the documents recovered from his home: reports claiming Ignatova had been killed in November 2018 — on a yacht in the Ionian Sea, on the orders of a Bulgarian organized crime figure known as "Taki," reportedly the man who had been providing her with protection after her flight from Sofia. The account claims her body was cut into pieces and thrown overboard. It was never recovered.
 
-The motive, according to this theory, was simple: she knew too much, and the people protecting her feared she might cooperate with authorities or become a liability. When you're hiding with organized crime, you're not a guest. You're an asset. And assets get liquidated when they become risky.
+[VISUEL : carte de la mer Ionienne, un point qui s'efface — silhouette de yacht, puis noir — texte discret "Unverified — single source"]
 
-[VISUEL : carte de la mer Ionienne, un point qui s'efface — silhouette de yacht, puis noir]
+Here's where the story gets darker still. The documents reportedly reached BIRD through a Bulgarian organized crime figure named Krasimir "Kuro" Kamenov, connected to the same criminal circles as Taki. In 2023, Kamenov was shot dead at his home in Cape Town, South Africa, along with his wife and two other people — reportedly not long before he was expected to speak with investigators. Nobody has been charged. A former Bulgarian deputy minister who'd investigated Taki's network years earlier called the killing, publicly, "a statement."
 
-**Theory two: she's alive, hiding under mob protection.**
+[VISUEL : silhouette qui s'efface sur une carte du Cap, ligne rouge reliant Sofia → mer Ionienne → Le Cap]
 
-This theory has a problem with the first one. Other reporting has surfaced claims that her brother Konstantin stayed in phone contact with her as late as March 2019 — months after she was supposedly killed on that yacht. If she was dead in November 2018, who was he talking to in March 2019?
+**Theory two: she's alive, hiding under organized crime protection.**
 
-Supporters of this theory point out that the BIRD documents came from a single, unverified source — documents recovered from a murdered man's home, with no independent corroboration. They argue that someone with Ignatova's intelligence, connections, and four billion dollars at her disposal could easily arrange a new identity, a new appearance, and a new life under the protection of people who have a financial interest in keeping her alive.
+This theory has a problem the first one never resolved. Reporting has surfaced claims that her brother Konstantin stayed in phone contact with her as late as March 2019 — months after she was supposedly killed on that yacht. Supporters of this theory also point out that the murder account rests on a single, secondhand source: a report found in a dead man's safe, describing something someone else allegedly said, during a boat trip, while drunk. It's the kind of evidence investigators call hearsay for a reason.
 
 [VISUEL : silhouette qui change de visage — transformation, nouveaux documents d'identité, passeports]
 
-**Theory three: she built an entirely new life on another continent.**
+**Theory three: she's alive, and building a new life — and this is now the leading theory.**
 
-In late 2024, German investigators told journalists they were actively pursuing leads that Ignatova might be alive, possibly living under a new identity in South Africa. The Daily Maverick, a South African investigative publication, reported that authorities were examining connections between OneCoin money and property purchases in the Cape Town area. The theory goes that someone with enough money and the right connections could simply... start over. New name. New face. New country. New everything.
+As of the most recent reporting, in January 2026, a senior German investigator told journalists that authorities now operate on the belief that Ignatova is, in fact, still alive — a meaningful shift from the "she might be dead" narrative that dominated headlines in 2023. German investigators have been examining possible sightings and connections tying Ignatova to Cape Town, South Africa, the same city where Kamenov — the man who allegedly leaked her murder story — was later killed.
 
-[VISUEL : carte — Athènes → potentiellement Afrique du Sud, ligne pointillée incertaine, silhouette dans un café au Cap]
+[VISUEL : carte — Athènes → Le Cap, ligne qui se renforce, texte "as of Jan. 2026: leading theory" qui apparaît]
 
-Three theories. One: she was killed on a yacht, her body dumped where it would never be found. Two: she's alive, protected by the same organized crime figures who may have ordered her death. Three: she's sitting in a café in Cape Town, under a name nobody's looking for.
+Which leaves us with an uncomfortable version of this story that's stranger than the one investigators were chasing three years ago: the murder story may have been planted, or believed by the wrong people, or simply wrong — and the man who carried it may have been killed for exactly that reason, in the same city where the woman he claimed was dead may actually be living.
 
-Nobody — not the FBI, not the journalists, not even, it seems, her own family — will say for certain which one is true.
+Nobody — not the FBI, not the journalists, not even, it seems, her own family — will say for certain which version is true. But for the first time since she vanished in 2017, the people paid to know are no longer betting on the yacht.
 
 ---
 

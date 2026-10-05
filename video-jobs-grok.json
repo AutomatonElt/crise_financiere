@@ -1,0 +1,66 @@
+[
+  {
+    "prompt": "A crowd of people from behind, hands reaching up holding cash and credit cards, chaotic energy, spotlights from a stage in the background, money flying between hands, dark cinematic atmosphere, blue-black color grade, film grain, documentary style",
+    "out": "episodes/01-ruja-ignatova/assets/ia-video/04-crowd-hands-money.mp4",
+    "provider": "grok",
+    "duration": 6,
+    "resolution": "720p",
+    "ref_image": "episodes/01-ruja-ignatova/assets/ia-image/04-crowd-hands-money.png"
+  },
+  {
+    "prompt": "A private jet on a tarmac at dusk, a globe hologram glowing above it, banknotes swirling around the jet like a tornado, luxury and excess, dark golden lighting, cinematic, documentary style",
+    "out": "episodes/01-ruja-ignatova/assets/ia-video/05-private-jet-globe.mp4",
+    "provider": "grok",
+    "duration": 6,
+    "resolution": "720p",
+    "ref_image": "episodes/01-ruja-ignatova/assets/ia-image/02-private-jet-globe.png"
+  },
+  {
+    "prompt": "A woman in a red dress walks through a crowded conference hall, her figure slowly becoming translucent and dissolving into the crowd behind her, people continue walking unaware, eerie disappearance effect, dark cinematic atmosphere, film grain",
+    "out": "episodes/01-ruja-ignatova/assets/ia-video/06-ruja-disappearing.mp4",
+    "provider": "grok",
+    "duration": 6,
+    "resolution": "720p",
+    "ref_image": "episodes/01-ruja-ignatova/assets/ia-image/05-ruja-disappearing-crowd.png"
+  },
+  {
+    "prompt": "A dark empty office at night, a single laptop on a desk glows with blue light, the screen flickers showing spreadsheet numbers, ominous atmosphere, slow camera push toward the laptop, dust particles in the light beam, documentary style",
+    "out": "episodes/01-ruja-ignatova/assets/ia-video/07-dark-office-laptop.mp4",
+    "provider": "grok",
+    "duration": 6,
+    "resolution": "720p",
+    "ref_image": "episodes/01-ruja-ignatova/assets/ia-image/07-dark-office-laptop.png"
+  },
+  {
+    "prompt": "A fake e-commerce website on a laptop screen, products scrolling endlessly, prices in a fake currency, the interface looks cheap and templated, cursor moves and clicks, screen recording style with dark surroundings, documentary style",
+    "out": "episodes/01-ruja-ignatova/assets/ia-video/08-dealshaker-mockup.mp4",
+    "provider": "grok",
+    "duration": 6,
+    "resolution": "720p",
+    "ref_image": "episodes/01-ruja-ignatova/assets/ia-image/09-dealshaker-mockup.png"
+  },
+  {
+    "prompt": "An FBI most wanted bulletin board in a dark room, a spotlight slowly illuminates a wanted poster with a woman's photo, camera slowly pushes in on the poster, tense atmosphere, red and blue accent lighting, documentary style",
+    "out": "episodes/01-ruja-ignatova/assets/ia-video/09-fbi-wanted-board.mp4",
+    "provider": "grok",
+    "duration": 6,
+    "resolution": "720p",
+    "ref_image": "episodes/01-ruja-ignatova/assets/ia-image/10-fbi-wanted-board.png"
+  },
+  {
+    "prompt": "A luxury yacht drifting on dark calm waters at night, distant coastline lights flickering, the yacht rocks gently on small waves, no people visible, mysterious and ominous, moonlight reflecting on water, cinematic, documentary style",
+    "out": "episodes/01-ruja-ignatova/assets/ia-video/10-yacht-ionian-sea.mp4",
+    "provider": "grok",
+    "duration": 6,
+    "resolution": "720p",
+    "ref_image": "episodes/01-ruja-ignatova/assets/ia-image/11-yacht-ionian-sea.png"
+  },
+  {
+    "prompt": "A lone silhouette of a person walks slowly along a coastal promenade at sunset, Cape Town Table Mountain in the background, warm golden light fading to dark blue, the figure is small in the frame, anonymous, melancholic, documentary style",
+    "out": "episodes/01-ruja-ignatova/assets/ia-video/11-cape-town-silhouette.mp4",
+    "provider": "grok",
+    "duration": 6,
+    "resolution": "720p",
+    "ref_image": "episodes/01-ruja-ignatova/assets/ia-image/12-cape-town-silhouette.png"
+  }
+]

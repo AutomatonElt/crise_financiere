@@ -1,0 +1,1427 @@
+{
+    "OTIO_SCHEMA": "Timeline.1",
+    "metadata": {
+        "kdenlive": {
+            "version": "26.04.3"
+        }
+    },
+    "name": "ruja-ignatova-reperes-complets",
+    "global_start_time": null,
+    "tracks": {
+        "OTIO_SCHEMA": "Stack.1",
+        "metadata": {},
+        "name": "tracks",
+        "source_range": null,
+        "effects": [],
+        "markers": [
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Hook - flight map",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 0.08
+                    }
+                },
+                "comment": "HOOK - Carte Sofia->Athenes"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Hook - flight lands",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 3.96
+                    }
+                },
+                "comment": "HOOK - Ligne de vol s arrete net"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Hook - no body",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 6.28
+                    }
+                },
+                "comment": "HOOK - No body no arrest no trace"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Hook - reward",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 9.62
+                    }
+                },
+                "comment": "HOOK - FBI $5M reward, poster"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Hook - her crime pause",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 19.06
+                    }
+                },
+                "comment": "HOOK - Pause avant revelation"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Hook - crime reveal",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 20.52
+                    }
+                },
+                "comment": "HOOK - Invented a cryptocurrency"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Hook - name reveal",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 36.86
+                    }
+                },
+                "comment": "HOOK - Story of Ruja Ignatova"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Hook - still alive",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 39.78
+                    }
+                },
+                "comment": "HOOK - Nobody knows still alive"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "WHOOSH 1",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 48.52
+                    }
+                },
+                "comment": "WHOOSH #1 - Let s rewind - titre THE CRYPTOQUEEN"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Histoire - bio",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 57.62
+                    }
+                },
+                "comment": "HISTOIRE - Bulgaria 1980, photos timeline"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Histoire - bitcoin killer",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 147.71
+                    }
+                },
+                "comment": "HISTOIRE - Logo Bitcoin killer"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Histoire - packages",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 168.72
+                    }
+                },
+                "comment": "HISTOIRE - Tableau packages Diamond"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Histoire - world map",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 236.43
+                    }
+                },
+                "comment": "HISTOIRE - Carte monde qui se remplit (175 countries)"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Histoire - Wembley",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 252.91
+                    }
+                },
+                "comment": "HISTOIRE - Silhouette Wembley (SIGNATURE)"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Histoire - Wembley 2",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 290.25
+                    }
+                },
+                "comment": "HISTOIRE - 2e mention Wembley, recadrage"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Histoire - blockchain pause",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 293.59
+                    }
+                },
+                "comment": "HISTOIRE - Where is the blockchain, pause"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Histoire - Bjercke visio",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 336.68
+                    }
+                },
+                "comment": "HISTOIRE - Bjercke visioconference"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Histoire - DECLINED",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 360.54
+                    }
+                },
+                "comment": "HISTOIRE - Document DECLINED"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Histoire - BBC insert",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 369.26
+                    }
+                },
+                "comment": "HISTOIRE - SQL database / insert BBC"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "WHOOSH 2",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 434.45
+                    }
+                },
+                "comment": "WHOOSH #2 - Boarded flight / indictment overlay"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Breakdown start",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 438.79
+                    }
+                },
+                "comment": "BREAKDOWN - Here s what almost nobody understood"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Breakdown - bitcoin network",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 455.24
+                    }
+                },
+                "comment": "BREAKDOWN - Reseau Bitcoin decentralise (glitch)"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Breakdown - database",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 514.5
+                    }
+                },
+                "comment": "BREAKDOWN - Serveur central / database (glitch)"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Breakdown - mining",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 547.07
+                    }
+                },
+                "comment": "BREAKDOWN - Comparaison mining bouton"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Breakdown - price chart",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 588.91
+                    }
+                },
+                "comment": "BREAKDOWN - Courbe prix OneCoin vs Bitcoin (glitch) [SCREENSHOTABLE]"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Breakdown - pyramid",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 640.38
+                    }
+                },
+                "comment": "BREAKDOWN - MLM -> pyramide transformation"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Breakdown - panels",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 685.75
+                    }
+                },
+                "comment": "BREAKDOWN - Panels Investment vs Educational"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Breakdown - DealShaker",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 707.11
+                    }
+                },
+                "comment": "BREAKDOWN - Mockup DealShaker"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "WHOOSH 3",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 769.34
+                    }
+                },
+                "comment": "WHOOSH #3 - Let s put actual numbers on this"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Numbers - counter 4B",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 798.26
+                    }
+                },
+                "comment": "NUMBERS - Compteur $4B [SCREENSHOTABLE]"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Numbers - FBI budget",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 805.7
+                    }
+                },
+                "comment": "NUMBERS - Comparaison budgets nationaux"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Numbers - Madoff bars",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 825.49
+                    }
+                },
+                "comment": "NUMBERS - Comparaison Madoff 37000 victimes"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Numbers - money flow",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 853.95
+                    }
+                },
+                "comment": "NUMBERS - Flowchart argent disparu [SCREENSHOTABLE]"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Numbers - recovered",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 859.95
+                    }
+                },
+                "comment": "NUMBERS - Barres stolen vs recovered"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Numbers - reward staircase",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 898.0
+                    }
+                },
+                "comment": "NUMBERS - Escalier recompense FBI"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Numbers - victims",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 977.09
+                    }
+                },
+                "comment": "NUMBERS - Victimes, silhouettes + drapeaux"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "WHOOSH 4",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1048.23
+                    }
+                },
+                "comment": "WHOOSH #4 - So what happened to everyone else"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Aftermath - Greenwood",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1052.48
+                    }
+                },
+                "comment": "AFTERMATH - Fiche judiciaire Greenwood"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Aftermath - Konstantin",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1082.76
+                    }
+                },
+                "comment": "AFTERMATH - Timeline arrestations Konstantin"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Aftermath - Mark Scott",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1144.97
+                    }
+                },
+                "comment": "AFTERMATH - Fiche judiciaire Mark Scott"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Aftermath - 3 theories",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1194.33
+                    }
+                },
+                "comment": "AFTERMATH - Schema 3 branches theories"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Aftermath - yacht",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1234.1
+                    }
+                },
+                "comment": "AFTERMATH - Theory 1 Yacht + texte Unverified (SILENCE)"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Aftermath - Kamenov map",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1279.74
+                    }
+                },
+                "comment": "AFTERMATH - Carte Sofia-Ionian-Cape Town Kamenov"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Aftermath - morph",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1296.87
+                    }
+                },
+                "comment": "AFTERMATH - Theory 2 morph identite (SILENCE)"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Aftermath - leading theory",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1328.55
+                    }
+                },
+                "comment": "AFTERMATH - Theory 3 Cafe au Cap, leading theory (SILENCE + clic date)"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "WHOOSH 5",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1397.12
+                    }
+                },
+                "comment": "WHOOSH #5 - No longer betting on the yacht"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Pattern start",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1399.5
+                    }
+                },
+                "comment": "PATTERN - Strip away the crypto branding"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Pattern - thirteen days",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1419.76
+                    }
+                },
+                "comment": "PATTERN - Domino indictment, thirteen days"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Pattern - trust chain",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1439.19
+                    }
+                },
+                "comment": "PATTERN - Chaine de confiance A-B-C-D"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Pattern - organized crime",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1500.0
+                    }
+                },
+                "comment": "PATTERN - Spectre de gravite fraude->crime"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Pattern - Bjercke callback",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1517.22
+                    }
+                },
+                "comment": "PATTERN - Rappel Bjorn Bjercke, plan DECLINED"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "WHOOSH 6",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1548.08
+                    }
+                },
+                "comment": "WHOOSH #6 - Ruja Ignatova is still out there"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Outro - FBI blur",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1560.18
+                    }
+                },
+                "comment": "OUTRO - Poster FBI qui se floute"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Outro - Ponzi photo",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1587.8
+                    }
+                },
+                "comment": "OUTRO - Photo reelle Charles Ponzi"
+            },
+            {
+                "OTIO_SCHEMA": "Marker.2",
+                "metadata": {
+                    "kdenlive": {
+                        "type": 0
+                    }
+                },
+                "name": "Outro - end",
+                "color": "PURPLE",
+                "marked_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1.0
+                    },
+                    "start_time": {
+                        "OTIO_SCHEMA": "RationalTime.1",
+                        "rate": 30.0,
+                        "value": 1600.72
+                    }
+                },
+                "comment": "OUTRO - Say out loud yet, fondu au noir"
+            }
+        ],
+        "enabled": true,
+        "color": null,
+        "children": [
+            {
+                "OTIO_SCHEMA": "Track.1",
+                "metadata": {},
+                "name": "",
+                "source_range": null,
+                "effects": [],
+                "markers": [],
+                "enabled": true,
+                "color": null,
+                "children": [],
+                "kind": "Video"
+            },
+            {
+                "OTIO_SCHEMA": "Track.1",
+                "metadata": {},
+                "name": "",
+                "source_range": null,
+                "effects": [],
+                "markers": [],
+                "enabled": true,
+                "color": null,
+                "children": [],
+                "kind": "Video"
+            },
+            {
+                "OTIO_SCHEMA": "Track.1",
+                "metadata": {},
+                "name": "",
+                "source_range": null,
+                "effects": [],
+                "markers": [],
+                "enabled": true,
+                "color": null,
+                "children": [],
+                "kind": "Video"
+            },
+            {
+                "OTIO_SCHEMA": "Track.1",
+                "metadata": {},
+                "name": "",
+                "source_range": null,
+                "effects": [],
+                "markers": [],
+                "enabled": true,
+                "color": null,
+                "children": [],
+                "kind": "Audio"
+            },
+            {
+                "OTIO_SCHEMA": "Track.1",
+                "metadata": {},
+                "name": "",
+                "source_range": null,
+                "effects": [],
+                "markers": [],
+                "enabled": true,
+                "color": null,
+                "children": [],
+                "kind": "Audio"
+            },
+            {
+                "OTIO_SCHEMA": "Track.1",
+                "metadata": {},
+                "name": "",
+                "source_range": null,
+                "effects": [],
+                "markers": [],
+                "enabled": true,
+                "color": null,
+                "children": [],
+                "kind": "Audio"
+            },
+            {
+                "OTIO_SCHEMA": "Track.1",
+                "metadata": {},
+                "name": "",
+                "source_range": null,
+                "effects": [],
+                "markers": [],
+                "enabled": true,
+                "color": null,
+                "children": [],
+                "kind": "Audio"
+            }
+        ]
+    }
+}

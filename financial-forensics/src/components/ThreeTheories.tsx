@@ -14,35 +14,42 @@ type ThreeTheoriesProps = {
 
 const THEORIES = [
   {
-    icon: "skull",
+    icon: "signal",
     title: "Dead",
     subtitle: "Nov 2018 — yacht, Ionian Sea",
+    tag: "Unverified — single source",
     color: theme.colors.red,
   },
   {
     icon: "shadow",
     title: "Alive",
     subtitle: "Under mob protection",
+    tag: "Phone contact until Mar 2019",
     color: theme.colors.gold,
   },
   {
     icon: "coffee",
     title: "New life",
     subtitle: "Cape Town, new identity",
+    tag: "Leading theory — Jan 2026",
     color: theme.colors.blue,
   },
 ];
 
 // Simple SVG icons drawn inline
-const SkullIcon: React.FC<{ color: string; size: number }> = ({ color, size }) => (
+const SignalIcon: React.FC<{ color: string; size: number }> = ({ color, size }) => (
   <g>
-    <circle cx={0} cy={-5} r={size * 0.4} fill="none" stroke={color} strokeWidth={3} />
-    <circle cx={-size * 0.15} cy={-8} r={size * 0.08} fill={color} />
-    <circle cx={size * 0.15} cy={-8} r={size * 0.08} fill={color} />
+    {/* Waveform that flatlines */}
     <path
-      d={`M ${-size * 0.12} ${size * 0.1} L ${-size * 0.12} ${size * 0.25} M 0 ${size * 0.1} L 0 ${size * 0.25} M ${size * 0.12} ${size * 0.1} L ${size * 0.12} ${size * 0.25}`}
+      d={`M ${-size * 0.4} 0
+          Q ${-size * 0.3} ${-size * 0.3}, ${-size * 0.2} 0
+          Q ${-size * 0.1} ${size * 0.3}, 0 0
+          Q ${size * 0.05} ${-size * 0.15}, ${size * 0.1} 0
+          L ${size * 0.4} 0`}
+      fill="none"
       stroke={color}
-      strokeWidth={2}
+      strokeWidth={3}
+      strokeLinecap="round"
     />
   </g>
 );
@@ -84,7 +91,7 @@ const CoffeeIcon: React.FC<{ color: string; size: number }> = ({ color, size }) 
 );
 
 const ICONS: Record<string, React.FC<{ color: string; size: number }>> = {
-  skull: SkullIcon,
+  signal: SignalIcon,
   shadow: ShadowIcon,
   coffee: CoffeeIcon,
 };
@@ -292,6 +299,19 @@ export const ThreeTheories: React.FC<ThreeTheoriesProps> = ({
               >
                 {theory.subtitle}
               </text>
+
+              {/* Tag */}
+              <text
+                x={0}
+                y={90}
+                textAnchor="middle"
+                fill={theory.color}
+                fontSize={theme.sizes.caption}
+                fontFamily={theme.fonts.body}
+                opacity={0.7}
+              >
+                {theory.tag}
+              </text>
             </g>
           );
         })}
@@ -321,7 +341,7 @@ export const ThreeTheories: React.FC<ThreeTheoriesProps> = ({
               fontFamily: theme.fonts.body,
             }}
           >
-            Nobody knows which one is true.
+            Investigators no longer bet on the yacht.
           </div>
         </div>
       )}

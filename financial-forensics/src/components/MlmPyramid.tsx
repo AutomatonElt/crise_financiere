@@ -30,9 +30,9 @@ export const MlmPyramid: React.FC<MlmPyramidProps> = ({
   // Phase 2: Transform into pyramid (startFrame + 60 → startFrame + 120)
   // Phase 3: Reveal + label (startFrame + 120 → startFrame + 150)
 
-  const phase1End = startFrame + 60;
-  const phase2End = startFrame + 120;
-  const phase3End = startFrame + 150;
+  const phase1End = startFrame + 100;
+  const phase2End = startFrame + 200;
+  const phase3End = startFrame + 250;
 
   const transformProgress = interpolate(
     frame,
@@ -108,8 +108,8 @@ export const MlmPyramid: React.FC<MlmPyramidProps> = ({
 
   // Node appearance animation (staggered by level)
   const nodeOpacity = (level: number) => {
-    const appearFrame = startFrame + level * 10;
-    return interpolate(frame, [appearFrame, appearFrame + 15], [0, 1], {
+    const appearFrame = startFrame + level * 20;
+    return interpolate(frame, [appearFrame, appearFrame + 20], [0, 1], {
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
     });
@@ -245,7 +245,7 @@ export const MlmPyramid: React.FC<MlmPyramidProps> = ({
         {connections.map((conn, i) => {
           const lineOpacity = interpolate(
             frame,
-            [startFrame + conn.level * 10 + 5, startFrame + conn.level * 10 + 15],
+            [startFrame + conn.level * 20 + 10, startFrame + conn.level * 20 + 30],
             [0, 0.6],
             { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
           );
@@ -297,7 +297,7 @@ export const MlmPyramid: React.FC<MlmPyramidProps> = ({
           const y = topY + level * levelHeight;
           const op = interpolate(
             frame,
-            [startFrame + level * 10, startFrame + level * 10 + 10],
+            [startFrame + level * 20, startFrame + level * 20 + 20],
             [0, commissionOpacity],
             { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
           );
@@ -321,7 +321,7 @@ export const MlmPyramid: React.FC<MlmPyramidProps> = ({
           const y = topY + level * levelHeight + levelHeight / 2;
           const op = interpolate(
             frame,
-            [startFrame + 30 + level * 5, startFrame + 40 + level * 5],
+            [startFrame + 50 + level * 10, startFrame + 70 + level * 10],
             [0, 1],
             { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
           );
