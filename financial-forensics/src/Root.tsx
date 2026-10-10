@@ -77,10 +77,20 @@ import {
   LedgerTitleSequenceScene,
   LedgerTitleSequenceProps,
 } from "./compositions/LedgerTitleSequence/LedgerTitleSequenceScene";
+import { LocationCardScene, LocationCardProps } from "./compositions/LocationCard/LocationCardScene";
+import { Design1HiggsfieldScene } from "./compositions/Design1Higgsfield/Design1HiggsfieldScene";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition
+        id="Design1Higgsfield"
+        component={Design1HiggsfieldScene}
+        durationInFrames={228}
+        fps={25}
+        width={1920}
+        height={1080}
+      />
       <Composition
         id="Forensic3DDocument"
         component={Forensic3DDocumentScene as any}
@@ -241,6 +251,30 @@ export const RemotionRoot: React.FC = () => {
           frameStyle: "clean",
           cardWidth: 520,
           offsetY: 85,
+        }}
+      />
+      <Composition
+        id="LocationCard"
+        component={LocationCardScene as any}
+        durationInFrames={75}
+        fps={25}
+        width={1920}
+        height={1080}
+        calculateMetadata={({ props }: { props: any }) => {
+          return {
+            durationInFrames: props?.durationInFrames || 75,
+          };
+        }}
+        defaultProps={{
+          imageSrc: "REAL-04_ftx_arena_miami_nuit.jpg",
+          title: "FTX ARENA",
+          subtitle: "",
+          dateOrBadge: "",
+          cardStyle: "postcard",
+          position: "right",
+          cardWidth: 440,
+          tiltDeg: 1.2,
+          offsetY: 40,
         }}
       />
       <Composition

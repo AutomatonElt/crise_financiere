@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Kinetic Beat Slam - Financial Forensics</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@500;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #06070a;
+        font-family: "Space Grotesk", sans-serif;
+        color: #f8fafc;
+      }
+
+      /* Root composition */
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+      }
+
+      /* Background Video (Cavalry procedural dot matrix) */
+      #bg-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.35;
+        mix-blend-mode: screen;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* Tech grid overlay behind content */
+      .grid-overlay {
+        position: absolute;
+        inset: 0;
+        background-image: 
+          radial-gradient(ellipse at center, rgba(0, 240, 255, 0.08) 0%, rgba(6, 7, 10, 0.95) 75%),
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 100% 100%, 80px 80px, 80px 80px;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* Camera Shake Wrapper */
+      #camera-rig {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+      }
+
+      /* HUD Header */
+      .hud-header {
+        position: absolute;
+        top: 60px;
+        left: 80px;
+        right: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 15px;
+        letter-spacing: 0.15em;
+        color: #94a3b8;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding-bottom: 16px;
+        z-index: 20;
+      }
+      .hud-tag {
+        color: #00f0ff;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .hud-dot {
+        width: 8px;
+        height: 8px;
+        background: #00f0ff;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #00f0ff;
+      }
+      .hud-case {
+        color: #cbd5e1;
+      }
+
+      /* Rhythm Chrome / Metronome Ticks */
+      .rhythm-ticks {
+        display: flex;
+        gap: 8px;
+      }
+      .tick {
+        width: 14px;
+        height: 4px;
+        background: #334155;
+        border-radius: 1px;
+      }
+
+      /* SCENE 1: Kinetic Beat Slam */
+      #scene-1 {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 140px;
+        z-index: 15;
+      }
+      .slam-kicker {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 24px;
+        color: #ff5b2e;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+      .slam-line {
+        font-family: "Archivo Black", sans-serif;
+        font-size: 120px;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        color: #f8fafc;
+        will-change: transform, filter, opacity;
+      }
+      .slam-line.accent {
+        color: #00f0ff;
+        text-shadow: 0 0 40px rgba(0, 240, 255, 0.4);
+      }
+
+      /* SCENE 2: Forensic Target Zoom & HUD Box */
+      #scene-2 {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        z-index: 16;
+      }
+      .target-card {
+        position: relative;
+        width: 860px;
+        padding: 60px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(0, 240, 255, 0.4);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 240, 255, 0.2);
+        border-radius: 4px;
+        backdrop-filter: blur(16px);
+      }
+      /* L-bracket Corners */
+      .bracket {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-color: #00f0ff;
+        border-style: solid;
+        border-width: 0;
+      }
+      .bracket.tl { top: -2px; left: -2px; border-top-width: 3px; border-left-width: 3px; }
+      .bracket.tr { top: -2px; right: -2px; border-top-width: 3px; border-right-width: 3px; }
+      .bracket.bl { bottom: -2px; left: -2px; border-bottom-width: 3px; border-left-width: 3px; }
+      .bracket.br { bottom: -2px; right: -2px; border-bottom-width: 3px; border-right-width: 3px; }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 15px;
+        color: #ff5b2e;
+        letter-spacing: 0.15em;
+        margin-bottom: 24px;
+        font-weight: 700;
+      }
+      .card-stat {
+        font-family: "Archivo Black", sans-serif;
+        font-size: 80px;
+        color: #f8fafc;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        margin-bottom: 20px;
+      }
+      .stat-progress-bar {
+        width: 100%;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+      .stat-progress-fill {
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(90deg, #ff5b2e, #00f0ff);
+        box-shadow: 0 0 12px #ff5b2e;
+      }
+      .card-footer {
+        display: flex;
+        justify-content: space-between;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 14px;
+        color: #cbd5e1;
+      }
+
+      /* SCENE 3: Final Kinetic Lock */
+      #scene-3 {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        opacity: 0;
+        z-index: 17;
+      }
+      .final-series {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 22px;
+        letter-spacing: 0.3em;
+        color: #00f0ff;
+        margin-bottom: 16px;
+        font-weight: 700;
+      }
+      .final-title {
+        font-family: "Archivo Black", sans-serif;
+        font-size: 130px;
+        letter-spacing: -0.04em;
+        line-height: 0.95;
+        text-transform: uppercase;
+        color: #ffffff;
+        text-shadow: 0 0 60px rgba(255, 255, 255, 0.4);
+      }
+      .final-badge {
+        display: inline-block;
+        margin-top: 32px;
+        padding: 12px 32px;
+        background: #ff5b2e;
+        color: #000000;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 19px;
+        font-weight: 800;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border-radius: 2px;
+      }
+
+      /* Bottom Metronome Bar */
+      .bottom-hud {
+        position: absolute;
+        bottom: 40px;
+        left: 80px;
+        right: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 14px;
+        color: #94a3b8;
+        z-index: 20;
+      }
+      .timecode {
+        color: #00f0ff;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- SVG Filters for Directional Motion Blur Streaks -->
+    <svg width="0" height="0" aria-hidden="true" style="position: absolute">
+      <defs>
+        <filter id="streak-x" x="-60%" y="-20%" width="220%" height="140%">
+          <feGaussianBlur id="blur-node-x" in="SourceGraphic" stdDeviation="0 0" />
+        </filter>
+        <filter id="streak-y" x="-20%" y="-60%" width="140%" height="220%">
+          <feGaussianBlur id="blur-node-y" in="SourceGraphic" stdDeviation="0 0" />
+        </filter>
+      </defs>
+    </svg>
+
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="5"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- Background Video: Cavalry procedural dot matrix -->
+      <video
+        id="bg-video"
+        class="clip"
+        src="assets/cavalry_bg.mp4"
+        data-start="0"
+        data-duration="5"
+        data-track-index="0"
+        autoplay
+        loop
+        muted
+        playsinline
+      ></video>
+
+      <!-- Tech grid overlay -->
+      <div class="grid-overlay"></div>
+
+      <!-- Camera Rig (for micro-shakes on kinetic impact) -->
+      <div id="camera-rig" data-layout-allow-occlusion data-layout-allow-overlap>
+        <!-- Top HUD Header -->
+        <div class="hud-header">
+          <div class="hud-tag">
+            <div class="hud-dot"></div>
+            <span>THE LEDGER // FINANCIAL FORENSICS</span>
+          </div>
+          <div class="rhythm-ticks">
+            <div class="tick tick-1"></div>
+            <div class="tick tick-2"></div>
+            <div class="tick tick-3"></div>
+            <div class="tick tick-4"></div>
+            <div class="tick tick-5"></div>
+            <div class="tick tick-6"></div>
+            <div class="tick tick-7"></div>
+            <div class="tick tick-8"></div>
+          </div>
+          <div class="hud-case">CASE #2022-FTX // CONFIDENTIAL</div>
+        </div>
+
+        <!-- SCENE 1: Kinetic Beat Slam -->
+        <div id="scene-1" class="clip" data-start="0" data-duration="1.8" data-track-index="1" data-layout-allow-overflow data-layout-allow-overlap>
+          <div class="slam-kicker" id="s1-kicker">// ONSET DETECTED · 10 NOV 2022</div>
+          <div class="slam-line" id="s1-p1" style="filter: url(#streak-y)" data-layout-allow-overflow>$8.9 BILLION</div>
+          <div class="slam-line accent" id="s1-p2" style="filter: url(#streak-x)" data-layout-allow-overflow>EVAPORATED.</div>
+        </div>
+
+        <!-- SCENE 2: Forensic Target Zoom & Counting Blast -->
+        <div id="scene-2" class="clip" data-start="1.8" data-duration="1.5" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap>
+          <div class="target-card" id="target-box">
+            <div class="bracket tl"></div>
+            <div class="bracket tr"></div>
+            <div class="bracket bl"></div>
+            <div class="bracket br"></div>
+
+            <div class="card-header">
+              <span>NODE: ALAMEDA RESEARCH LTD</span>
+              <span style="color: #00f0ff;">LIQUIDITY: DEPLETED 99.8%</span>
+            </div>
+            <div class="card-stat" id="stat-number">$0.00 M</div>
+            <div class="stat-progress-bar">
+              <div class="stat-progress-fill" id="stat-fill"></div>
+            </div>
+            <div class="card-footer">
+              <span>AUDIT SCANNER // BLOCK 15,938,201</span>
+              <span>VERDICT: ZERO COLLATERAL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCENE 3: Final Kinetic Lock -->
+        <div id="scene-3" class="clip" data-start="3.3" data-duration="1.7" data-track-index="3" data-layout-allow-overflow data-layout-allow-overlap>
+          <div class="final-series" id="s3-series">EPISODE 02</div>
+          <div class="final-title" id="s3-title" style="filter: url(#streak-y)" data-layout-allow-overflow>THE COLLAPSE</div>
+          <div class="final-badge" id="s3-badge">FULL INVESTIGATION</div>
+        </div>
+
+        <!-- Bottom HUD Metronome -->
+        <div class="bottom-hud">
+          <div>FPS: 60.00 // SHUTTER: 180° // CODEC: PRORES/H.264</div>
+          <div class="timecode" id="tc-display">00:00:00.00</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // Motion Blur Proxies
+      const blurNodeX = document.getElementById("blur-node-x");
+      const blurNodeY = document.getElementById("blur-node-y");
+      const blurProxyX = { v: 0 };
+      const blurProxyY = { v: 0 };
+
+      const setBlurX = () => blurNodeX.setAttribute("stdDeviation", `${blurProxyX.v} 0`);
+      const setBlurY = () => blurNodeY.setAttribute("stdDeviation", `0 ${blurProxyY.v}`);
+
+      // Camera Shake Intensity on Slam
+      const impactShake = (time, intensity = 6) => {
+        tl.to("#camera-rig", { x: -intensity, y: intensity * 0.7, duration: 0.04, ease: "power2.inOut" }, time);
+        tl.to("#camera-rig", { x: intensity * 0.8, y: -intensity * 0.5, duration: 0.04, ease: "power2.inOut" }, time + 0.04);
+        tl.to("#camera-rig", { x: 0, y: 0, duration: 0.06, ease: "power2.out" }, time + 0.08);
+      };
+
+      // Rhythm Chrome Metronome Ticks
+      const PULSE = 0.32;
+      const ticks = gsap.utils.toArray(".tick");
+      ticks.forEach((tick, i) => {
+        tl.to(tick, { backgroundColor: "#ff5b2e", duration: 0.08, yoyo: true, repeat: 1 }, PULSE * (i + 1));
+      });
+
+      // ==========================================
+      // ACT 1: KINETIC BEAT SLAM (0.1s - 1.8s)
+      // ==========================================
+      tl.fromTo("#s1-kicker", 
+        { opacity: 0, y: -20 }, 
+        { opacity: 1, y: 0, duration: 0.22, ease: "power3.out" }, 
+        0.1
+      );
+
+      // BEAT 1 (t=0.25s): "$8.9 BILLION" slams down with vertical streak
+      blurProxyY.v = 24; setBlurY();
+      tl.fromTo("#s1-p1",
+        { y: -140, scale: 1.25, opacity: 0 },
+        { y: 0, scale: 1.0, opacity: 1, duration: 0.28, ease: "power4.out" },
+        0.25
+      );
+      tl.to(blurProxyY, { v: 0, duration: 0.28, ease: "power4.out", onUpdate: setBlurY }, 0.25);
+      impactShake(0.25, 8);
+
+      // BEAT 2 (t=0.65s): "EVAPORATED." horizontal whip streak
+      blurProxyX.v = 32; setBlurX();
+      tl.fromTo("#s1-p2",
+        { x: -450, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.26, ease: "expo.out" },
+        0.65
+      );
+      tl.to(blurProxyX, { v: 0, duration: 0.26, ease: "expo.out", onUpdate: setBlurX }, 0.65);
+      impactShake(0.65, 10);
+
+      // Exit wipe
+      tl.to("#scene-1", { scale: 0.96, opacity: 0, duration: 0.2, ease: "power3.in" }, 1.6);
+      tl.set("#scene-1", { display: "none" }, 1.8);
+
+      // ==========================================
+      // ACT 2: FORENSIC TARGET & STAT BLAST (1.8s - 3.3s)
+      // ==========================================
+      tl.set("#scene-2", { opacity: 1 }, 1.8);
+      tl.fromTo("#target-box",
+        { scale: 1.5, opacity: 0 },
+        { scale: 1.0, opacity: 1, duration: 0.3, ease: "back.out(1.8)" },
+        1.8
+      );
+      impactShake(1.8, 7);
+
+      // Dynamic Counter
+      const countObj = { val: 0 };
+      const statEl = document.getElementById("stat-number");
+      tl.to(countObj, {
+        val: 8924.5,
+        duration: 0.85,
+        ease: "power2.out",
+        onUpdate: () => {
+          statEl.textContent = `-$${countObj.val.toFixed(1)} M`;
+        }
+      }, 1.95);
+
+      // Counter dynamic scale
+      tl.fromTo("#stat-number",
+        { scale: 1.0 },
+        { scale: 1.08, duration: 0.42, yoyo: true, repeat: 1, ease: "power1.inOut" },
+        1.95
+      );
+
+      // Progress bar fill
+      tl.to("#stat-fill", { width: "100%", duration: 0.8, ease: "power3.out" }, 1.95);
+
+      // Exit Act 2
+      tl.to("#target-box", { scale: 0.5, opacity: 0, duration: 0.18, ease: "power4.in" }, 3.12);
+      tl.set("#scene-2", { display: "none" }, 3.3);
+
+      // ==========================================
+      // ACT 3: THE FINAL KINETIC LOCK (3.3s - 5.0s)
+      // ==========================================
+      tl.set("#scene-3", { opacity: 1 }, 3.3);
+
+      tl.fromTo("#s3-series",
+        { y: -30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.2, ease: "expo.out" },
+        3.35
+      );
+
+      // Slam title "THE COLLAPSE"
+      blurProxyY.v = 28; setBlurY();
+      tl.fromTo("#s3-title",
+        { scale: 1.8, opacity: 0 },
+        { scale: 1.0, opacity: 1, duration: 0.28, ease: "power4.out" },
+        3.45
+      );
+      tl.to(blurProxyY, { v: 0, duration: 0.28, ease: "power4.out", onUpdate: setBlurY }, 3.45);
+      impactShake(3.45, 12);
+
+      // Badge snap with bounce
+      tl.fromTo("#s3-badge",
+        { scale: 0, rotation: -8 },
+        { scale: 1, rotation: 0, duration: 0.28, ease: "back.out(2.5)" },
+        3.7
+      );
+
+      // Final hold micro push
+      tl.to("#scene-3", { scale: 1.025, duration: 1.2, ease: "none" }, 3.75);
+
+      // Register with HyperFrames
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

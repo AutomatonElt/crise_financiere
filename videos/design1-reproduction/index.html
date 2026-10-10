@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Design 1 Reproduction - Living Texture Pitaya</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000000;
+        font-family: "Inter", sans-serif;
+      }
+
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+      }
+
+      /* Global Scene Container */
+      .scene {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        overflow: hidden;
+      }
+
+      /* ========================================================
+         SCENE 1: 4-STAGE STAIRCASE (0.00s - 0.45s)
+         ======================================================== */
+      #scene-1 {
+        background-color: #e21c75;
+      }
+      .s1-grid {
+        position: absolute;
+        inset: 0;
+        background-image: 
+          linear-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+        background-size: 160px 160px;
+      }
+      .staircase-wrapper {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .stair-card {
+        position: absolute;
+        background: #000000;
+        border: 2px solid #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      /* Selection handles on card corners */
+      .card-handle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: #000000;
+      }
+      .card-handle.tl { top: -5px; left: -5px; }
+      .card-handle.tr { top: -5px; right: -5px; }
+      .card-handle.bl { bottom: -5px; left: -5px; }
+      .card-handle.br { bottom: -5px; right: -5px; }
+
+      .card-label {
+        position: absolute;
+        top: -30px;
+        left: 0;
+        font-family: "Inter", sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: #000000;
+      }
+      .stair-card img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+      }
+      .s1-curve-svg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      /* 4 Cards specific coordinates */
+      #s1-card-1 { width: 220px; height: 240px; left: 340px; top: 410px; }
+      #s1-card-2 { width: 230px; height: 250px; left: 660px; top: 380px; }
+      #s1-card-3 { width: 230px; height: 250px; left: 980px; top: 330px; }
+      #s1-card-4 { width: 230px; height: 250px; left: 1300px; top: 290px; }
+
+      /* ========================================================
+         SCENE 2: IN & OUT SPLIT (0.45s - 0.85s)
+         ======================================================== */
+      #scene-2 {
+        background-color: #9fe700;
+      }
+      #s2-card-in {
+        position: absolute;
+        left: 360px;
+        top: 370px;
+        width: 250px;
+        height: 270px;
+        background: #000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #s2-text-in {
+        position: absolute;
+        left: 640px;
+        top: 360px;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 270px;
+        line-height: 0.85;
+        color: #000000;
+      }
+      #s2-text-out {
+        position: absolute;
+        left: 960px;
+        top: 310px;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 270px;
+        line-height: 0.85;
+        color: #000000;
+      }
+      #s2-card-out {
+        position: absolute;
+        left: 1280px;
+        top: 300px;
+        width: 250px;
+        height: 270px;
+        background: #000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* ========================================================
+         SCENE 3: INSIDE OUT VECTOR MORPH (0.85s - 1.40s)
+         ======================================================== */
+      #scene-3 {
+        background-color: #080808;
+      }
+      .s3-wrap {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .s3-text {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 280px;
+        color: #e21c75;
+        letter-spacing: 0.08em;
+        line-height: 0.85;
+      }
+      .vector-node-box {
+        position: absolute;
+        pointer-events: none;
+      }
+
+      /* ========================================================
+         SCENE 4: MACRO SCAN & PLEXUS NODES (1.40s - 2.60s)
+         ======================================================== */
+      #scene-4 {
+        background: #000000;
+      }
+      #s4-macro-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .s4-overlay-nodes {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      .seed-point {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: #ffffff;
+        border-radius: 50%;
+        box-shadow: 0 0 8px #ffffff;
+      }
+      .seed-coord {
+        position: absolute;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: #e2e8f0;
+        white-space: nowrap;
+        transform: translate(8px, -6px);
+      }
+      /* Scanning HUD Boxes */
+      .s4-hud-box {
+        position: absolute;
+        width: 38px;
+        height: 38px;
+        opacity: 0.9;
+      }
+      .s4-hud-box.lime { background: rgba(163, 230, 53, 0.8); }
+      .s4-hud-box.magenta { background: rgba(226, 28, 117, 0.8); }
+
+      /* ========================================================
+         SCENE 5: STEPPED MAGENTA CUTOUT & 4 TILES (2.60s - 3.30s)
+         ======================================================== */
+      #scene-5 {
+        background: #000000;
+      }
+      .s5-stepped-mask {
+        position: absolute;
+        inset: 0;
+        background-color: #e21c75;
+        clip-path: polygon(
+          12% 0%, 82% 0%, 82% 8%, 95% 8%, 95% 42%, 98% 42%, 98% 88%, 88% 88%, 88% 100%,
+          0% 100%, 0% 72%, 4% 72%, 4% 65%, 2% 65%, 2% 24%, 6% 24%, 6% 16%, 12% 16%
+        );
+      }
+      .s5-card {
+        position: absolute;
+        border: 2px solid #ffffff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+      }
+      .s5-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .s5-card-label {
+        position: absolute;
+        top: -24px;
+        left: 0;
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: #ffffff;
+      }
+
+      /* 4 Cards coordinates */
+      #s5-c1 { left: 460px; top: 340px; width: 200px; height: 320px; }
+      #s5-c2 { left: 860px; top: 220px; width: 330px; height: 210px; }
+      #s5-c3 { left: 950px; top: 660px; width: 220px; height: 210px; }
+      #s5-c4 { left: 1350px; top: 300px; width: 340px; height: 180px; }
+
+      /* ========================================================
+         SCENE 6: LIVING TEXTURE & WHOLE SPECIMEN (3.30s - 4.70s)
+         ======================================================== */
+      #scene-6 {
+        background: #000000;
+      }
+      .s6-dot-grid {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px);
+        background-size: 140px 140px;
+      }
+      #s6-text-living {
+        position: absolute;
+        left: 60px;
+        top: 60px;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 320px;
+        line-height: 0.82;
+        color: #f5f5f0;
+      }
+      #s6-text-texture {
+        position: absolute;
+        left: 60px;
+        bottom: 60px;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 320px;
+        line-height: 0.82;
+        color: #f5f5f0;
+      }
+      #s6-hero-fruit {
+        position: absolute;
+        left: 700px;
+        top: 100px;
+        width: 860px;
+        height: 880px;
+        object-fit: contain;
+        filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.9));
+      }
+      /* Flash slice transition */
+      #s6-flash-slice {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        opacity: 0;
+        background: #ffffff;
+      }
+
+      /* ========================================================
+         SCENE 7: BLUEPRINT TECHNICAL STUDY (4.70s - 6.20s)
+         ======================================================== */
+      #scene-7 {
+        background-color: #f4f3ea;
+      }
+      .s7-blueprint-lines {
+        position: absolute;
+        inset: 0;
+      }
+      #s7-center-fruit {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 660px;
+        height: 720px;
+        object-fit: contain;
+      }
+      .s7-hud-node {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background: #9fe700;
+        border: 2px solid #000000;
+      }
+      #s7-title-pitaya {
+        position: absolute;
+        left: 370px;
+        bottom: 160px;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 230px;
+        line-height: 0.82;
+        color: #000000;
+      }
+      #s7-specimen-badge {
+        position: absolute;
+        left: 580px;
+        bottom: 160px;
+        background: #9fe700;
+        color: #000000;
+        padding: 6px 18px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+      }
+      .s7-tech-specs {
+        position: absolute;
+        right: 400px;
+        top: 360px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 15px;
+        line-height: 1.45;
+        color: #000000;
+        font-weight: 600;
+      }
+
+      /* ========================================================
+         SCENE 8: 5-STAGE COMPLETE STAIRCASE (6.20s - 7.20s)
+         ======================================================== */
+      #scene-8 {
+        background-color: #e21c75;
+      }
+      #s8-c1 { width: 220px; height: 250px; left: 340px; top: 400px; }
+      #s8-c2 { width: 230px; height: 260px; left: 600px; top: 470px; }
+      #s8-c3 { width: 230px; height: 260px; left: 860px; top: 470px; }
+      #s8-c4 { width: 230px; height: 260px; left: 1100px; top: 450px; }
+      #s8-c5 { width: 230px; height: 260px; left: 1300px; top: 390px; }
+
+      /* ========================================================
+         SCENE 9: MULTI-DETECTION SCAN & LIDAR (7.20s - 9.13s)
+         ======================================================== */
+      #scene-9 {
+        background: #000000;
+      }
+      #s9-slice-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .cv-box {
+        position: absolute;
+        border: 1.5px solid #ffffff;
+        box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+      }
+      .cv-crosshair {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        transform: translate(-50%, -50%);
+      }
+      .cv-crosshair::before {
+        content: "";
+        position: absolute;
+        left: 3px; top: 0; width: 1px; height: 7px; background: #ffffff;
+      }
+      .cv-crosshair::after {
+        content: "";
+        position: absolute;
+        left: 0; top: 3px; width: 7px; height: 1px; background: #ffffff;
+      }
+      /* Lidar horizontal scanlines */
+      .lidar-line {
+        position: absolute;
+        height: 4px;
+        background: #ffffff;
+        box-shadow: 0 0 8px #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="9.13"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- ==============================================
+           SCENE 1: 4-STAGE STAIRCASE (0.00s - 0.45s)
+           ============================================== -->
+      <div id="scene-1" class="scene clip" data-start="0" data-duration="0.45" data-track-index="1">
+        <div class="s1-grid"></div>
+        <!-- Connecting Sinusoidal Spline -->
+        <svg class="s1-curve-svg" viewBox="0 0 1920 1080">
+          <path d="M 450 650 Q 550 780, 775 630 Q 880 780, 1095 580 Q 1200 710, 1415 540" fill="none" stroke="#000000" stroke-width="2" />
+        </svg>
+        <div class="staircase-wrapper" id="s1-group">
+          <!-- Card 1: Bud -->
+          <div class="stair-card" id="s1-card-1">
+            <span class="card-label">Bud</span>
+            <div class="card-handle tl"></div><div class="card-handle tr"></div>
+            <div class="card-handle bl"></div><div class="card-handle br"></div>
+            <img src="assets/s1_bud_clean.png" alt="Bud" />
+          </div>
+          <!-- Card 2: Opening -->
+          <div class="stair-card" id="s1-card-2">
+            <span class="card-label">Opening</span>
+            <div class="card-handle tl"></div><div class="card-handle tr"></div>
+            <div class="card-handle bl"></div><div class="card-handle br"></div>
+            <img src="assets/s3_opening_clean.png" alt="Opening" />
+          </div>
+          <!-- Card 3: Ripe -->
+          <div class="stair-card" id="s1-card-3">
+            <span class="card-label">Ripe</span>
+            <div class="card-handle tl"></div><div class="card-handle tr"></div>
+            <div class="card-handle bl"></div><div class="card-handle br"></div>
+            <img src="assets/s4_ripe_clean.png" alt="Ripe" />
+          </div>
+          <!-- Card 4: Cut -->
+          <div class="stair-card" id="s1-card-4">
+            <span class="card-label">Cut</span>
+            <div class="card-handle tl"></div><div class="card-handle tr"></div>
+            <div class="card-handle bl"></div><div class="card-handle br"></div>
+            <img src="assets/s5_cut_clean.png" alt="Cut" />
+          </div>
+        </div>
+      </div>
+
+      <!-- ==============================================
+           SCENE 2: IN & OUT SPLIT (0.45s - 0.85s)
+           ============================================== -->
+      <div id="scene-2" class="scene clip" data-start="0.45" data-duration="0.40" data-track-index="2">
+        <svg style="position: absolute; inset: 0;" viewBox="0 0 1920 1080">
+          <path d="M 485 505 C 800 200, 1100 800, 1405 435" fill="none" stroke="#000000" stroke-width="2" />
+        </svg>
+        <div id="s2-card-in" class="stair-card">
+          <div class="card-handle tl"></div><div class="card-handle tr"></div>
+          <div class="card-handle bl"></div><div class="card-handle br"></div>
+          <img src="assets/s1_bud_clean.png" style="width: 70%;" alt="Bud" />
+        </div>
+        <div id="s2-text-in">IN</div>
+        <div id="s2-text-out">OUT</div>
+        <div id="s2-card-out" class="stair-card">
+          <div class="card-handle tl"></div><div class="card-handle tr"></div>
+          <div class="card-handle bl"></div><div class="card-handle br"></div>
+          <img src="assets/s5_cut_clean.png" style="width: 80%;" alt="Cut" />
+        </div>
+      </div>
+
+      <!-- ==============================================
+           SCENE 3: INSIDE OUT VECTOR MORPH (0.85s - 1.40s)
+           ============================================== -->
+      <div id="scene-3" class="scene clip" data-start="0.85" data-duration="0.55" data-track-index="3">
+        <div class="s3-wrap" id="s3-content">
+          <div class="s3-text" id="s3-text-el">INSIDE OUT</div>
+          <!-- Bezier control node handles over OUT -->
+          <svg style="position: absolute; left: 1040px; top: 380px; width: 450px; height: 320px;" viewBox="0 0 450 320">
+            <polyline points="20,180 80,40 180,40 280,50 360,60" fill="none" stroke="#9fe700" stroke-width="1.5" />
+            <polyline points="20,270 120,290 240,290 360,300" fill="none" stroke="#9fe700" stroke-width="1.5" />
+            <!-- Handles -->
+            <rect x="14" y="174" width="12" height="12" fill="none" stroke="#9fe700" stroke-width="2" />
+            <rect x="74" y="34" width="12" height="12" fill="none" stroke="#9fe700" stroke-width="2" />
+            <rect x="174" y="34" width="12" height="12" fill="none" stroke="#9fe700" stroke-width="2" />
+            <rect x="274" y="44" width="12" height="12" fill="none" stroke="#9fe700" stroke-width="2" />
+            <rect x="354" y="54" width="12" height="12" fill="none" stroke="#9fe700" stroke-width="2" />
+            <rect x="114" y="284" width="12" height="12" fill="none" stroke="#9fe700" stroke-width="2" />
+            <rect x="234" y="284" width="12" height="12" fill="none" stroke="#9fe700" stroke-width="2" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- ==============================================
+           SCENE 4: MACRO SCAN & PLEXUS NODES (1.40s - 2.60s)
+           ============================================== -->
+      <div id="scene-4" class="scene clip" data-start="1.40" data-duration="1.20" data-track-index="4">
+        <img id="s4-macro-img" src="assets/macro_cross_section_base.png" alt="Macro Pitaya" />
+        <div class="s4-overlay-nodes" id="s4-nodes">
+          <!-- Dynamically generated or SVG plexus -->
+          <svg style="position: absolute; inset: 0;" viewBox="0 0 1920 1080">
+            <g id="s4-plexus-lines" stroke="#ffffff" stroke-width="1" opacity="0.6">
+              <line x1="720" y1="480" x2="880" y2="600" />
+              <line x1="880" y1="600" x2="1120" y2="520" />
+              <line x1="1120" y1="520" x2="1280" y2="700" />
+              <line x1="880" y1="600" x2="980" y2="780" />
+              <line x1="650" y1="720" x2="720" y2="480" />
+              <line x1="1280" y1="700" x2="1450" y2="550" />
+            </g>
+          </svg>
+          <!-- Seed detection coordinates -->
+          <div class="seed-point" style="left: 720px; top: 480px;"><span class="seed-coord">720 480</span></div>
+          <div class="seed-point" style="left: 880px; top: 600px;"><span class="seed-coord">880 600</span></div>
+          <div class="seed-point" style="left: 1120px; top: 520px;"><span class="seed-coord">1120 520</span></div>
+          <div class="seed-point" style="left: 1280px; top: 700px;"><span class="seed-coord">1280 700</span></div>
+          <div class="seed-point" style="left: 980px; top: 780px;"><span class="seed-coord">980 780</span></div>
+          <div class="seed-point" style="left: 650px; top: 720px;"><span class="seed-coord">650 720</span></div>
+          <div class="seed-point" style="left: 1450px; top: 550px;"><span class="seed-coord">1450 550</span></div>
+
+          <!-- Color tracking boxes -->
+          <div class="s4-hud-box lime" id="s4-box-1" style="left: 700px; top: 460px;"></div>
+          <div class="s4-hud-box magenta" id="s4-box-2" style="left: 860px; top: 580px;"></div>
+          <div class="s4-hud-box lime" id="s4-box-3" style="left: 1100px; top: 500px;"></div>
+          <div class="s4-hud-box magenta" id="s4-box-4" style="left: 1260px; top: 680px;"></div>
+        </div>
+      </div>
+
+      <!-- ==============================================
+           SCENE 5: STEPPED MAGENTA CUTOUT (2.60s - 3.30s)
+           ============================================== -->
+      <div id="scene-5" class="scene clip" data-start="2.60" data-duration="0.70" data-track-index="5">
+        <div class="s5-stepped-mask"></div>
+        <svg style="position: absolute; inset: 0;" viewBox="0 0 1920 1080">
+          <polyline points="560,500 1025,325 1520,390" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.7" />
+          <line x1="1025" y1="325" x2="1060" y2="765" stroke="#ffffff" stroke-width="1.5" opacity="0.7" />
+          <line x1="560" y1="500" x2="1060" y2="765" stroke="#ffffff" stroke-width="1.5" opacity="0.7" />
+        </svg>
+        <!-- Tile 1 -->
+        <div class="s5-card" id="s5-c1">
+          <span class="s5-card-label">Surface_01</span>
+          <img src="assets/macro_cross_section_base.png" style="filter: invert(1);" alt="S1" />
+        </div>
+        <!-- Tile 2 -->
+        <div class="s5-card" id="s5-c2">
+          <span class="s5-card-label">Surface_02</span>
+          <img src="assets/macro_cross_section_base.png" alt="S2" />
+        </div>
+        <!-- Tile 3 -->
+        <div class="s5-card" id="s5-c3">
+          <span class="s5-card-label">Surface_03</span>
+          <img src="assets/macro_cross_section_base.png" style="filter: contrast(1.8);" alt="S3" />
+        </div>
+        <!-- Tile 4 -->
+        <div class="s5-card" id="s5-c4">
+          <span class="s5-card-label">Surface_04</span>
+          <img src="assets/s4_ripe_clean.png" alt="S4" />
+        </div>
+      </div>
+
+      <!-- ==============================================
+           SCENE 6: LIVING TEXTURE & WHOLE SPECIMEN (3.30s - 4.70s)
+           ============================================== -->
+      <div id="scene-6" class="scene clip" data-start="3.30" data-duration="1.40" data-track-index="6">
+        <div class="s6-dot-grid"></div>
+        <div id="s6-text-living">LIVING</div>
+        <div id="s6-text-texture">TEXTURE</div>
+        <img id="s6-hero-fruit" src="assets/pitaya_whole.png" alt="Pitaya Specimen" />
+        <!-- Flash slice -->
+        <img id="s6-flash-slice" src="assets/pitaya_slice.png" alt="Flash Slice" />
+      </div>
+
+      <!-- ==============================================
+           SCENE 7: BLUEPRINT TECHNICAL STUDY (4.70s - 6.20s)
+           ============================================== -->
+      <div id="scene-7" class="scene clip" data-start="4.70" data-duration="1.50" data-track-index="7">
+        <!-- Technical Vector Framework -->
+        <svg class="s7-blueprint-lines" viewBox="0 0 1920 1080">
+          <!-- Composition axes -->
+          <line x1="300" y1="200" x2="1620" y2="200" stroke="#000000" stroke-width="1.5" stroke-opacity="0.3" />
+          <line x1="300" y1="880" x2="1620" y2="880" stroke="#000000" stroke-width="1.5" stroke-opacity="0.3" />
+          <line x1="580" y1="100" x2="580" y2="980" stroke="#000000" stroke-width="1.5" stroke-opacity="0.3" />
+          <line x1="1340" y1="100" x2="1340" y2="980" stroke="#000000" stroke-width="1.5" stroke-opacity="0.3" />
+          <!-- Concentric technical dashed circles -->
+          <circle cx="960" cy="540" r="380" fill="none" stroke="#000000" stroke-width="1.5" stroke-dasharray="6 6" stroke-opacity="0.4" />
+          <!-- Diagonals -->
+          <line x1="580" y1="200" x2="1340" y2="880" stroke="#000000" stroke-width="1" stroke-opacity="0.3" />
+          <line x1="580" y1="880" x2="1340" y2="200" stroke="#000000" stroke-width="1" stroke-opacity="0.3" />
+        </svg>
+        <!-- Corner control nodes -->
+        <div class="s7-hud-node" style="left: 573px; top: 193px;"></div>
+        <div class="s7-hud-node" style="left: 1333px; top: 193px;"></div>
+        <div class="s7-hud-node" style="left: 573px; top: 873px;"></div>
+        <div class="s7-hud-node" style="left: 1333px; top: 873px;"></div>
+        <!-- Center node -->
+        <div class="s7-hud-node" style="left: 953px; top: 533px;"></div>
+
+        <img id="s7-center-fruit" src="assets/pitaya_whole.png" alt="Technical Specimen" />
+
+        <div id="s7-title-pitaya">PITAYA</div>
+        <div id="s7-specimen-badge">/ SPECIMEN_01</div>
+
+        <div class="s7-tech-specs">
+          SPECIMEN: PITAYA-01<br />
+          TYPE: DRAGON FRUIT<br />
+          STATE: FRESH / CUT<br />
+          RIND: PINK / GREEN<br />
+          PALETTE: PINK / LIME<br />
+          SURFACE: ORGANIC<br />
+          CAPTURE: FRONT STUDY
+        </div>
+      </div>
+
+      <!-- ==============================================
+           SCENE 8: 5-STAGE COMPLETE STAIRCASE (6.20s - 7.20s)
+           ============================================== -->
+      <div id="scene-8" class="scene clip" data-start="6.20" data-duration="1.00" data-track-index="8">
+        <div class="s1-grid"></div>
+        <svg class="s1-curve-svg" viewBox="0 0 1920 1080">
+          <path d="M 450 650 Q 525 780, 715 720 Q 825 820, 975 720 Q 1080 810, 1215 700 Q 1300 780, 1415 640" fill="none" stroke="#000000" stroke-width="2" />
+        </svg>
+        <div class="staircase-wrapper">
+          <!-- Card 1: Bud -->
+          <div class="stair-card" id="s8-c1">
+            <span class="card-label">Bud</span>
+            <div class="card-handle tl"></div><div class="card-handle tr"></div>
+            <div class="card-handle bl"></div><div class="card-handle br"></div>
+            <img src="assets/s1_bud_clean.png" alt="Bud" />
+          </div>
+          <!-- Card 2: Young -->
+          <div class="stair-card" id="s8-c2">
+            <span class="card-label">Young</span>
+            <div class="card-handle tl"></div><div class="card-handle tr"></div>
+            <div class="card-handle bl"></div><div class="card-handle br"></div>
+            <img src="assets/s2_young_clean.png" alt="Young" />
+          </div>
+          <!-- Card 3: Opening -->
+          <div class="stair-card" id="s8-c3">
+            <span class="card-label">Opening</span>
+            <div class="card-handle tl"></div><div class="card-handle tr"></div>
+            <div class="card-handle bl"></div><div class="card-handle br"></div>
+            <img src="assets/s3_opening_clean.png" alt="Opening" />
+          </div>
+          <!-- Card 4: Ripe -->
+          <div class="stair-card" id="s8-c4">
+            <span class="card-label">Ripe</span>
+            <div class="card-handle tl"></div><div class="card-handle tr"></div>
+            <div class="card-handle bl"></div><div class="card-handle br"></div>
+            <img src="assets/s4_ripe_clean.png" alt="Ripe" />
+          </div>
+          <!-- Card 5: Cut -->
+          <div class="stair-card" id="s8-c5">
+            <span class="card-label">Cut</span>
+            <div class="card-handle tl"></div><div class="card-handle tr"></div>
+            <div class="card-handle bl"></div><div class="card-handle br"></div>
+            <img src="assets/s5_cut_clean.png" alt="Cut" />
+          </div>
+        </div>
+      </div>
+
+      <!-- ==============================================
+           SCENE 9: MULTI-DETECTION SCAN & LIDAR (7.20s - 9.13s)
+           ============================================== -->
+      <div id="scene-9" class="scene clip" data-start="7.20" data-duration="1.93" data-track-index="9">
+        <img id="s9-slice-img" src="assets/pitaya_slice.png" alt="Slice Macro" />
+        <!-- Micro detection boxes on seeds & droplets -->
+        <div id="s9-detections" style="position: absolute; inset: 0;"></div>
+        <!-- Lidar contour profile lines -->
+        <div id="s9-lidar-bars" style="position: absolute; inset: 0; opacity: 0;"></div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // Generate 28 CV Bounding Boxes dynamically for Scene 9
+      const s9Detections = document.getElementById("s9-detections");
+      const seedPositions = [
+        [720, 360], [840, 310], [960, 280], [1080, 330], [1200, 380],
+        [680, 480], [790, 440], [920, 410], [1050, 460], [1180, 510],
+        [740, 590], [860, 560], [990, 540], [1120, 580], [1240, 620],
+        [650, 710], [780, 680], [910, 660], [1040, 700], [1160, 750],
+        [720, 820], [850, 800], [980, 790], [1110, 830], [1220, 860],
+        [540, 420], [520, 560], [1380, 460], [1410, 620]
+      ];
+      seedPositions.forEach(([x, y]) => {
+        const box = document.createElement("div");
+        box.className = "cv-box";
+        box.style.left = (x - 14) + "px";
+        box.style.top = (y - 12) + "px";
+        box.style.width = "28px";
+        box.style.height = "24px";
+
+        const ch = document.createElement("div");
+        ch.className = "cv-crosshair";
+        ch.style.left = "14px";
+        ch.style.top = "12px";
+        box.appendChild(ch);
+        s9Detections.appendChild(box);
+      });
+
+      // Generate Lidar Scan Lines for Scene 9
+      const s9Lidar = document.getElementById("s9-lidar-bars");
+      const lidarY = [280, 340, 400, 460, 520, 580, 640, 700, 760, 820];
+      lidarY.forEach((y, i) => {
+        // Left bar
+        const leftBar = document.createElement("div");
+        leftBar.className = "lidar-line";
+        leftBar.style.left = (380 + Math.sin(i) * 50) + "px";
+        leftBar.style.top = y + "px";
+        leftBar.style.width = (70 + (i % 3) * 35) + "px";
+        s9Lidar.appendChild(leftBar);
+        // Right bar
+        const rightBar = document.createElement("div");
+        rightBar.className = "lidar-line";
+        rightBar.style.left = (1420 - Math.sin(i) * 50) + "px";
+        rightBar.style.top = y + "px";
+        rightBar.style.width = (70 + (i % 4) * 30) + "px";
+        s9Lidar.appendChild(rightBar);
+      });
+
+      // ========================================================
+      // GSAP KINETIC MASTER TIMELINE (Staccato 9-Phase Precision)
+      // ========================================================
+
+      // PLAN 1 (0.00s - 0.45s) : 4-STAGE STAIRCASE
+      tl.set("#scene-1", { display: "block" }, 0.0);
+      tl.fromTo("#s1-group", 
+        { scale: 1.15, opacity: 0 }, 
+        { scale: 1.0, opacity: 1, duration: 0.22, ease: "power4.out" }, 
+        0.0
+      );
+      tl.set("#scene-1", { display: "none" }, 0.45);
+
+      // PLAN 2 (0.45s - 0.85s) : IN & OUT SPLIT
+      tl.set("#scene-2", { display: "block" }, 0.45);
+      tl.fromTo("#s2-text-in", 
+        { x: -80, opacity: 0 }, 
+        { x: 0, opacity: 1, duration: 0.2, ease: "expo.out" }, 
+        0.45
+      );
+      tl.fromTo("#s2-text-out", 
+        { x: 80, opacity: 0 }, 
+        { x: 0, opacity: 1, duration: 0.2, ease: "expo.out" }, 
+        0.48
+      );
+      tl.set("#scene-2", { display: "none" }, 0.85);
+
+      // PLAN 3 (0.85s - 1.40s) : INSIDE OUT VECTOR MORPH
+      tl.set("#scene-3", { display: "block" }, 0.85);
+      tl.fromTo("#s3-content",
+        { scale: 0.85, opacity: 0 },
+        { scale: 1.0, opacity: 1, duration: 0.22, ease: "back.out(1.5)" },
+        0.85
+      );
+      // Flash cream background on "OUT" at 1.15s
+      tl.to("#scene-3", { backgroundColor: "#f5f5f0", duration: 0.05 }, 1.15);
+      tl.to("#s3-text-el", { color: "#e21c75", duration: 0.05 }, 1.15);
+      tl.set("#scene-3", { display: "none" }, 1.40);
+
+      // PLAN 4 (1.40s - 2.60s) : MACRO SCAN & PLEXUS NODES
+      tl.set("#scene-4", { display: "block" }, 1.40);
+      tl.fromTo("#s4-macro-img",
+        { scale: 1.0 },
+        { scale: 1.08, duration: 1.2, ease: "none" },
+        1.40
+      );
+      // Nodes appear staccato
+      tl.fromTo(".seed-point",
+        { scale: 0, opacity: 0 },
+        { scale: 1, opacity: 1, stagger: 0.03, duration: 0.15, ease: "back.out(2.0)" },
+        1.45
+      );
+      // Invert to X-ray at 1.95s
+      tl.to("#s4-macro-img", { filter: "invert(1) contrast(1.4) brightness(0.85)", duration: 0.08 }, 1.95);
+      tl.fromTo(".s4-hud-box",
+        { scale: 1.8, opacity: 0 },
+        { scale: 1.0, opacity: 0.9, stagger: 0.06, duration: 0.22, ease: "power4.out" },
+        2.0
+      );
+      tl.set("#scene-4", { display: "none" }, 2.60);
+
+      // PLAN 5 (2.60s - 3.30s) : STEPPED MAGENTA CUTOUT
+      tl.set("#scene-5", { display: "block" }, 2.60);
+      tl.fromTo(".s5-card",
+        { scale: 0.8, opacity: 0, y: 30 },
+        { scale: 1.0, opacity: 1, y: 0, stagger: 0.05, duration: 0.22, ease: "power3.out" },
+        2.60
+      );
+      tl.set("#scene-5", { display: "none" }, 3.30);
+
+      // PLAN 6 (3.30s - 4.70s) : LIVING TEXTURE
+      tl.set("#scene-6", { display: "block" }, 3.30);
+      tl.fromTo("#s6-text-living",
+        { x: -200, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.28, ease: "power4.out" },
+        3.30
+      );
+      tl.fromTo("#s6-text-texture",
+        { x: -200, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.28, ease: "power4.out" },
+        3.36
+      );
+      // Fruit slight ambient float
+      tl.fromTo("#s6-hero-fruit",
+        { scale: 0.92, rotation: -3 },
+        { scale: 1.04, rotation: 3, duration: 1.2, ease: "none" },
+        3.30
+      );
+      // Flash high-key slice at 4.45s
+      tl.to("#s6-flash-slice", { opacity: 1, duration: 0.05 }, 4.45);
+      tl.set("#scene-6", { display: "none" }, 4.70);
+
+      // PLAN 7 (4.70s - 6.20s) : BLUEPRINT TECHNICAL STUDY
+      tl.set("#scene-7", { display: "block" }, 4.70);
+      tl.fromTo("#s7-center-fruit",
+        { scale: 1.15, opacity: 0 },
+        { scale: 1.0, opacity: 1, duration: 0.25, ease: "power4.out" },
+        4.70
+      );
+      tl.fromTo("#s7-title-pitaya",
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.22, ease: "expo.out" },
+        4.75
+      );
+      tl.fromTo("#s7-specimen-badge",
+        { scale: 0 },
+        { scale: 1, duration: 0.2, ease: "back.out(2.5)" },
+        4.85
+      );
+      tl.set("#scene-7", { display: "none" }, 6.20);
+
+      // PLAN 8 (6.20s - 7.20s) : 5-STAGE COMPLETE STAIRCASE
+      tl.set("#scene-8", { display: "block" }, 6.20);
+      tl.fromTo("#scene-8 .stair-card",
+        { scale: 0.85, opacity: 0, y: 40 },
+        { scale: 1.0, opacity: 1, y: 0, stagger: 0.04, duration: 0.2, ease: "power4.out" },
+        6.20
+      );
+      tl.set("#scene-8", { display: "none" }, 7.20);
+
+      // PLAN 9 (7.20s - 9.13s) : MULTI-DETECTION SCAN & LIDAR
+      tl.set("#scene-9", { display: "block" }, 7.20);
+      tl.fromTo("#s9-slice-img",
+        { scale: 1.0 },
+        { scale: 1.06, duration: 1.93, ease: "none" },
+        7.20
+      );
+      // Detection boxes burst
+      tl.fromTo(".cv-box",
+        { scale: 1.6, opacity: 0 },
+        { scale: 1.0, opacity: 1, stagger: 0.015, duration: 0.15, ease: "power2.out" },
+        7.25
+      );
+      // Lidar scanlines flash at 8.40s
+      tl.to("#s9-lidar-bars", { opacity: 1, duration: 0.08 }, 8.40);
+
+      // Register timeline with HyperFrames
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
