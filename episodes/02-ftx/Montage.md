@@ -1,7 +1,7 @@
 # MONTAGE — FTX : NINE DAYS TO ZERO
-### Conducteur v2 pour Google Flow (Veo 3.1) — Financial Forensics, Épisode 02
+### Conducteur v3 pour Google Flow (Gemini Omni Flash) — Financial Forensics, Épisode 02
 
-> **Statut :** ce document remplace le « Conducteur Maître » et le découpage du Hook en 21 plans de la Bible. Il s'appuie sur `Objets_Atomiques.md` (registre complet des assets : environnements, personnages, objets, graphiques, archives, sons). Tous les identifiants (`ENV-03`, `CHR-SBF`, `PRP-BTC`…) renvoient à ce registre.
+> **Statut :** cette version remplace le conducteur v2 (Veo 3.1). Elle intègre trois choses : le passage à **Gemini Omni Flash** (plus d'images de référence, clips plus longs, édition par conversation), les **assets modernes** réellement générés (décors, mannequins, objets), et le **Hook final** (anciennement dans `Hook_Video_Prompts.md`). Tous les identifiants (`ENV-04_NUIT`, `CHR-SBF`, `PRP-BTC_COUPELLE`…) renvoient à `Environnements_Tous_Les_Prompts.md`, `Objets_Tous_Les_Prompts.md` et `Objets_Atomiques.md`.
 > **Chemin cible :** `episodes/02-ftx/Montage.md` (je n'ai pas accès à votre disque : placez le fichier à cet endroit).
 
 ---
@@ -10,76 +10,110 @@
 
 | Code | Méthode | Usage |
 |---|---|---|
-| **FLOW-I** | *Ingredients to Video* : jusqu'à **3 images de référence** (1 décor + 1 personnage + 1 objet) | Méthode par défaut pour toute scène avec décor, mannequin ou objet récurrent |
-| **FLOW-F** | *Frames to Video* (première image fournie) | Micro-mouvements prévisibles uniquement. Jamais pour un morphing : la transition entre deux images fournies n'est pas fiable |
+| **FLOW-I** | **Références multiples** : décor + personnage + objets (de 5 à 10 images selon la plateforme, **à vérifier dans votre Flow**) | Méthode par défaut quand l'exactitude de la position n'est pas critique |
+| **FLOW-F** | **Première image** (devient l'ouverture exacte du plan), avec ou sans **dernière image** | Quand un objet doit être exactement à sa place ou qu'un état change (tiroir qui s'ouvre) |
 | **FLOW-T** | Texte seul | Plans sans personnage ni objet récurrent |
-| **GFX** | Scripts maison / Remotion | **Tout** texte, chiffre, document lisible, contenu d'écran |
+| **FLOW-E** | **Édition par conversation** d'un clip déjà généré | Corriger un détail sans tout régénérer (§3.6) |
+| **GFX** | Scripts maison / Remotion | Compteurs, courbes, cartes-dates, tampons animés |
 | **REAL** | Archive réelle (`generate_evidence_card.py`) | Vrais visages, tweets, décisions de justice |
 
-**1 génération = 2 ou 3 coupes.** Flow produit des clips d'environ 8 s : on y prélève 2 à 3 passages de 2 à 3 s (gros plan, plan moyen, punch-in). Le conducteur compte **≈ 110 générations** au total au lieu des ~220 plans de l'ancienne version.
+**Les numéros entre crochets** (`[1]`, `[2]`, `[3]`…) indiquent simplement l'**ordre des références**, il n'y a plus de plafond à trois. Là où un plan en liste trois, vous pouvez en ajouter d'autres (un second objet, une vue supplémentaire du décor).
+**1 génération = 2 ou 3 coupes.** Omni Flash produit des clips de 3 à 10 s : on génère 6 à 8 s (jusqu'à 10 s pour une poussée très lente) et on y prélève 2 à 3 passages de 2 à 3 s. Le conducteur compte **≈ 110 générations**.
 
 ---
 
 ## 1. Décisions prises sur l'existant
 
-| Constat dans l'ancienne version | Décision |
+| Constat dans les anciennes versions | Décision |
 |---|---|
-| **Deux Hooks concurrents** : 13 plans / 0:45 (conducteur) et 21 plans / 0:51 (Bible) | **Un seul Hook**, 13 coupes, calé sur la voix off de 0:45 |
-| **Tour de verre FTX** vue en drone, qui se fissure et s'effondre | Supprimée : un bâtiment qui s'effondre en IA est le plan le plus « faux » possible, et le siège de FTX n'était pas une tour de verre. Remplacée par la salle des serveurs + photos réelles |
-| **Rembobinage « verre brisé »**, caméra qui traverse une baie vitrée, zoom *dans* un écran de télé | Supprimés : ce sont des morphings, le point faible de la vidéo générée. Remplacés par des **coupes franches + raccords** |
-| **Texte, chiffres, tampons, bilans** demandés à Veo | **Jamais dans la vidéo.** Le texte naît dans une image fixe (Nano Banana Pro, vérifiée mot à mot) ou en GFX, puis l'image est animée avec un mouvement minimal |
-| **SBF avec cheveux bouclés** (Bible, prompt Lot 1) alors que la règle 1 impose une tête chauve | **Tête chauve partout.** L'identité passe par les vêtements et objets (t-shirt anthracite, short cargo, pieds nus, pouf). Le vrai visage n'apparaît que sur les cartes preuve |
-| **Une métaphore par phrase** (canot de sauvetage, tuyau-vanne, sucre, bloc d'eau…) | **Une métaphore par séquence maximum**, uniquement si elle est physique, simple et tactile |
-| **Logos réels** dans les visuels (chaînes d'info, Windows, magazines) | Remplacés par des **génériques inventés** |
-| **Textes inventés présentés comme des preuves** (Post-it « Gary : allow negative… », note « He's in another dimension. Genius. ») | Ce sont des fictions. Soit on les rend illisibles, soit on affiche « RECONSTITUTION » |
-| **Prompts à base de « 8k, Unreal Engine 5, hyper-detailed »** | Remplacés par un **langage photographique** (optique, source de lumière, imperfections). Les mots-clés de rendu sont ce qui donne ce look plastique |
+| **Deux Hooks concurrents** (13 plans / 0:45 et 21 plans / 0:51) | **Un seul Hook**, 13 coupes, calé sur la voix off de 0:45 |
+| **Tour de verre FTX** vue en drone, qui s'effondre | Supprimée : plan le plus « faux » possible, et le siège n'était pas une tour de verre. Remplacée par la salle des serveurs + photos réelles |
+| **Rembobinage « verre brisé »**, caméra qui traverse une vitre, zoom *dans* un écran | Supprimés : ce sont des morphings. Remplacés par des **coupes franches + raccords** |
+| **Texte, chiffres, tampons, bilans** générés dans la vidéo | **Jamais dans la vidéo.** Le texte naît dans une image fixe (Nano Banana Pro, relue mot à mot) ou en GFX, puis on anime très peu |
+| **SBF avec cheveux bouclés** | **Tête chauve partout**, identité par les vêtements (t-shirt anthracite, short cargo, **baskets grises**) et les objets |
+| **Une métaphore par phrase** | **Une métaphore par séquence maximum**, physique, simple, tactile |
+| **Logos réels** (chaînes d'info, magazines) | Remplacés par des **génériques inventés** |
+| **Textes inventés présentés comme des preuves** | Fictions : illisibles, ou marqués « RECONSTITUTION » |
+| **Prompts « 8k, Unreal Engine 5, hyper-detailed »** | Remplacés par un **langage photographique** |
+| **Lieux vieillis et délabrés** (poussière, brique, bois ancien, câbles qui traînent) | **Moderne, propre, confortable, sans luxe.** Le réalisme vient de la matière et de la lumière, pas de la saleté |
+| **Objets anciens** (imprimante matricielle, moniteur beige, calculatrice mécanique, cassette VHS, vieux téléviseur CRT) | **Versions modernes** (imprimante laser, moniteur plat, calculatrice imprimante, clé USB, téléviseur plat) |
+| **Limite de 3 ingrédients** (Veo 3.1) | **Plus de références** avec Omni Flash : le collage d'objets et la plupart des images de départ composées deviennent **facultatifs** (§3.3) |
 
 ---
 
 ## 2. Les 12 règles anti-artificiel
 
-1. **Zéro texte dans la vidéo générée (Veo).** Veo déforme le texte dès qu'il bouge. Tout ce qui se lit se crée dans une **image fixe** (Nano Banana Pro, qui rend très bien le texte, relu mot à mot) ou en GFX, puis on anime l'image avec un mouvement minimal (poussée de caméra, coin de page qui se soulève).
+1. **Zéro texte dans la vidéo générée.** Les modèles vidéo déforment le texte dès qu'il bouge. Tout ce qui se lit naît dans une **image fixe** (Nano Banana Pro, relue mot à mot) ou en GFX, puis on anime l'image avec un mouvement minimal (poussée de caméra, coin de page qui se soulève).
 2. **Zéro morphing.** Pas de reconstruction à l'envers, pas de traversée de matière, pas de transformation d'objet. Une action = un geste physique simple.
-3. **Mannequins : mouvements lents, rares et lisibles.** Dos, profil, silhouette, mains. Jamais de course, de foule qui bouge ou de gros plan sur la tête.
-4. **Une seule idée de mouvement par prise** : soit le mannequin, soit la caméra, soit la lumière. Jamais les trois.
-5. **Caméra motivée.** Trépied verrouillé (idéal pour incruster un écran), poussée lente de 3 à 6 %, ou léger souffle d'épaule. Pas de travelling aérien ni de dolly traversant un mur.
-6. **Matières et défauts réels.** Poussière, rayures, empreintes, reflets imparfaits : ils sont dans chaque prompt, car un décor trop propre trahit l'IA.
-7. **Cohérence par ingrédients.** Chaque plan récurrent part des mêmes images maîtres. On ne « redécrit » jamais un personnage ou un décor dans le prompt.
-8. **Lumière à deux températures seulement** : tungstène chaud (2700 K) et fill bleu froid (5600 K). Le rouge n'apparaît qu'à partir du 9 novembre.
-9. **Respirations.** Après chaque révélation forte : 1 à 2 s de silence ou de plan fixe. C'est ce qui donne du poids aux chiffres.
-10. **Le réel ancre, le fictif illustre.** Chaque minute environ, une preuve réelle (tweet, jugement, photo) rappelle que « tout cela est arrivé pour de vrai ».
-11. **Objets avant gestes.** Quand l'IA doit choisir, elle filme un objet immobile ou un geste minimal (macro d'un tampon, d'un chèque, d'une clé), jamais une action complexe. C'est là que le photoréalisme est maximal et le risque d'artefact minimal.
-12. **Le chiffre à l'écran = le chiffre dit en voix off, à la même image.** Aucun nombre n'apparaît avant ni après la phrase qui le prononce, et il est identique au mot près.
+3. **Mannequins : mouvements lents, rares et lisibles.** Dos, profil, silhouette, mains. Jamais de course, de foule qui bouge, de gros plan sur la tête.
+4. **Une seule idée de mouvement par prise** : soit le mannequin, soit la caméra, soit la lumière.
+5. **Caméra motivée.** Trépied verrouillé (idéal pour incruster un écran), poussée lente de 3 à 6 %, léger souffle d'épaule. Pas de travelling aérien, pas de dolly à travers un mur.
+6. **Matières réelles, lieux propres.** Reflets doux, grain de film, chute naturelle de la lumière, tout petits détails de vie (une trace de doigt sur une vitre). **Jamais de saleté, de débris ni d'objets anciens** sauf si l'histoire l'exige (un registre en cuir).
+7. **Cohérence par références.** Chaque plan récurrent part des mêmes images maîtres. On ne « redécrit » jamais un personnage ou un décor dans le prompt.
+8. **Lumière à deux températures** : tungstène chaud (2700 K) et fill bleu froid (5600 K). Le rouge n'apparaît qu'à partir du 9 novembre.
+9. **Respirations.** Après chaque révélation forte : 1 à 2 s de silence ou de plan fixe.
+10. **Le réel ancre, le fictif illustre.** Chaque minute environ, une preuve réelle rappelle que « tout cela est arrivé pour de vrai ».
+11. **Objets avant gestes.** Quand l'IA doit choisir, elle filme un objet immobile ou un geste minimal, jamais une action complexe.
+12. **Le chiffre à l'écran = le chiffre dit en voix off, à la même image.**
 
 ---
 
-## 3. Protocole Google Flow
+## 3. Protocole Google Flow (Gemini Omni Flash)
 
-**Ce que fait Flow aujourd'hui (Veo 3.1)** : *Ingredients to Video* accepte jusqu'à 3 images de référence, *Frames to Video* prend une image de départ et/ou d'arrivée, *Extend* prolonge un clip à partir de sa dernière seconde, et l'audio est généré nativement. Les images de référence se produisent dans Flow avec **Nano Banana**. Veo n'utilise pas de balises `@` : il faut dire dans le prompt **quelle référence est quoi**.
+### 3.0 Ce que fait le modèle, et ce qui reste incertain
+**Sources concordantes :** Gemini Omni Flash accepte du texte, des **images de référence** et des **clips vidéo de référence** ; il génère des clips de **3 à 10 s** avec **audio natif synchronisé** ; il permet l'**édition conversationnelle** (corriger un clip par une consigne), la **prolongation** et l'**interpolation** entre images. La **première image** devient l'ouverture exacte du plan, alors que les **images de référence guident l'apparence sans être recopiées à l'identique**. Il refuse les **personnes réelles nommées** (sans importance ici : nos personnages sont des mannequins, et les vraies photos passent par les cartes preuve hors Flow).
+
+**À vérifier dans votre interface Flow :**
+- **Le nombre maximal d'images de référence.** Les sources donnent **5, 7 ou 10** selon la plateforme et la version. Comptez 5 par prudence, montez à 7 ou 10 si votre Flow le permet.
+- **La résolution.** Plusieurs sources donnent 720p en natif, avec 1080p ou 4K selon les outils. Vérifiez la résolution d'export et l'option d'agrandissement avant le montage final.
+- **Le statut.** Le modèle est en préversion publique : le comportement peut changer.
 
 ### 3.1 Ordre de travail
-1. **Générer les images maîtres** de `Objets_Atomiques.md` (décors vides, personnages maîtres sur fond neutre, objets isolés). Dans Google Flow, importer l'image maître du personnage et utiliser l'option **Body** pour générer automatiquement les cadrages (plein pied, trois-quarts, dos, macro mains/poignets) sans dérive.
-2. **Fond simple pour les ingrédients** : un personnage ou un objet sur fond uni ou détouré est mieux reconnu par Veo.
-3. **Tester en mode Fast** pour valider le mouvement, puis relancer en qualité maximale uniquement les plans retenus. Vérifiez le coût en crédits de votre abonnement.
-4. **Trois ingrédients maximum par plan** : `[1] décor` · `[2] personnage` · `[3] objet`.
-5. **Générer 8 s**, garder le meilleur segment de 2 à 4 s. Prévoir 2 prises par plan.
-6. **Nommage :** `H05_coin-dish_take2.mp4` (ID du plan + sujet + prise).
-7. **Audio Flow :** on le garde comme **ambiance de référence** uniquement. Les SFX définitifs viennent de votre bibliothèque.
+1. **Images maîtres** : décors, mannequins (importés dans l'onglet *Personnages*, option **Body** pour dos / mains / trois-quarts), objets. Voir `Environnements_Tous_Les_Prompts.md` et `Objets_Tous_Les_Prompts.md`.
+2. **Fond simple pour les références d'objets** : un objet sur fond uni est mieux reconnu.
+3. **Essais en mode rapide**, puis relance en qualité maximale des seules prises retenues. Vérifiez le coût en crédits.
+4. **Générer 6 à 8 s** (10 s pour les poussées très lentes), garder le meilleur passage de 2 à 4 s. **2 prises par plan.**
+5. **Nommage :** `H05_coin-dish_take2.mp4` (ID du plan + sujet + prise).
+6. **Audio du modèle :** ambiance de référence seulement. Les SFX définitifs viennent de votre bibliothèque.
 
-### 3.2 Préfixe d'ingrédients (à coller en tête de chaque prompt FLOW-I)
+### 3.2 Préfixe de références (à coller en tête de chaque prompt FLOW-I)
 ```
-Reference 1 is the room. Reference 2 is the white mannequin. Reference 3 is the prop.
+Reference images: image 1 is the room, image 2 is the white mannequin, image 3 is [objet], image 4 is [objet]. Use them to keep identity, materials and layout consistent.
 ```
-(supprimez les lignes inutiles quand un plan a moins de 3 références)
+(adaptez la liste : une ligne par référence réellement fournie)
 
-### 3.3 Bloc STYLE (à coller en fin de **chaque** prompt)
+### 3.3 Quelle méthode pour quel plan ?
+| Situation | Méthode | Pourquoi |
+|---|---|---|
+| Décor seul | **FLOW-F** : l'image du décor en première image | L'ouverture est exacte |
+| Décor + mannequin + 1 à 4 objets, **position non critique** | **FLOW-I** : tout en références | Plus rapide : aucune image à composer |
+| **Un objet doit être exactement au centre / à un endroit précis**, ou le **mannequin exactement assis à un endroit** | **FLOW-F** avec une **image de départ composée** (Nano Banana Pro) | Les références guident mais ne copient pas : seule la première image fixe la position |
+| **Un état change** (tiroir fermé → ouvert) | **FLOW-F** première image **+ dernière image** | Le modèle interpole entre deux états maîtrisés |
+| Une **petite correction** sur un bon clip | **FLOW-E** | Évite de régénérer |
+| Un **geste répété** (tampon, clic) | Référence **vidéo** (jusqu'à 3 clips de 3 s ou moins, si votre Flow l'accepte) | Même mouvement d'un plan à l'autre |
+
+**Règle d'économie :** le collage `PACK_TABLE` et les images de départ composées ne servent plus que lorsque la position exacte compte.
+
+### 3.4 Bloc STYLE (à coller en fin de **chaque** prompt)
 ```
-Photographed on a 35mm cinema lens, shallow depth of field, natural film grain, muted slightly desaturated colour grade, practical light sources only, visible real-world imperfections (dust, scuffs, fingerprints), slow motivated camera, ambient sound only, no music, no speech, no on-screen text, no logos.
+Photorealistic, natural film grain, clean modern surfaces, tiny lived-in details only, no dirt, no debris. Ambient sound only, no music, no speech, no on-screen text, no logos.
 ```
 
-### 3.4 Structure d'un prompt
-`[Cadrage + caméra]` → `[Action dans l'ordre du temps]` → `[Lumière]` → `[STYLE]`.
-Une action par prompt, des verbes simples (*slides*, *clicks*, *lifts*), jamais d'adjectifs de rendu (*stunning*, *epic*, *hyper-detailed*).
+### 3.5 Structure d'un prompt
+`[Cadrage + caméra]` → `[Action dans l'ordre du temps]` → `[Lumière]` → `[Audio]` → `[STYLE]`.
+Une seule action, des verbes simples (*slides*, *clicks*, *lifts*), jamais d'adjectifs de rendu (*stunning*, *epic*, *hyper-detailed*). Avec une première image fournie, le prompt ne décrit que **le mouvement**.
+
+### 3.6 Corriger sans régénérer (FLOW-E)
+Sur un clip réussi à 80 %, demandez une retouche ciblée :
+```
+Keep the same shot, framing, lighting and camera movement. Change only this: [CHANGEMENT PRÉCIS]. Everything else stays identical.
+```
+Exemples : « remove the paper note from the glass », « make the coin's edge sharper in the last second », « the rain is lighter, same everything else ».
+
+### 3.7 Limites à connaître
+- La **durée** maximale est de 10 s : tout plan plus long se monte en deux clips.
+- Les **références ne sont pas recopiées à l'identique** : si l'exactitude compte, passez par la première image.
+- Un modèle en **préversion** : ne pas bâtir tout le projet sur un comportement non vérifié. Testez par le pilote (§16.6).
 
 ---
 
@@ -96,106 +130,153 @@ Une action par prompt, des verbes simples (*slides*, *clicks*, *lifts*), jamais 
 | **The Pattern** | 16:33–17:47 | 3–5 s | Or poussiéreux | Tissu, plancher qui craque | Un plan fixe long : le costume | La clé, le t-shirt |
 | **Outro** | 17:47–19:19 | 3–5 s | Noir, silence | Verrou, interrupteur | Retour à la pièce du Hook, puis noir complet | La pièce BTC sous la poussière |
 
-**Principe de rétention :** la vidéo s'ouvre sur un objet (une pièce posée sur un plateau) et se referme sur ce même objet, couvert de poussière. Entre les deux, **aucune séquence ne dure plus de 25 s sans changement de nature d'image** (plan physique → carte-date → preuve réelle → graphique).
+**Principe de rétention :** la vidéo s'ouvre sur un objet (une pièce sur un plateau) et se referme sur ce même objet, voilé de poussière. Entre les deux, **aucune séquence ne dure plus de 25 s sans changement de nature d'image** (plan physique → carte-date → preuve réelle → graphique).
 
 ---
 
 ## 5. HOOK — 0:00 à 0:45
-*13 coupes, 9 générations.* Cinq plans sont des cartes (GFX/REAL) : ils tiennent les chiffres, Flow tient la matière.
+*13 coupes, 9 générations, 6 images de départ composées.* Cinq plans sont des cartes (GFX/REAL) : ils tiennent les chiffres, Flow tient la matière.
 
-**H01 · 0:00–0:03 · FLOW-I · gén. 6 s**
-VO : « À son niveau le plus bas... »
-Réf. : [1] `ENV-03`
-```
-Locked-off low-angle wide shot down a long corridor of server racks. The overhead light banks are on, then switch off one bank after another from the far end toward the camera until only the small blinking LEDs remain. Cold cyan light on the polished concrete floor. [STYLE]
-```
-Son : un « clac » de disjoncteur par rangée de lumières, ventilateurs qui ralentissent.
-*Remplace la plongée en drone sur une tour de verre.* Les 0,5 premières secondes sont éclairées : l'image s'éteint sous les yeux du spectateur.
+### 5.0 Prérequis
+- [ ] `PRP-BTC_COUPELLE` retouchée : **symbole Bitcoin** sur la pièce
+- [ ] `ENV-03` sans chariot ni feuille collée
+- [ ] `ENV-04_NUIT`, `ENV-01X`, `ENV-01_V2`, `ENV-09_B` générées
+- [ ] Deux corrections de voix off : « vingt-neuf ans » → **trente ans** ; « environ un bitcoin en réserves » → à sourcer ou à reformuler
 
-**H02 · 0:03–0:06 · FLOW-I · gén. 4 s**
-VO : « ...dans les dernières heures avant son effondrement... »
-Réf. : [1] `ENV-02` (flou, arrière-plan) · [3] `PRP-MONTRE`
-```
-Extreme macro of a mechanical wristwatch lying on dark lacquered wood, the second hand sweeping in short ticks, raking light from the left. In the soft background a monitor glows, flickers and goes black. The ticking continues. [STYLE]
-```
-Son : tic-tac métallique amplifié, craquement électrique léger à l'extinction.
+### 5.1 Les 6 images de départ à composer (Nano Banana Pro, 1 résultat chacune)
+Elles fixent la position exacte des objets et des mannequins. Joignez les références dans l'ordre, renommez avec le nom indiqué.
 
-**H03 · 0:06–0:09 · REAL + GFX**
-VO : « ...une entreprise valorisée à trente-deux milliards de dollars dix mois plus tôt... »
-Photo réelle `REAL-04` (FTX Arena, nuit), poussée lente de 6 %, carte `generate_title_card.py` : « 32 000 000 000 $ » en cyan `#38BDF8`, mention « JANVIER 2022 ».
-Son : houle de foule qui s'éteint net.
-
-**H04 · 0:09–0:13 · FLOW-I + GFX · gén. 6 s**
-VO : « ...selon des messages internes examinés plus tard par les enquêteurs... »
-Réf. : [1] `ENV-10` · [2] `CHR-ENQ`
+**`H02_depart`** · Référence : [1] `PRP-MONTRE`
 ```
-Medium-wide locked-off shot in an evidence warehouse. Two white mannequins in dark suits and white gloves lift the lids off archive boxes on steel shelves and slowly leaf through papers. Flat cold fluorescent light, no readable writing on any box or page. [STYLE]
+Extreme macro of the wristwatch from the reference image lying on dark lacquered wood, raking light from the left, the dial and the second hand in sharp focus, very shallow depth of field. In the soft out-of-focus background, a computer monitor glowing cold blue. Keep the watch exactly as in the reference: no numerals, no lettering. Photographic, natural film grain, no text, no logos. 16:9.
 ```
-Post : incrustation GFX d'un message interne flouté, mot « reserves » surligné.
-Son : papier kraft, classeurs métalliques.
+**`H04_depart`** · Références : [1] `ENV-10` · [2] `CHR-ENQ`
+```
+Place the white mannequin from reference 2 standing in the central aisle of the evidence storage room of reference 1, in a dark suit and white cotton gloves, holding a white archive box already lifted off a shelf with its lid off, looking down into it. Medium-wide shot, 28mm. Keep the room exactly as in reference 1. No writing on any box. Photographic, natural film grain, no text, no logos. 16:9.
+```
+**`H05_depart`** · Références : [1] `ENV-04_NUIT` · [2] `PRP-BTC_COUPELLE`
+```
+Place the stainless steel dish with the gold coin from reference 2 at the exact centre of the walnut table in reference 1, at correct scale and perspective (the dish about 25 cm wide), lit by the single narrow warm spotlight cone from above that is already present in reference 1. Keep the room, the table and everything else exactly as in reference 1; the rest of the room stays in deep shadow. Photographic, natural film grain, no text, no logos. 16:9.
+```
+**`H10_depart`** · Références : [1] `CHR-LD` · [2] `PRP-ROUE`
+```
+The white mannequin in a toga from reference 1 standing in front of the stone wheel from reference 2 on a bare studio floor against a flat painted backdrop. Hard side light, commercial-set look. Photographic, natural film grain, no text, no logos. 16:9.
+```
+**`H11_depart`** · Références : [1] `CHR-SBF` (option *Body → mains / gros plan*) · [2] `PRP-MENOTTES` · ✅ **VALIDÉ**
+```
+Tight macro on the crossed wrists of the white mannequin from reference 1. The steel handcuffs from reference 2 are open and held just above the wrists by a white-gloved hand. A trace of blue and red light on the metal. Plain dark background. Photographic, natural film grain, no text, no logos. 16:9.
+```
+*(Fichier enregistré : `episodes/02-ftx/assets/image-ai/starting_frames/H11_depart.jpg`)*
+**`H13_depart`** · Références : [1] `ENV-01X` · [2] `CHR-SBF`
+```
+Place the white mannequin from reference 2 inside the room of reference 1, seated on the simple chair at the light-oak table, seen from outside through the glass wall: elbows on the table, head in his hands, wearing the same anthracite t-shirt, cargo shorts and grey sneakers. Keep the rain, the glass and the room exactly as in reference 1. Faint cool monitor reflections on his shoulders. Photographic, natural film grain, no text, no logos. 16:9.
+```
+**Contrôle avant d'animer :** un seul mannequin à la fois · tête lisse, mains à cinq doigts · objets à leur place et à l'échelle · aucun texte lisible · lumière conforme au plan.
 
-**H05 + H06 · 0:13–0:19 · FLOW-I · gén. 8 s · 2 coupes**
+### 5.2 Les 9 plans vidéo
+> **Ordre de production :** ① H05 · ② H07 · ③ H01 (le pilote), puis les six autres. **Première image** = l'image indiquée. **Références** = à joindre en plus.
+
+**① H05 + H06 · 0:13–0:19 · FLOW-F · 8 s · 2 coupes**
 VO : « ...que de l'équivalent d'environ un bitcoin en réserves immédiatement disponibles... / Un seul bitcoin, d'une valeur d'environ vingt mille dollars à l'époque... »
-Réf. : [1] `ENV-04` · [3] `PRP-BTC` + `PRP-COUPELLE` (même image)
+Première image : `H05_depart` · Références : `ENV-04_NUIT`, `PRP-BTC_COUPELLE`
 ```
-Slow push-in toward a single gold coin lying in the centre of a stainless steel dish on a large empty dark oak table. One hard overhead light cone, everything else in darkness. The first four seconds stay wide on the dish, the last four end in macro on the coin's engraved edge. [STYLE]
+Locked-off start, then a very slow push-in on the dish. The first four seconds stay wide on the dish on the table; the last four end in extreme macro on the coin's edge and its Bitcoin symbol. The light cone stays steady. Nothing else moves. Audio: faint reverberation of an empty room, one clear metallic tick. [STYLE]
 ```
-Coupe A (3 s, plan large) = H05. Coupe B (3 s, macro) = H06 + GFX « 1 BTC ≈ 20 000 $ ».
-Son : cliquetis cristallin d'une pièce sur l'acier, réverbération de chambre forte vide.
-**Plan-clé :** c'est l'image qui reviendra dans l'outro.
+Coupe A (3 s, large) = H05. Coupe B (3 s, macro) = H06 + GFX « 1 BTC ≈ 20 000 $ ».
+**Si la pièce change de forme :** « the camera is almost still, only a 3% push-in », ou deux générations (une large, une macro).
+**Plan de respiration** : c'est l'image qui reviendra dans l'outro.
 
-**H07 · 0:19–0:24 · FLOW-I · gén. 8 s**
+**② H07 · 0:19–0:24 · FLOW-F · 6 s**
 VO : « ...derrière plus de huit milliards de dollars que les clients pensaient en sécurité sur leurs comptes. »
-Réf. : [1] `ENV-09`
+Première image : `ENV-09` · Dernière image : `ENV-09_B` · Références : `ENV-09`
 ```
-Slow lateral dolly along a long wall of numbered metal safe-deposit boxes with small brass keys in the locks. Near the end of the move one drawer slides open by itself a few centimetres and stops: inside, an empty felt-lined tray. Cool top light, slight dust in the beam. [STYLE]
+Locked-off camera with a very slow push-in of 3%. One drawer at mid-height on the left wall slides open about five centimetres by itself and stops, revealing an empty felt-lined tray. Every other drawer stays closed. Nothing else moves. Audio: a heavy metal drawer sliding on its runners, then silence. [STYLE]
 ```
-Son : tiroir blindé qui coulisse, silence dans le casier vide. *Clin d'œil Spaggiari : le coffre qu'on croit plein.*
+**Si la dernière image n'est pas acceptée :** première image seule avec le même prompt, ou coupe sèche entre `ENV-09` et `ENV-09_B` avec le bruit du tiroir. *Clin d'œil Spaggiari : le coffre qu'on croit plein.*
 
-**H08 · 0:24–0:28 · REAL + GFX**
-VO : « Il a fallu neuf jours à l'une des plus grandes plateformes d'échange de cryptomonnaies au monde... »
-Photo réelle `REAL-02` (siège de Nassau, crépuscule). Compteur Remotion JOUR 1 → JOUR 9, une pulsation de basse sèche par chiffre.
+**③ H01 · 0:00–0:03 · FLOW-F · 6 s**
+VO : « À son niveau le plus bas... »
+Première image : `ENV-03` · Références : `ENV-03`
+```
+Locked-off camera, no movement. The rows of ceiling light tubes along the corridor switch off one bank after another, starting at the far end and moving toward the camera, until only the small blinking LEDs on the server racks and a faint cold cyan glow remain. Nothing else moves. Audio: a heavy electrical breaker clunk as each bank goes out, cooling fans slowing down. [STYLE]
+```
+**On garde :** les 3 s de l'extinction, les 0,5 premières secondes éclairées. **Si tout s'éteint d'un coup :** acceptable, un seul « clac ».
 
-**H09 · 0:28–0:32 · FLOW-I · gén. 6 s**
-VO : « ...pour passer d'une valorisation de trente-deux milliards de dollars à la faillite. »
-Réf. : [1] `ENV-01` · [3] `PRP-TV`
-```
-Locked-off tripod shot of an old cathode-ray television on a low table in a dark room. The screen is a flat blue-grey glow with faint scanlines and gentle flicker, throwing light on the wall behind. Nothing is shown on the screen. [STYLE]
-```
-Post : contenu d'écran incrusté en tracking fixe : bandeau générique « BREAKING — FTX CHAPTER 11 — $32B TO ZERO » (aucun logo de chaîne réelle).
-Son : sifflement haute fréquence du CRT, voix de speaker étouffée.
-
-**H10 · 0:32–0:37 · FLOW-I + GFX · gén. 6 s**
-VO : « Il a fallu à peu près les mêmes neuf jours à son fondateur de vingt-neuf ans pour passer d'une publicité diffusée pendant le Super Bowl... »
-Réf. : [2] `CHR-LD` · [3] `PRP-ROUE`
-```
-Static medium shot on a bare studio floor against a flat painted backdrop, commercial-set look. A white mannequin in a toga stands in front of a roughly hewn stone wheel and waves it away with the back of one hand, then turns his head away. Hard side light. [STYLE]
-```
-Post : plaque incrustée dans l'écran de H09 (coupe « punch-in », pas de zoom à travers l'écran). Aucun logo NFL.
-Son : rumeur de stade étouffée.
-*Cette génération sera réutilisée dans The Rise (publicité Larry David).*
-
-**H11 · 0:37–0:40 · FLOW-I · gén. 4 s**
-VO : « ...à une inculpation pénale. »
-Réf. : [2] `CHR-SBF` (poignets) · [3] `PRP-MENOTTES`
-```
-Tight macro on the wrists of a faceless white mannequin in a black cotton sleeve. A white-gloved hand snaps steel handcuffs shut. Blue and red police light sweeps across the frame from out of shot. Hard cut right after the click. [STYLE]
-```
-Son : clic sec des menottes, sirène étouffée au loin.
-Coupe sèche : l'éclat des paillettes du Super Bowl disparaît d'un coup.
-
-**H12 · 0:40–0:42 · REAL**
-VO : « Son nom était Sam Bankman-Fried. »
-`generate_evidence_card.py --image sbf-real-portrait.jpg --style clean --pos center --duration 2.5` sur un fond flou issu de H11. Son : `camera-click.wav`.
-*Seul vrai visage de l'ouverture.*
-
-**H13 · 0:42–0:45 · FLOW-I · gén. 6 s**
+**④ H13 · 0:42–0:45 · FLOW-F · 6 s**
 VO : « Voici à quoi ces neuf jours ressemblaient réellement de l'intérieur. »
-Réf. : [1] `ENV-01X` · [2] `CHR-SBF`
+Première image : `H13_depart` · Références : `ENV-01X`, `ENV-01`, `CHR-SBF`
 ```
-Locked-off medium shot from the terrace, through a floor-to-ceiling glass wall in heavy rain at night. Inside, a white mannequin in an anthracite t-shirt and cargo shorts sits alone at a glass table, elbows on knees, head in hands. Red reflections from monitors slide across his shoulders. Very slow push-in of 4%. [STYLE]
+The mannequin is completely motionless. Only the rain moves: drops run down the glass and streak the reflection of the ocean. Faint cool reflections slide slowly across his shoulders. A very slow push-in of 4%. Audio: heavy rain on glass, a far-off rumble. [STYLE]
 ```
-Raccord : **coupe sèche au noir** à 0:45 → `generate_main_title.py` « FTX — NINE DAYS TO ZERO ». Pas de traversée de vitre : la caméra reste dehors.
+**Raccord :** coupe sèche au noir à 0:45, puis `generate_main_title.py` « FTX — NINE DAYS TO ZERO ». La caméra reste dehors.
+
+**⑤ H04 · 0:09–0:13 · FLOW-F + GFX · 6 s**
+VO : « ...selon des messages internes examinés plus tard par les enquêteurs... »
+Première image : `H04_depart` · Références : `ENV-10`, `CHR-ENQ`
+```
+Locked-off medium-wide shot. The mannequin slowly lifts a bundle of papers out of the open archive box and leafs through them with a steady hand. Nothing else moves. The papers show no readable writing. Audio: paper rustling, a faint ventilation hum. [STYLE]
+```
+Post : message interne flouté en GFX, mot « reserves » surligné, sur la dernière seconde.
+
+**⑥ H09 · 0:28–0:32 · FLOW-F · 6 s**
+VO : « ...pour passer d'une valorisation de trente-deux milliards de dollars à la faillite. »
+Première image : `ENV-01_V2` · Références : `ENV-01`, `PRP-TV`
+```
+Locked-off tripod shot, no camera movement. The television screen switches on to a flat cold blue-grey glow with a very faint flicker, casting soft light onto the wall and the white media unit. Nothing is displayed on the screen. Nothing else moves. Audio: a soft electrical click and a low hum. [STYLE]
+```
+**Caméra immobile** : indispensable pour incruster le bandeau « BREAKING — FTX CHAPTER 11 — $32B TO ZERO » (générique, sans logo de chaîne réelle).
+
+**⑦ H10 · 0:32–0:37 · FLOW-F + GFX · 6 s**
+VO : « ...pour passer d'une publicité diffusée pendant le Super Bowl... »
+Première image : `H10_depart` · Références : `CHR-LD`, `PRP-ROUE`
+```
+Static medium shot, camera locked. The mannequin extends one arm and waves the stone wheel away with the back of his hand, then turns his head away in dismissal. The wheel does not move. Audio: a muffled stadium crowd, one dry stone scrape. [STYLE]
+```
+Post : plaque incrustée dans l'écran de H09 (coupe punch-in, **pas de zoom à travers l'écran**). Aucun logo NFL. Réutilisée dans The Rise.
+
+**⑧ H11 · 0:37–0:40 · FLOW-F · 4 s**
+VO : « ...à une inculpation pénale. »
+Première image : `H11_depart` · Références : `CHR-SBF`, `PRP-MENOTTES`
+```
+Tight macro, camera locked. The white-gloved hand lowers the handcuffs and snaps them shut around the crossed wrists in one clean motion. Blue and red light sweeps once across the frame. Audio: one sharp metallic click, a distant siren. [STYLE]
+```
+**Si les mains se déforment :** plan B, les menottes seules refermées sur une barre de bois, avec le balayage bleu et rouge.
+
+**⑨ H02 · 0:03–0:06 · Stock Réel Macro 1080p (Remplacement IA validé) · 3 s**
+VO : « ...dans les dernières heures avant son effondrement... »
+Source : `PRP-REVEIL_DOMESTIQUE_1080p.mp4` (`7033607-hd_1920_1080_25fps.mp4`)
+Audio : `freesound_community-ticking-clock_1-27477.mp3` (vrai enregistrement micro analogique)
+Fichier monté : `episodes/02-ftx/assets/generated-videos/H02_cut_3s.mp4` (1920x1080, 25 fps, 3,00s)
+```
+Gros plan macro sur un réveil domestique traditionnel. L'aiguille des secondes bat à une cadence physique rigoureuse de 1 seconde par seconde (frames 13, 38, 63). 
+Chaque claquement acoustique réel est calé pile sur le saut de la trotteuse (< 0,1 ms d'écart). Ambiance feutrée, zéro écran d'ordinateur.
+```
+*Note arbitrage :* L'IA (Seedance 2.5) avait tendance à accélérer la trotteuse de façon artificielle. Le passage au footage réel 1080p avec calage acoustique offre un rendu cinéma plus pesant et authentique.
+
+### 5.3 Plans sans Flow
+| Plan | Contenu |
+|---|---|
+| **H03 · 0:06–0:09** | `REAL-04` (FTX Arena) + carte `generate_title_card.py` « 32 000 000 000 $ » / « JANVIER 2022 » |
+| **H08 · 0:24–0:28** | `REAL-02` (siège de Nassau) + compteur Remotion JOUR 1 → 9, une pulsation de basse par chiffre |
+| **H12 · 0:40–0:42** | `generate_evidence_card.py --image sbf-real-portrait.jpg --style clean --pos center --duration 2.5`, `camera-click.wav`. *Seul vrai visage de l'ouverture.* |
+| **0:45** | Coupe au noir, `generate_main_title.py` |
+
+### 5.4 Tableau de montage du Hook
+| Plan | TC | Voix off | Source | Coupe retenue |
+|---|---|---|---|---|
+| H01 | 0:00–0:03 | « À son niveau le plus bas... » | Seedance 2.5 (ENV-03) | `H01_cut_3s.mp4` (extinction néons validée) |
+| H02 | 0:03–0:06 | « ...avant son effondrement... » | Stock 1080p + Freesound | `H02_cut_3s.mp4` (cadence 1s exacte + vrai tic-tac) |
+| H03 | 0:06–0:09 | « ...trente-deux milliards... » | REAL-04 + GFX | poussée lente |
+| H04 | 0:09–0:13 | « ...examinés par les enquêteurs... » | ⑤ + GFX | l'enquêteur, puis message flouté |
+| H05 | 0:13–0:16 | « ...un bitcoin en réserves... » | ① coupe A | plan large du plateau |
+| H06 | 0:16–0:19 | « ...vingt mille dollars... » | ① coupe B + GFX | macro de la pièce |
+| H07 | 0:19–0:24 | « ...huit milliards... en sécurité... » | ② | le tiroir qui s'ouvre |
+| H08 | 0:24–0:28 | « Il a fallu neuf jours... » | REAL-02 + Remotion | compteur 1 → 9 |
+| H09 | 0:28–0:32 | « ...à la faillite. » | ⑥ + GFX | bandeau d'information |
+| H10 | 0:32–0:37 | « ...publicité... Super Bowl... » | ⑦ | roue rejetée, dans la télé |
+| H11 | 0:37–0:40 | « ...inculpation pénale. » | ⑧ | menottes, coupe sèche |
+| H12 | 0:40–0:42 | « Son nom était Sam Bankman-Fried. » | REAL-01 | visage réel |
+| H13 | 0:42–0:45 | « ...de l'intérieur. » | ④ | vitre sous la pluie, puis noir |
 
 ---
 
@@ -214,9 +295,9 @@ Post : carte « 2 NOVEMBRE 2022 », `--pos center --hold 1.0`. Son : machine à 
 **N02 · FLOW-I · gén. 6 s** · VO : « ...bilan financier interne ayant fuité d'Alameda Research... »
 Réf. : [3] `PRP-IMP` + `PRP-FEUILLE_BILAN`
 ```
-Top-down shot of a dot-matrix printer on a table feeding out continuous perforated paper. The sheet is blank except for faint printed column grid lines. Hard lamp light from the right. [STYLE]
+Top-down shot of a modern white laser printer on a table, one blank printed sheet sliding out into the output tray. The sheet is blank except for faint printed table grid lines. Hard lamp light from the right. [STYLE]
 ```
-Post : en-tête « CONFIDENTIAL // ALAMEDA RESEARCH BALANCE SHEET » et chiffres en GFX. Son : grincement strident d'imprimante matricielle.
+Post : en-tête « CONFIDENTIAL // ALAMEDA RESEARCH BALANCE SHEET » et chiffres en GFX. Son : bruit sec d'une imprimante laser qui éjecte une page.
 
 **N03 · GFX sur la plaque N02** · VO : « Alameda déclare quatorze virgule six milliards de dollars d'actifs. »
 Tampon rouge animé sur « 14,6 Md$ ». Son : clac d'huissier.
@@ -378,9 +459,9 @@ Post : photo/intitulé du badge en GFX. Son : plastique sur parquet.
 **N27 · FLOW-I · gén. 6 s** · VO : « L'homme nommé pour lui succéder... est John Ray III. »
 Réf. : [1] `ENV-04` · [2] `CHR-RAY` · [3] `PRP-VALISE`
 ```
-Medium shot: a white mannequin in a navy three-piece suit sets a black leather briefcase on an empty oak table and clicks the two latches open. Behind him, on a shelf, a dusty cardboard archive box. Cold window light. [STYLE]
+Medium shot: a white mannequin in a navy three-piece suit sets a black leather briefcase on an empty oak table and clicks the two latches open. Behind him, on a shelf, a cardboard archive box. Cold window light. [STYLE]
 ```
-Post : étiquette du carton « ENRON CORP. — 2001 » (`PRP-CARTON_ENRON`) en GFX. Son : fermoirs de mallette.
+Post : étiquette du carton « ENRON CORP. — 2001 » (`PRP-CARTON_ARCHIVE`) en GFX. Son : fermoirs de mallette.
 
 **N28 · REAL** · carte preuve : photo d'archive de John Ray III (`--style print`).
 
@@ -421,7 +502,7 @@ Post : **inverser la prise au montage** (de « Novembre » vers « Janvier 2022 
 **R04 · FLOW-I · gén. 6 s** · VO : « Sam Bankman-Fried fonde Alameda Research en 2017... »
 Réf. : [1] `ENV-02` · [2] `CHR-SBF`
 ```
-Locked-off medium shot of a white mannequin in an anthracite t-shirt seated in front of four vertical monitors in a small drab office. Daylight through a dirty window, cables on the floor, a half-empty cup on the desk. Barely any movement. [STYLE]
+Locked-off medium shot of a white mannequin in an anthracite t-shirt seated in front of four vertical monitors in a small drab office. Daylight through large windows, a neat cable tray, a half-empty cup on the desk. Barely any movement. [STYLE]
 ```
 Post : carte « NOVEMBRE 2017 / FONDATION D'ALAMEDA RESEARCH » (`--pos bottom-left`).
 
@@ -608,9 +689,9 @@ Macro on an official notarised document with a blind embossed seal pressed into 
 Post : paragraphe surligné en GFX.
 
 **B09 · FLOW-I · gén. 8 s** · VO : « Pour rendre cela possible, il fallait un élément d'ingénierie bien précis... »
-Réf. : [1] `ENV-04` · [2] `CHR-WANG` · [3] `PRP-MONITEUR_BEIGE` + `PRP-CLAVIER`
+Réf. : [1] `ENV-04` · [2] `CHR-WANG` · [3] `PRP-MONITEUR` + `PRP-CLAVIER`
 ```
-Medium shot of a quiet white mannequin in a dark sweater seated at an old beige CRT monitor, hands on a mechanical keyboard. Plaster walls, a ray of sun through venetian blinds. He types one line, then pauses with his hands hovering above the keys. Very still. [STYLE]
+Medium shot of a quiet white mannequin in a dark sweater seated at a modern desktop monitor, hands on a mechanical keyboard. Plain plaster walls, a ray of sun through venetian blinds. He types one line, then pauses with his hands hovering above the keys. Very still. [STYLE]
 ```
 Post : ligne `allow_negative = True` (blanc sur noir, sobre) en GFX. Son : une seule frappe sourde sur Entrée.
 
@@ -657,7 +738,7 @@ Post : trait de marqueur « $ » sur le sucre en GFX (non demandé à l'IA).
 **B17 · FLOW-I · gén. 6 s** · VO : « C'était le costume moral que Bankman-Fried portait publiquement. »
 Réf. : [1] `ENV-02` · [3] `PRP-PLAID` + `PRP-TASSE`
 ```
-Slow lateral move across a modest, cluttered desk: an old wooden chair with a crumpled grey plaid over the back, a half-empty cup of tea, an open mathematics textbook. Soft daylight. The mood of a diligent student. [STYLE]
+Slow lateral move across a modest, tidy desk: an ergonomic grey mesh chair with a crumpled grey plaid over the back, a half-empty cup of tea, an open mathematics textbook. Soft daylight. The mood of a diligent student. [STYLE]
 ```
 
 **B18 · FLOW-I · gén. 6 s** · VO : « Les investisseurs voyaient un fondateur qui dormait à son bureau... Les régulateurs... Les clients... »
@@ -682,9 +763,9 @@ Son : porte lourde qui se referme, gonds qui grincent. Fin d'acte.
 **M01 · FLOW-I · gén. 6 s** · Carte de chapitre (« 04 / L'AUDIT DU SINISTRE / THE NUMBERS ») · VO : « À son sommet, en janvier 2022, FTX était valorisée à trente-deux milliards... »
 Réf. : [3] `PRP-CALCULATRICE`
 ```
-Macro on the paper tape of a mechanical desk adding machine. The print head strikes twice with a hard mechanical action and the roll advances one notch. First line in black ink, second in red. Hard lamp light from above. [STYLE]
+Macro on the paper tape of a modern printing desk calculator. It prints two lines in quick succession and the roll advances one notch. First line in black ink, second in red. Hard lamp light from above. [STYLE]
 ```
-Post : « JAN 2022 : 32 000 000 000,00 $ » (noir) puis « NOV 2022 : 0,00 $ » (rouge) en GFX. Son : deux claquements d'impression à aiguilles.
+Post : « JAN 2022 : 32 000 000 000,00 $ » (noir) puis « NOV 2022 : 0,00 $ » (rouge) en GFX. Son : deux impressions sèches de la calculatrice.
 
 **M02 · FLOW-I · gén. 4 s** · VO : « ...l'entreprise devait plus de onze milliards de dollars... »
 Réf. : [3] `PRP-CHEMISES`
@@ -706,7 +787,7 @@ Ordonnance de confiscation réelle (document judiciaire fédéral public), monta
 **M05 · FLOW-I · gén. 6 s** · VO : « ...La procédure de faillite a passé près de deux ans à retrouver des actifs dispersés... »
 Réf. : [1] `ENV-04`
 ```
-Slow push-in on a cork board on a brick wall, pinned with blank glossy photo prints. A hand connects them one by one with red wool thread, pressing each pin in with a thumb. Warm lamp light. [STYLE]
+Slow push-in on a cork board on a white plaster wall, pinned with blank glossy photo prints. A hand connects them one by one with red wool thread, pressing each pin in with a thumb. Warm lamp light. [STYLE]
 ```
 Post : photos réelles (villa, marina, bureaux) incrustées sur les épreuves vierges. Son : punaise dans le liège.
 
@@ -780,7 +861,7 @@ Post : photos réelles d'archive (SBF, Salame, Ellison, Wang, Singh) incrustées
 **K03 · FLOW-I · gén. 4 s** · VO : « Une seule d'entre elles se trouve actuellement dans une prison fédérale. »
 Réf. : [3] `PRP-CLEF_CELLULE`
 ```
-Medium shot: a hand sets a heavy wrought-iron cell key on the first of five folders with a dull thud. Over the other four folders, the same hand lays an unmarked rubber stamp one after another. [STYLE]
+Medium shot: a hand sets a heavy steel cell key on the first of five folders with a dull thud. Over the other four folders, the same hand lays an unmarked rubber stamp one after another. [STYLE]
 ```
 Post : mention « COOPÉRATION » sur les quatre dossiers en GFX.
 
@@ -812,7 +893,7 @@ Réf. : [1] `ENV-05`
 ```
 Locked-off medium shot of a plain white courtroom wall clock in a dark wooden frame. Through the shot, the hour hand moves steadily forward in a continuous time-lapse. At the end, a heavy oak door at the back of the room opens. [STYLE]
 ```
-**Fallback :** trois plans fixes de l'horloge (13 h, 15 h 30, 18 h) enchaînés avec fondu, si Veo déforme la rotation des aiguilles.
+**Fallback :** trois plans fixes de l'horloge (13 h, 15 h 30, 18 h) enchaînés avec fondu, si Omni Flash déforme la rotation des aiguilles.
 Son : tic-tac, déclic de serrure.
 
 **K09 · FLOW-I · gén. 4 s** · VO : « ...évasif à un degré que le juge disait avoir rarement observé... »
@@ -906,7 +987,7 @@ Réf. : [1] `ENV-12` · [2] `CHR-SBF` · [3] `PRP-MIROIR`
 ```
 Wide shot of a white mannequin in a black t-shirt and cargo shorts seated on a raw wooden stool in profile, arms hanging, facing an old three-panel fitting mirror. The mirror is spotted with age and the reflection stays soft and out of focus. Quiet, warm light. [STYLE]
 ```
-**Attention :** les reflets sont un point faible de Veo. Garder le miroir flou ; sinon, remplacer par un plan de dos.
+**Attention :** les reflets sont un point faible d'Omni Flash. Garder le miroir flou ; sinon, remplacer par un plan de dos.
 
 **P06 · RÉUTIL B02/R18** · VO : « Un milliardaire qui conduisait une Corolla et dormait sous son bureau ne ressemblait pas à quelqu'un qui avait besoin de voler. »
 Macro de la clé (`PRP-CLE`) sur table d'acajou, puis plan bas sous le bureau (reprise de R20 : pouf, plaid, baskets). *Aucune nouvelle génération : ces objets sont déjà là, c'est leur reprise qui fait sens.*
@@ -944,9 +1025,9 @@ Medium locked-off shot of a white mannequin in a black t-shirt and cargo shorts 
 ```
 
 **P12 · FLOW-I · gén. 6 s** · VO : « ...près de deux milliards de dollars de capital-risque et une publicité au Super Bowl avant qu'un seul bilan ne soit examiné... »
-Réf. : [3] `PRP-LIASSE` + `PRP-VHS`
+Réf. : [3] `PRP-LIASSE` + `PRP-CLE_USB`
 ```
-Medium shot on an oak table: a stack of banded cheques and a worn VHS cassette in a black plastic case. The camera tilts down; under them lies a closed envelope with an unbroken wax seal, covered in a fine layer of dust. [STYLE]
+Medium shot on an oak table: a stack of banded cheques and a small black USB flash drive on a short lanyard. The camera tilts down; under them lies a closed envelope with an untouched adhesive seal, a fine veil of dust on it. [STYLE]
 ```
 Post : bande « 1 960 000 000 $ » en GFX. Son : gong de bronze. Fin d'acte.
 
@@ -1018,7 +1099,7 @@ Coupure de presse réelle sur la grâce de Zhao à gauche, pétition à droite. 
 **O12 · FLOW-I · gén. 4 s** · VO : « Quelque part dans tout cela se trouve la véritable leçon de cette affaire... »
 Réf. : [1] `ENV-04`
 ```
-Wide locked-off shot of the oak investigation table, now empty and quiet. CRT screens off, folders sealed in boxes. Only a low ambient hum. The banker's lamp is the only light. [STYLE]
+Wide locked-off shot of the oak investigation table, now empty and quiet. Monitors off, folders sealed in boxes. Only a low ambient hum. The banker's lamp is the only light. [STYLE]
 ```
 
 **O13 · FLOW-I · gén. 6 s** · VO : « ...ce qu'un jury, un juge — et peut-être un jour un président — sont prêts à pardonner... »
@@ -1040,7 +1121,7 @@ Carte de fin : `generate_subscribe_cta.py --theme dark-gold --lang fr --pos bott
 
 ## 13. Ordre de production conseillé
 
-1. **Jour 1 — Assets** (voir `Objets_Atomiques.md`) : 15 décors (+ 2 variantes extérieures : `ENV-01X`, `ENV-05X`), 12 personnages, objets totems (`PRP-BTC`, `PRP-COUPELLE`, `PRP-CLE`, `PRP-POUF`, `PRP-FTT`, `PRP-TV`).
+1. **Jour 1 — Assets** : décors (`Environnements_Tous_Les_Prompts.md`), personnages (déjà faits), objets (`Objets_Tous_Les_Prompts.md`). Le Hook ne demande que `ENV-01`, `ENV-01X`, `ENV-01_V2`, `ENV-03`, `ENV-04_NUIT`, `ENV-09`, `ENV-09_B`, `ENV-10` et les 5 objets du Lot 1.
 2. **Jour 2 — Hook** : H01 à H13 en priorité, puis monter la séquence complète avec la voix off. Si le Hook tient seul, le reste suit.
 3. **Jour 3 — The Nine Days.** Ce chapitre porte la rétention des 5 premières minutes.
 4. **Jours 4 à 6 — The Rise, The Breakdown, The Numbers.**
@@ -1065,6 +1146,7 @@ Carte de fin : `generate_subscribe_cta.py --theme dark-gold --lang fr --pos bott
 | **Citations à l'écran** (Kaplan, Post-it, note Sequoia) | Reconstitutions ou paraphrases : ne pas les présenter comme des pièces authentiques |
 | **Numéro d'écrou réel** (O01) | Ne l'afficher que s'il est vérifié et public |
 | **Droits des photos de presse** (`REAL-0x`) | Statut à documenter pour chaque archive ; les ordonnances fédérales américaines sont en général réutilisables, pas les photos d'agence |
+| **Gemini Omni Flash : limite de références, résolution, statut** | Sources divergentes : 5, 7 ou 10 images ; 720p natif selon les outils ; modèle en préversion. À vérifier dans votre Flow avant de planifier les plans à nombreux objets |
 | **Divulgation YouTube « contenu synthétique »** | Les reconstitutions sont stylisées (mannequins), mais vérifiez la règle selon le rendu final ; les générations Flow portent un filigrane SynthID invisible |
 
 
@@ -1079,7 +1161,7 @@ Les durées de la colonne « Coupes » du §4 ont été resserrées. **Règle g�
 Conséquence au montage : chaque génération de 6 à 8 s fournit **2 à 3 coupes** de 2 à 3 s.
 
 ### 16.2 La chaîne d'images Nano Banana (correction de la version précédente)
-**Correction :** j'avais limité Flow à produire une feuille vierge et laissé tout le texte à vos scripts. C'était trop restrictif. Dans Flow, **Nano Banana Pro** produit des images fixes avec du texte lisible, accepte plusieurs images de référence (jusqu'à 4) et sait *transformer* une image selon une consigne. C'est ce qui permet le rendu des références. La limite réelle est ailleurs : le texte **dans une vidéo qui bouge** (Veo). La règle devient donc : **le texte naît dans une image fixe, puis l'image est animée très peu.**
+**Correction :** j'avais limité Flow à produire une feuille vierge et laissé tout le texte à vos scripts. C'était trop restrictif. Dans Flow, **Nano Banana Pro** produit des images fixes avec du texte lisible, accepte plusieurs images de référence (le nombre exact dépend de votre version : à vérifier) et sait *transformer* une image selon une consigne. C'est ce qui permet le rendu des références. La limite réelle est ailleurs : le texte **dans une vidéo qui bouge** (le modèle vidéo). La règle devient donc : **le texte naît dans une image fixe, puis l'image est animée très peu.**
 
 **La chaîne en 4 étapes (exemple : l'enquêteur dessine l'objet dans son cahier)**
 1. **Image source** : l'objet ou le lieu tel qu'il existe déjà dans votre registre (`PRP-BALANCE`, `ENV-03`…), ou une photo réelle.

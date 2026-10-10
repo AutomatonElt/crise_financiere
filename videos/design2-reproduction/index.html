@@ -1,0 +1,1616 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Design 2 &amp; Motion Flow Reproduction</title>
+    <!-- GSAP 3 & Plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/MotionPathPlugin.min.js"></script>
+    
+    <!-- Google Fonts: Editorial & Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      *, *::before, *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html, body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0d0d0f;
+        color: #ffffff;
+        font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        user-select: none;
+      }
+
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background-color: #0b0b0d;
+      }
+
+      /* Noise & Subtle Vignette */
+      .bg-vignette {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 50% 50%, rgba(26, 26, 32, 0.4) 0%, rgba(10, 10, 12, 0.95) 100%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image: 
+          linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        background-size: 80px 80px;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* =========================================================================
+         SCENE 1: EXACT DIAGRAM REPRODUCTION ("MAKES MOTION GRAPHICS")
+         ========================================================================= */
+      #scene-diagram {
+        position: absolute;
+        inset: 0;
+        width: 1920px;
+        height: 1080px;
+        z-index: 10;
+        opacity: 1;
+      }
+
+      /* Header: MAKES MOTION GRAPHICS */
+      .diagram-header-container {
+        position: absolute;
+        left: 70px;
+        top: 48px;
+        z-index: 20;
+        overflow: hidden;
+      }
+
+      .diagram-header-badge {
+        background: #F4F0E8;
+        padding: 12px 28px;
+        display: inline-block;
+        border: 1px solid #E5E0D5;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      }
+
+      .diagram-header-title {
+        font-family: 'DM Serif Display', 'Playfair Display', serif;
+        font-size: 44px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        color: #111111;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+
+      /* SVG Connectors Container */
+      .svg-network-layer {
+        position: absolute;
+        inset: 0;
+        width: 1920px;
+        height: 1080px;
+        z-index: 12;
+        pointer-events: none;
+      }
+
+      .dashed-orange-path {
+        fill: none;
+        stroke: #FF462B;
+        stroke-width: 2.4;
+        filter: drop-shadow(0 0 6px rgba(255, 70, 43, 0.35));
+      }
+
+      .converge-white-path {
+        fill: none;
+        stroke: rgba(255, 255, 255, 0.5);
+        stroke-width: 1.6;
+        filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
+      }
+
+      /* Flowing glowing particles along paths */
+      .energy-particle {
+        fill: #FF5A40;
+        filter: drop-shadow(0 0 8px #FF462B);
+        opacity: 0;
+      }
+
+      .energy-particle-white {
+        fill: #FFFFFF;
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+        opacity: 0;
+      }
+
+      /* Box 1: Your idea */
+      #box-idea {
+        position: absolute;
+        left: 80px;
+        top: 450px;
+        width: 250px;
+        height: 154px;
+        background: #121215;
+        border: 1.5px solid rgba(255, 255, 255, 0.75);
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        z-index: 15;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+        transform-origin: center center;
+      }
+
+      .idea-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 34px;
+        font-style: italic;
+        font-weight: 600;
+        color: #FFFFFF;
+        margin-bottom: 8px;
+        letter-spacing: 0.3px;
+      }
+
+      .idea-subtitle {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 2.2px;
+        text-transform: uppercase;
+        color: #A1A1AA;
+      }
+
+      /* Box 2: Opus 5.5 */
+      #box-opus {
+        position: absolute;
+        left: 450px;
+        top: 432px;
+        width: 320px;
+        height: 190px;
+        background: #F4F0E8;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        z-index: 16;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+        transform-origin: center center;
+      }
+
+      .opus-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 48px;
+        font-weight: 800;
+        color: #111111;
+        letter-spacing: -0.5px;
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+
+      .opus-subtitle {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 13.5px;
+        font-weight: 700;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        color: #18181B;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .opus-subtitle-dash {
+        color: #B91C1C;
+        font-weight: 800;
+      }
+
+      /* Live ticker on Opus card */
+      .opus-telemetry-tag {
+        margin-top: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(0, 0, 0, 0.08);
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10.5px;
+        font-weight: 600;
+        color: #27272A;
+      }
+
+      .opus-pulse-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #10B981;
+        box-shadow: 0 0 6px #10B981;
+      }
+
+      /* 4 Stacked Cards A, B, C, D */
+      .cards-stack-layer {
+        position: absolute;
+        left: 920px;
+        top: 190px;
+        width: 530px;
+        z-index: 15;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .branch-card {
+        background: #131317;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 7px;
+        padding: 18px 26px;
+        height: 110px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        position: relative;
+        transform-origin: left center;
+        overflow: hidden;
+      }
+
+      .card-tag {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 12.5px;
+        font-weight: 800;
+        letter-spacing: 2.2px;
+        text-transform: uppercase;
+        color: #FF5A36;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .card-tag-pill {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        padding: 2px 7px;
+        border-radius: 4px;
+        background: rgba(255, 70, 43, 0.15);
+        color: #FFA392;
+        border: 1px solid rgba(255, 70, 43, 0.35);
+      }
+
+      .card-content {
+        font-family: 'Inter', sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        color: #F4F4F5;
+        line-height: 1.35;
+      }
+
+      /* Mini Oscilloscope / Sine wave inside Card A */
+      .card-a-wave {
+        position: absolute;
+        right: 20px;
+        bottom: 14px;
+        width: 110px;
+        height: 24px;
+        opacity: 0.8;
+      }
+
+      /* Box 3: The video */
+      #box-video {
+        position: absolute;
+        left: 1580px;
+        top: 454px;
+        width: 240px;
+        height: 146px;
+        background: #121215;
+        border: 1.5px solid rgba(255, 255, 255, 0.75);
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        z-index: 15;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .video-node-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 34px;
+        font-weight: 600;
+        color: #FFFFFF;
+        letter-spacing: 0.2px;
+      }
+
+      .video-node-badge {
+        margin-top: 8px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        color: #A1A1AA;
+        text-transform: uppercase;
+      }
+
+      .node-shimmer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transform: skewX(-25deg);
+        pointer-events: none;
+      }
+
+      /* =========================================================================
+         SCENE 2: LE DYNAMISME PUR DE DESIGN 2 ("PASSO & FORENSIC MOTION ENGINE")
+         ========================================================================= */
+      #scene-dynamics {
+        position: absolute;
+        inset: 0;
+        width: 1920px;
+        height: 1080px;
+        z-index: 30;
+        opacity: 0;
+        pointer-events: none;
+        perspective: 1600px;
+      }
+
+      /* Cinematic Atmospheric Glowing Orbs */
+      .ambient-glow-cyan {
+        position: absolute;
+        top: -150px;
+        right: 100px;
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(14, 165, 233, 0.14) 0%, transparent 70%);
+        filter: blur(60px);
+        pointer-events: none;
+      }
+
+      .ambient-glow-gold {
+        position: absolute;
+        bottom: -150px;
+        left: 200px;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
+        filter: blur(60px);
+        pointer-events: none;
+      }
+
+      /* Scene 2 Header & Tag */
+      .dyn-header-container {
+        position: absolute;
+        left: 80px;
+        top: 54px;
+        z-index: 40;
+      }
+
+      .dyn-top-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 20px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #38BDF8;
+        margin-bottom: 10px;
+      }
+
+      .dyn-badge-pulse {
+        width: 7px;
+        height: 7px;
+        background: #38BDF8;
+        border-radius: 50%;
+        box-shadow: 0 0 8px #38BDF8;
+      }
+
+      .dyn-main-title {
+        font-family: 'DM Serif Display', 'Playfair Display', serif;
+        font-size: 54px;
+        font-weight: 800;
+        letter-spacing: -1px;
+        color: #FFFFFF;
+        line-height: 1.05;
+      }
+
+      .dyn-main-subtitle {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 17px;
+        color: #CBD5E1;
+        margin-top: 6px;
+        font-weight: 400;
+      }
+
+      /* 3D Perspective Stage Container */
+      .dyn-3d-stage {
+        position: absolute;
+        inset: 0;
+        width: 1920px;
+        height: 1080px;
+        transform-style: preserve-3d;
+      }
+
+      /* Hero Component 1: GRAND COMPTEUR À ROULEAUX */
+      .dyn-counter-card {
+        position: absolute;
+        left: 80px;
+        top: 230px;
+        width: 650px;
+        background: rgba(18, 18, 22, 0.85);
+        backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 16px;
+        padding: 32px 38px;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+        z-index: 35;
+      }
+
+      .counter-label-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .counter-meta-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #CBD5E1;
+        font-weight: 600;
+      }
+
+      .counter-live-badge {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(16, 185, 129, 0.2);
+        border: 1px solid rgba(16, 185, 129, 0.4);
+        padding: 3px 10px;
+        border-radius: 12px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        color: #34D399;
+        font-weight: 700;
+      }
+
+      .counter-digits-container {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .counter-currency {
+        font-family: 'DM Serif Display', serif;
+        font-size: 52px;
+        color: #F59E0B;
+        font-weight: 700;
+      }
+
+      .odometer-stream {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 62px;
+        font-weight: 800;
+        letter-spacing: -2px;
+        color: #F8FAFC;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        display: flex;
+      }
+
+      .counter-sub-stats {
+        display: flex;
+        gap: 24px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .sub-stat-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .sub-stat-kpi {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px;
+        font-weight: 700;
+        color: #38BDF8;
+      }
+
+      .sub-stat-title {
+        font-size: 12px;
+        color: #CBD5E1;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Hero Component 2: ONDES MULTI-FRÉQUENCES */
+      .dyn-wave-card {
+        position: absolute;
+        left: 80px;
+        top: 580px;
+        width: 650px;
+        height: 250px;
+        background: rgba(18, 18, 22, 0.85);
+        backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 16px;
+        padding: 24px 30px;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+        z-index: 35;
+        overflow: hidden;
+      }
+
+      .wave-card-title {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #CBD5E1;
+        font-weight: 600;
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .wave-canvas-svg {
+        width: 100%;
+        height: 160px;
+      }
+
+      .sine-wave-line {
+        fill: none;
+        stroke: url(#wave-gradient);
+        stroke-width: 3.5;
+        filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.6));
+      }
+
+      .sine-wave-fill {
+        fill: url(#wave-fill-gradient);
+        opacity: 0.35;
+      }
+
+      /* Hero Component 3: 3D PHONE / PASSO INSPECTION & ROUTE CARD */
+      .dyn-route-card {
+        position: absolute;
+        left: 770px;
+        top: 150px;
+        width: 580px;
+        background: rgba(22, 22, 28, 0.88);
+        backdrop-filter: blur(28px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        padding: 30px 34px;
+        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.7);
+        z-index: 36;
+      }
+
+      .route-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 22px;
+      }
+
+      .route-header-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand-circle {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: #FFFFFF;
+        color: #000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 800;
+        font-size: 20px;
+      }
+
+      .brand-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #FFFFFF;
+      }
+
+      .route-points-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 16px 10px 10px 10px;
+      }
+
+      .point-box {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .point-code {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 40px;
+        font-weight: 800;
+        color: #FFFFFF;
+        letter-spacing: -1px;
+      }
+
+      .point-city {
+        font-size: 14px;
+        color: #CBD5E1;
+        font-weight: 500;
+      }
+
+      /* Animated Bezier Curved Arc for the Flight Route */
+      .route-arc-svg {
+        position: absolute;
+        left: 160px;
+        top: 10px;
+        width: 200px;
+        height: 90px;
+      }
+
+      .route-arc-path {
+        fill: none;
+        stroke: #38BDF8;
+        stroke-width: 2.5;
+        stroke-dasharray: 6 5;
+      }
+
+      .route-plane-marker {
+        width: 14px;
+        height: 14px;
+        fill: #38BDF8;
+        filter: drop-shadow(0 0 6px #38BDF8);
+      }
+
+      /* Hero Component 4: PASSO EVIDENCE CHECKLIST */
+      .dyn-checklist-card {
+        position: absolute;
+        left: 770px;
+        top: 480px;
+        width: 580px;
+        background: rgba(22, 22, 28, 0.9);
+        backdrop-filter: blur(28px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        padding: 26px 34px;
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.65);
+        z-index: 37;
+      }
+
+      .checklist-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+      }
+
+      .checklist-title {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 21px;
+        font-weight: 700;
+        color: #FFFFFF;
+      }
+
+      .checklist-pill-badge {
+        background: #020617;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: #FFFFFF;
+        padding: 5px 14px;
+        border-radius: 16px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .checklist-items {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+      }
+
+      .check-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .check-box-icon {
+        width: 26px;
+        height: 26px;
+        border-radius: 6px;
+        border: 2px solid #64748B;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .check-box-icon.checked {
+        background: #0284C7;
+        border-color: #38BDF8;
+      }
+
+      .check-svg-mark {
+        width: 14px;
+        height: 14px;
+        stroke: #FFFFFF;
+        stroke-width: 3;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0;
+        transform: scale(0.4);
+      }
+
+      .check-label {
+        font-size: 17.5px;
+        font-weight: 500;
+        color: #F1F5F9;
+      }
+
+      /* Interactive Button with Simulated Cursor */
+      .dyn-cta-bar {
+        margin-top: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .dyn-cta-btn {
+        background: #0369A1;
+        color: #FFFFFF;
+        padding: 11px 26px;
+        border-radius: 30px;
+        font-size: 15px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 8px 24px rgba(3, 105, 161, 0.45);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Animated Stylized Cursor */
+      #simulated-cursor {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 28px;
+        height: 28px;
+        z-index: 100;
+        pointer-events: none;
+        filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.7));
+      }
+
+      .cursor-click-ripple {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid #38BDF8;
+        top: -16px;
+        left: -16px;
+        transform: scale(0);
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top-level Root Composition required by HyperFrames -->
+    <div id="root" data-composition-id="main" data-start="0" data-duration="16" data-width="1920" data-height="1080">
+      
+      <!-- SFX Audio Clips configured with HyperFrames data-attributes -->
+      <audio id="sfx-whoosh-1" src="assets/sfx/whoosh_short.wav" data-start="0.1" data-volume="0.8"></audio>
+      <audio id="sfx-typing" src="assets/sfx/soumages-keyboard-typing-579122.mp3" data-start="0.6" data-volume="0.5"></audio>
+      <audio id="sfx-whoosh-mid" src="assets/sfx/whoosh_medium.wav" data-start="7.3" data-volume="0.9"></audio>
+      <audio id="sfx-click-1" src="assets/sfx/iphone_camera_click_trimmed.wav" data-start="11.2" data-volume="0.8"></audio>
+      <audio id="sfx-click-2" src="assets/sfx/iphone_camera_click_trimmed.wav" data-start="12.4" data-volume="0.8"></audio>
+
+      <!-- Ambient Background Layers -->
+      <div class="bg-vignette"></div>
+      <div class="bg-grid"></div>
+
+      <!-- ========================================================
+           SCENE 1: EXACT DIAGRAM REPRODUCTION ("MAKES MOTION GRAPHICS")
+           ======================================================== -->
+      <div id="scene-diagram" data-layout-allow-overlap="true">
+        
+        <!-- Header Banner -->
+        <div class="diagram-header-container" id="diagram-header">
+          <div class="diagram-header-badge">
+            <h1 class="diagram-header-title">MAKES MOTION GRAPHICS</h1>
+          </div>
+        </div>
+
+        <!-- SVG Network & Dynamic Connectors -->
+        <svg class="svg-network-layer" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="glow-orange" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+
+          <!-- Path 1: Box 1 (Your idea) -> Box 2 (Opus 5.5) -->
+          <path id="path-idea-opus" class="dashed-orange-path" d="M 330 527 L 450 527" />
+
+          <!-- Path 2A: Box 2 (Opus 5.5) -> Card A (Drawn in Code) -->
+          <path id="path-opus-a" class="dashed-orange-path" d="M 770 527 C 840 527, 860 245, 920 245" />
+
+          <!-- Path 2B: Box 2 (Opus 5.5) -> Card B (Animation Framework) -->
+          <path id="path-opus-b" class="dashed-orange-path" d="M 770 527 C 840 527, 860 377, 920 377" />
+
+          <!-- Path 2C: Box 2 (Opus 5.5) -> Card C (Hybrid) -->
+          <path id="path-opus-c" class="dashed-orange-path" d="M 770 527 C 840 527, 860 509, 920 509" />
+
+          <!-- Path 2D: Box 2 (Opus 5.5) -> Card D (Your Footage) -->
+          <path id="path-opus-d" class="dashed-orange-path" d="M 770 527 C 840 527, 860 641, 920 641" />
+
+          <!-- Converging Paths: Cards A, B, C, D -> Box 3 (The video) -->
+          <path id="path-a-video" class="converge-white-path" d="M 1450 245 C 1510 245, 1530 527, 1580 527" />
+          <path id="path-b-video" class="converge-white-path" d="M 1450 377 C 1510 377, 1530 527, 1580 527" />
+          <path id="path-c-video" class="converge-white-path" d="M 1450 509 C 1510 509, 1530 527, 1580 527" />
+          <path id="path-d-video" class="converge-white-path" d="M 1450 641 C 1510 641, 1530 527, 1580 527" />
+
+          <!-- Animated Traveling Energy Pulses -->
+          <circle id="pulse-idea-opus" class="energy-particle" r="4.5" />
+          <circle id="pulse-a" class="energy-particle" r="4.5" />
+          <circle id="pulse-b" class="energy-particle" r="4.5" />
+          <circle id="pulse-c" class="energy-particle" r="4.5" />
+          <circle id="pulse-d" class="energy-particle" r="4.5" />
+          <circle id="pulse-video-a" class="energy-particle-white" r="3.5" />
+          <circle id="pulse-video-b" class="energy-particle-white" r="3.5" />
+          <circle id="pulse-video-c" class="energy-particle-white" r="3.5" />
+          <circle id="pulse-video-d" class="energy-particle-white" r="3.5" />
+        </svg>
+
+        <!-- Box 1: Your idea -->
+        <div id="box-idea">
+          <div class="idea-title">Your idea</div>
+          <div class="idea-subtitle">A PROMPT + REFERENCES</div>
+        </div>
+
+        <!-- Box 2: Opus 5.5 -->
+        <div id="box-opus">
+          <div class="opus-title">Opus 5.5</div>
+          <div class="opus-subtitle">
+            <span class="opus-subtitle-dash">—</span> TURNS IT INTO CODE
+          </div>
+          <div class="opus-telemetry-tag">
+            <div class="opus-pulse-dot"></div>
+            <span id="opus-token-speed">248 TOKENS/S · 18ms</span>
+          </div>
+        </div>
+
+        <!-- 4 Stacked Cards: A, B, C, D -->
+        <div class="cards-stack-layer">
+          
+          <!-- Card A: DRAWN IN CODE -->
+          <div class="branch-card" id="card-a">
+            <div class="card-tag">
+              <span>A · DRAWN IN CODE</span>
+              <span class="card-tag-pill" id="card-a-loc">LOC: 1,480</span>
+            </div>
+            <div class="card-content">
+              JavaScript animations, with Python sound effects
+            </div>
+            <!-- Animated SVG Wave inside Card A -->
+            <svg class="card-a-wave" viewBox="0 0 100 24">
+              <path id="card-a-wave-path" d="M 0 12 Q 12 4, 25 12 T 50 12 T 75 12 T 100 12" fill="none" stroke="#FF5A36" stroke-width="1.8" />
+            </svg>
+          </div>
+
+          <!-- Card B: ANIMATION FRAMEWORK -->
+          <div class="branch-card" id="card-b">
+            <div class="card-tag">
+              <span>B · ANIMATION FRAMEWORK</span>
+              <span class="card-tag-pill" id="card-b-fps">60.0 FPS · 1080P</span>
+            </div>
+            <div class="card-content">
+              Built in Remotion (React) or HyperFrames (HTML)
+            </div>
+          </div>
+
+          <!-- Card C: HYBRID -->
+          <div class="branch-card" id="card-c">
+            <div class="card-tag">
+              <span>C · HYBRID</span>
+              <span class="card-tag-pill" id="card-c-ratio">AI FUSION: 98.4%</span>
+            </div>
+            <div class="card-content">
+              AI image + video models, with Opus layering the motion on top
+            </div>
+          </div>
+
+          <!-- Card D: YOUR FOOTAGE -->
+          <div class="branch-card" id="card-d">
+            <div class="card-tag">
+              <span>D · YOUR FOOTAGE</span>
+              <span class="card-tag-pill" id="card-d-tc">TC 00:02:52:14</span>
+            </div>
+            <div class="card-content">
+              Your recordings, trimmed, captioned, with B-roll and picture-in-picture
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Box 3: The video -->
+        <div id="box-video">
+          <div class="video-node-title">The video</div>
+          <div class="video-node-badge">MASTER EXPORT · PRORES</div>
+          <div class="node-shimmer" id="video-shimmer" data-layout-allow-overflow="true"></div>
+        </div>
+
+      </div>
+
+      <!-- ========================================================
+           SCENE 2: LE DYNAMISME PUR DE DESIGN 2 ("PASSO & FORENSIC MOTION ENGINE")
+           ======================================================== -->
+      <div id="scene-dynamics">
+        
+        <!-- Ambient Glowing Background Spheres -->
+        <div class="ambient-glow-cyan"></div>
+        <div class="ambient-glow-gold"></div>
+
+        <!-- Scene 2 Header -->
+        <div class="dyn-header-container" id="dyn-header">
+          <div class="dyn-top-badge">
+            <div class="dyn-badge-pulse"></div>
+            <span>FINANCIAL FORENSICS · REALTIME MOTION INTELLIGENCE</span>
+          </div>
+          <h1 class="dyn-main-title">Less planning. More going.</h1>
+          <p class="dyn-main-subtitle">High-fidelity procedural animations driven by HyperFrames HTML &amp; GSAP</p>
+        </div>
+
+        <div class="dyn-3d-stage" id="dyn-stage">
+          
+          <!-- Component 1: Grand Compteur à Rouleaux (Chiffres qui défilent) -->
+          <div class="dyn-counter-card" id="dyn-card-counter">
+            <div class="counter-label-row">
+              <span class="counter-meta-label">Total Ponzi Capitalization Flow</span>
+              <div class="counter-live-badge">
+                <span class="dyn-badge-pulse" style="background:#10B981;"></span>
+                <span>LIVE AUDIT</span>
+              </div>
+            </div>
+            <div class="counter-digits-container">
+              <span class="counter-currency">$</span>
+              <span class="odometer-stream" id="odometer-display">0</span>
+            </div>
+            <div class="counter-sub-stats">
+              <div class="sub-stat-item">
+                <span class="sub-stat-kpi" id="kpi-rate">+428.4%</span>
+                <span class="sub-stat-title">Velocity Peak</span>
+              </div>
+              <div class="sub-stat-item">
+                <span class="sub-stat-kpi" id="kpi-tx">18,420 TX/S</span>
+                <span class="sub-stat-title">Throughput</span>
+              </div>
+              <div class="sub-stat-item">
+                <span class="sub-stat-kpi" style="color:#F59E0B;" id="kpi-conf">99.8% CONF</span>
+                <span class="sub-stat-title">Forensic Match</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Component 2: Ondes et Courbes Fluides (Choses ondulées) -->
+          <div class="dyn-wave-card" id="dyn-card-wave">
+            <div class="wave-card-title">
+              <span>Financial Volatility Waveform</span>
+              <span style="color:#38BDF8;" id="wave-freq-text">FREQ: 142.6 HZ</span>
+            </div>
+            <svg class="wave-canvas-svg" viewBox="0 0 620 160" data-layout-allow-overflow="true">
+              <defs>
+                <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#38BDF8" />
+                  <stop offset="50%" stop-color="#818CF8" />
+                  <stop offset="100%" stop-color="#34D399" />
+                </linearGradient>
+                <linearGradient id="wave-fill-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.5" />
+                  <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.0" />
+                </linearGradient>
+              </defs>
+              <path id="dynamic-sine-wave" class="sine-wave-line" d="M 0 80 Q 75 20, 155 80 T 310 80 T 465 80 T 620 80" data-layout-allow-overflow="true" />
+              <path id="dynamic-sine-fill" class="sine-wave-fill" d="M 0 80 Q 75 20, 155 80 T 310 80 T 465 80 T 620 80 L 620 160 L 0 160 Z" data-layout-allow-overflow="true" />
+            </svg>
+          </div>
+
+          <!-- Component 3: Route Incurvée (Design 2 Passo Travel Style) -->
+          <div class="dyn-route-card" id="dyn-card-route">
+            <div class="route-header">
+              <div class="route-header-brand">
+                <div class="brand-circle">P</div>
+                <div class="brand-title">passo · Flight Arc</div>
+              </div>
+              <span class="counter-live-badge" style="background:rgba(56,189,248,0.2); border-color:rgba(56,189,248,0.4); color:#38BDF8;">
+                ON TIME · GATE B12
+              </span>
+            </div>
+
+            <div class="route-points-row">
+              <div class="point-box">
+                <span class="point-code">LIS</span>
+                <span class="point-city">Lisbon</span>
+              </div>
+
+              <!-- Animated Curved Arc with Plane Icon -->
+              <svg class="route-arc-svg" viewBox="0 0 200 90">
+                <path id="route-flight-arc" class="route-arc-path" d="M 15 75 Q 100 10, 185 75" />
+                <path id="plane-indicator" class="route-plane-marker" d="M0,-5 L7,5 L0,2 L-7,5 Z" />
+              </svg>
+
+              <div class="point-box" style="text-align:right;">
+                <span class="point-code">IST</span>
+                <span class="point-city">Istanbul</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Component 4: Evidence & Packing Checklist (Design 2 Interactivity) -->
+          <div class="dyn-checklist-card" id="dyn-card-check">
+            <div class="checklist-top">
+              <span class="checklist-title">Packing &amp; Forensics Dossier</span>
+              <div class="checklist-pill-badge" id="check-badge-counter">2/4 packed</div>
+            </div>
+
+            <div class="checklist-items">
+              <div class="check-row">
+                <div class="check-box-icon checked">
+                  <svg class="check-svg-mark" style="opacity:1; transform:scale(1);" viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span class="check-label">Passport &amp; Diplomatic Visa</span>
+              </div>
+
+              <div class="check-row">
+                <div class="check-box-icon checked">
+                  <svg class="check-svg-mark" style="opacity:1; transform:scale(1);" viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span class="check-label">Encrypted Satellite Ledger</span>
+              </div>
+
+              <div class="check-row">
+                <div class="check-box-icon" id="box-item-3">
+                  <svg class="check-svg-mark" id="svg-mark-3" viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span class="check-label">Dubai Offshore Asset Keys</span>
+              </div>
+
+              <div class="check-row">
+                <div class="check-box-icon" id="box-item-4">
+                  <svg class="check-svg-mark" id="svg-mark-4" viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span class="check-label">Hardware Cold Storage</span>
+              </div>
+            </div>
+
+            <div class="dyn-cta-bar">
+              <span style="font-size:13.5px; color:#E2E8F0; font-weight:500;">Status: Ready for broadcast</span>
+              <div class="dyn-cta-btn" id="dyn-action-button">
+                <span>Deploy Motion Pipeline</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+                <div class="cursor-click-ripple" id="click-ripple"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Simulated Stylized User Cursor -->
+        <svg id="simulated-cursor" viewBox="0 0 24 24">
+          <path d="M4 2 L20 10 L12 13 L8 21 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.8" />
+        </svg>
+
+      </div>
+
+    </div>
+
+    <!-- HyperFrames Timeline & GSAP Orchestration Script -->
+    <script>
+      // Register MotionPathPlugin
+      gsap.registerPlugin(MotionPathPlugin);
+
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // =========================================================================
+      // SCENE 1 TIMELINE (0.0s - 7.5s) : Exact Diagram Reproduction with Dynamics
+      // =========================================================================
+
+      // Initial States
+      gsap.set("#diagram-header", { y: -100, opacity: 0 });
+      gsap.set("#box-idea", { scale: 0.6, opacity: 0 });
+      gsap.set("#box-opus", { scale: 0.7, opacity: 0 });
+      gsap.set("#box-video", { scale: 0.6, opacity: 0 });
+      gsap.set(".branch-card", { x: 80, opacity: 0, scale: 0.9 });
+      gsap.set("#simulated-cursor", { x: 1200, y: 900 });
+      gsap.set("#video-shimmer", { x: -200 });
+
+      // 3D perspective setup
+      gsap.set("#dyn-card-counter", { rotateY: 3, rotateX: 2 });
+      gsap.set("#dyn-card-route", { rotateY: -6, rotateX: 3 });
+      gsap.set("#dyn-card-check", { rotateY: -4, rotateX: 2 });
+
+      // Setup SVG Dash Arrays & Offsets for smooth draw-in
+      const orangePaths = ["#path-idea-opus", "#path-opus-a", "#path-opus-b", "#path-opus-c", "#path-opus-d"];
+      const whitePaths = ["#path-a-video", "#path-b-video", "#path-c-video", "#path-d-video"];
+
+      orangePaths.forEach(selector => {
+        const el = document.querySelector(selector);
+        if (el) {
+          const len = el.getTotalLength ? el.getTotalLength() : 400;
+          gsap.set(el, { strokeDasharray: `${len} ${len}`, strokeDashoffset: len });
+        }
+      });
+
+      whitePaths.forEach(selector => {
+        const el = document.querySelector(selector);
+        if (el) {
+          const len = el.getTotalLength ? el.getTotalLength() : 350;
+          gsap.set(el, { strokeDasharray: `${len} ${len}`, strokeDashoffset: len });
+        }
+      });
+
+      // 1. Reveal Header: "MAKES MOTION GRAPHICS" (0.15s)
+      tl.to("#diagram-header", {
+        y: 0,
+        opacity: 1,
+        duration: 0.65,
+        ease: "power4.out"
+      }, 0.15);
+
+      // 2. Reveal Box 1: "Your idea" (0.45s)
+      tl.to("#box-idea", {
+        scale: 1,
+        opacity: 1,
+        duration: 0.55,
+        ease: "back.out(1.8)"
+      }, 0.45);
+
+      // 3. Draw Path 1: Your idea -> Opus 5.5 (0.85s)
+      tl.to("#path-idea-opus", {
+        strokeDashoffset: 0,
+        duration: 0.45,
+        ease: "power2.inOut",
+        onComplete: () => {
+          const el = document.querySelector("#path-idea-opus");
+          if (el) el.setAttribute("stroke-dasharray", "7 6");
+        }
+      }, 0.85);
+
+      // Energy pulse travels across path 1
+      tl.set("#pulse-idea-opus", { opacity: 1 }, 0.90);
+      tl.to("#pulse-idea-opus", {
+        motionPath: {
+          path: "#path-idea-opus",
+          align: "#path-idea-opus",
+          alignOrigin: [0.5, 0.5]
+        },
+        duration: 0.4,
+        ease: "power1.inOut"
+      }, 0.90);
+      tl.set("#pulse-idea-opus", { opacity: 0 }, 1.30);
+
+      // 4. Reveal Box 2: "Opus 5.5" (1.15s)
+      tl.to("#box-opus", {
+        scale: 1,
+        opacity: 1,
+        duration: 0.6,
+        ease: "back.out(1.7)"
+      }, 1.15);
+
+      // Live token speed rolling numbers on Opus 5.5
+      const tokenObj = { val: 60 };
+      tl.to(tokenObj, {
+        val: 284,
+        duration: 1.8,
+        ease: "power2.out",
+        onUpdate: () => {
+          const el = document.querySelector("#opus-token-speed");
+          if (el) el.textContent = `${Math.round(tokenObj.val)} TOKENS/S · 16ms`;
+        }
+      }, 1.30);
+
+      // 5. Draw 4 Branching Paths from Opus 5.5 -> Cards A, B, C, D (1.55s)
+      const branchPaths = ["#path-opus-a", "#path-opus-b", "#path-opus-c", "#path-opus-d"];
+      branchPaths.forEach((pSelector, idx) => {
+        tl.to(pSelector, {
+          strokeDashoffset: 0,
+          duration: 0.55,
+          ease: "power2.out",
+          onComplete: () => {
+            const el = document.querySelector(pSelector);
+            if (el) el.setAttribute("stroke-dasharray", "7 6");
+          }
+        }, 1.55 + idx * 0.08);
+      });
+
+      // 4 Energy Pulses branch out
+      const pulseIds = ["#pulse-a", "#pulse-b", "#pulse-c", "#pulse-d"];
+      pulseIds.forEach((pId, idx) => {
+        tl.set(pId, { opacity: 1 }, 1.65 + idx * 0.08);
+        tl.to(pId, {
+          motionPath: {
+            path: branchPaths[idx],
+            align: branchPaths[idx],
+            alignOrigin: [0.5, 0.5]
+          },
+          duration: 0.5,
+          ease: "power2.inOut"
+        }, 1.65 + idx * 0.08);
+        tl.set(pId, { opacity: 0 }, 2.20 + idx * 0.08);
+      });
+
+      // 6. Cascade in 4 Branch Cards A, B, C, D (1.95s)
+      const cards = ["#card-a", "#card-b", "#card-c", "#card-d"];
+      cards.forEach((cardId, idx) => {
+        tl.to(cardId, {
+          x: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.5,
+          ease: "back.out(1.5)"
+        }, 1.95 + idx * 0.12);
+      });
+
+      // Live Telemetry increments on Cards
+      // Card A: LOC counter
+      const locObj = { val: 450 };
+      tl.to(locObj, {
+        val: 1840,
+        duration: 1.5,
+        ease: "power3.out",
+        onUpdate: () => {
+          const el = document.querySelector("#card-a-loc");
+          if (el) el.textContent = `LOC: ${Math.round(locObj.val).toLocaleString()}`;
+        }
+      }, 2.10);
+
+      // Card A: Oscilloscope wave path animation (chose ondulée)
+      const waveEl = document.querySelector("#card-a-wave-path");
+      const waveObj = { offset: 0 };
+      tl.to(waveObj, {
+        offset: 100,
+        duration: 4.5,
+        repeat: 3,
+        ease: "none",
+        onUpdate: () => {
+          if (waveEl) {
+            const a = 4 + Math.sin(waveObj.offset * 0.15) * 3;
+            waveEl.setAttribute("d", `M 0 12 Q 12 ${12 - a}, 25 12 T 50 12 T 75 12 T 100 12`);
+          }
+        }
+      }, 2.10);
+
+      // Card C: AI Fusion percentage roll
+      const ratioObj = { val: 42 };
+      tl.to(ratioObj, {
+        val: 98.4,
+        duration: 1.6,
+        ease: "power2.out",
+        onUpdate: () => {
+          const el = document.querySelector("#card-c-ratio");
+          if (el) el.textContent = `AI FUSION: ${ratioObj.val.toFixed(1)}%`;
+        }
+      }, 2.30);
+
+      // 7. Converging Paths Draw from Cards A, B, C, D -> "The video" (2.60s)
+      whitePaths.forEach((wpSelector, idx) => {
+        tl.to(wpSelector, {
+          strokeDashoffset: 0,
+          duration: 0.55,
+          ease: "power2.out",
+          onComplete: () => {
+            const el = document.querySelector(wpSelector);
+            if (el) el.setAttribute("stroke-dasharray", "6 5");
+          }
+        }, 2.60 + idx * 0.08);
+      });
+
+      // Converging white particles
+      const whitePulseIds = ["#pulse-video-a", "#pulse-video-b", "#pulse-video-c", "#pulse-video-d"];
+      whitePulseIds.forEach((wpId, idx) => {
+        tl.set(wpId, { opacity: 1 }, 2.70 + idx * 0.08);
+        tl.to(wpId, {
+          motionPath: {
+            path: whitePaths[idx],
+            align: whitePaths[idx],
+            alignOrigin: [0.5, 0.5]
+          },
+          duration: 0.5,
+          ease: "power2.inOut"
+        }, 2.70 + idx * 0.08);
+        tl.set(wpId, { opacity: 0 }, 3.25 + idx * 0.08);
+      });
+
+      // 8. Box 3: "The video" pops in with Shimmer Sweep (2.95s)
+      tl.to("#box-video", {
+        scale: 1,
+        opacity: 1,
+        duration: 0.6,
+        ease: "back.out(1.8)"
+      }, 2.95);
+
+      tl.fromTo("#video-shimmer",
+        { x: -200 },
+        { x: 350, duration: 0.9, ease: "power2.inOut" },
+        3.25
+      );
+
+      // Continuous dash-flow loop for all orange dashed paths
+      tl.to(".dashed-orange-path", {
+        strokeDashoffset: "+=40",
+        duration: 4.0,
+        ease: "none",
+        repeat: 3
+      }, 2.0);
+
+      // =========================================================================
+      // TRANSITION SCENE 1 -> SCENE 2 (7.2s - 7.5s)
+      // =========================================================================
+      tl.to("#scene-diagram", {
+        scale: 0.92,
+        opacity: 0,
+        filter: "blur(12px)",
+        duration: 0.45,
+        ease: "power3.in"
+      }, 7.05);
+
+      tl.set("#scene-diagram", { display: "none" }, 7.50);
+
+      // =========================================================================
+      // SCENE 2 TIMELINE (7.5s - 16.0s) : Le Dynamisme Pur de Design 2
+      // =========================================================================
+      tl.set("#scene-dynamics", { display: "block", opacity: 1 }, 7.50);
+
+      // Header entrance with kinetic punch
+      tl.fromTo("#dyn-header",
+        { y: -60, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.7, ease: "expo.out" },
+        7.50
+      );
+
+      // 3D Cards Float In with Staggered Spring Physics
+      tl.fromTo("#dyn-card-counter",
+        { x: -200, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.85, ease: "power4.out" },
+        7.65
+      );
+
+      tl.fromTo("#dyn-card-wave",
+        { y: 150, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
+        7.85
+      );
+
+      tl.fromTo("#dyn-card-route",
+        { x: 220, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.85, ease: "power4.out" },
+        7.75
+      );
+
+      tl.fromTo("#dyn-card-check",
+        { x: 220, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.85, ease: "power4.out" },
+        7.95
+      );
+
+      // -----------------------------------------------------------------------
+      // DYNAMISME 1: GRAND COMPTEUR À ROULEAUX (Chiffres qui défilent de 0 à 4 Milliards)
+      // -----------------------------------------------------------------------
+      const odoObj = { count: 0 };
+      tl.to(odoObj, {
+        count: 4289150000,
+        duration: 3.8,
+        ease: "power4.out",
+        onUpdate: () => {
+          const el = document.querySelector("#odometer-display");
+          if (el) {
+            el.textContent = Math.round(odoObj.count).toLocaleString('en-US');
+          }
+        }
+      }, 7.90);
+
+      // Sub-stats live increment
+      const txObj = { count: 1200 };
+      tl.to(txObj, {
+        count: 18420,
+        duration: 3.5,
+        ease: "power3.out",
+        onUpdate: () => {
+          const el = document.querySelector("#kpi-tx");
+          if (el) el.textContent = `${Math.round(txObj.count).toLocaleString()} TX/S`;
+        }
+      }, 8.0);
+
+      // -----------------------------------------------------------------------
+      // DYNAMISME 2: ONDES MULTI-FRÉQUENCES (Choses ondulées)
+      // -----------------------------------------------------------------------
+      const wavePathEl = document.querySelector("#dynamic-sine-wave");
+      const waveFillEl = document.querySelector("#dynamic-sine-fill");
+      const freqTextEl = document.querySelector("#wave-freq-text");
+
+      const waveState = { t: 0, amp: 40, freq: 120 };
+      tl.to(waveState, {
+        t: Math.PI * 8,
+        freq: 260,
+        duration: 6.0,
+        ease: "none",
+        onUpdate: () => {
+          const t = waveState.t;
+          const y1 = 80 + Math.sin(t * 1.5) * waveState.amp;
+          const y2 = 80 + Math.sin(t * 1.5 + 1.2) * (waveState.amp * 0.85);
+          const y3 = 80 + Math.sin(t * 1.5 + 2.4) * (waveState.amp * 1.05);
+          const y4 = 80 + Math.sin(t * 1.5 + 3.6) * waveState.amp;
+
+          const dPath = `M 0 80 Q 75 ${y1}, 155 80 T 310 ${y2} T 465 ${y3} T 620 ${y4}`;
+          const dFill = `${dPath} L 620 160 L 0 160 Z`;
+
+          if (wavePathEl) wavePathEl.setAttribute("d", dPath);
+          if (waveFillEl) waveFillEl.setAttribute("d", dFill);
+          if (freqTextEl) freqTextEl.textContent = `FREQ: ${(100 + Math.sin(t) * 80).toFixed(1)} HZ`;
+        }
+      }, 8.0);
+
+      // -----------------------------------------------------------------------
+      // DYNAMISME 3: ROUTE INCURVÉE (Avion glissant sur la courbe de Bézier)
+      // -----------------------------------------------------------------------
+      tl.fromTo("#plane-indicator",
+        { motionPath: { path: "#route-flight-arc", align: "#route-flight-arc", autoRotate: true, start: 0 } },
+        { motionPath: { path: "#route-flight-arc", align: "#route-flight-arc", autoRotate: true, start: 0, end: 1 }, duration: 2.8, ease: "power2.inOut", repeat: 1, yoyo: true },
+        8.20
+      );
+
+      // -----------------------------------------------------------------------
+      // DYNAMISME 4: CHECKLIST INTERACTIVE & CURSEUR (Style Passo Valise / 2/4 -> 4/4)
+      // -----------------------------------------------------------------------
+      // Cursor enters and flies towards Item 3
+      tl.to("#simulated-cursor", {
+        x: 1320,
+        y: 630,
+        duration: 1.1,
+        ease: "power2.inOut"
+      }, 9.80);
+
+      // Cursor clicks item 3
+      tl.to("#simulated-cursor", {
+        scale: 0.82,
+        duration: 0.08,
+        yoyo: true,
+        repeat: 1
+      }, 11.0);
+
+      // Item 3 checks with spring pop!
+      tl.add(() => {
+        const box = document.querySelector("#box-item-3");
+        const mark = document.querySelector("#svg-mark-3");
+        if (box && mark) {
+          box.classList.add("checked");
+          gsap.to(mark, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2.5)" });
+          document.querySelector("#check-badge-counter").textContent = "3/4 packed";
+        }
+      }, 11.15);
+
+      // Cursor moves to Item 4
+      tl.to("#simulated-cursor", {
+        x: 1320,
+        y: 680,
+        duration: 0.5,
+        ease: "power2.inOut"
+      }, 11.50);
+
+      // Cursor clicks item 4
+      tl.to("#simulated-cursor", {
+        scale: 0.82,
+        duration: 0.08,
+        yoyo: true,
+        repeat: 1
+      }, 12.20);
+
+      // Item 4 checks and badge displays "4/4 COMPLETE"
+      tl.add(() => {
+        const box = document.querySelector("#box-item-4");
+        const mark = document.querySelector("#svg-mark-4");
+        if (box && mark) {
+          box.classList.add("checked");
+          gsap.to(mark, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2.5)" });
+          const badge = document.querySelector("#check-badge-counter");
+          badge.textContent = "4/4 VERIFIED";
+          badge.style.background = "#047857";
+          badge.style.color = "#FFFFFF";
+          badge.style.borderColor = "#10B981";
+        }
+      }, 12.35);
+
+      // Cursor moves to Deploy CTA Button
+      tl.to("#simulated-cursor", {
+        x: 1480,
+        y: 755,
+        duration: 0.7,
+        ease: "power2.inOut"
+      }, 12.90);
+
+      // Button hover & click
+      tl.to("#dyn-action-button", { scale: 0.95, duration: 0.08, yoyo: true, repeat: 1 }, 13.80);
+      tl.fromTo("#click-ripple",
+        { scale: 0, opacity: 0.9 },
+        { scale: 2.2, opacity: 0, duration: 0.55, ease: "power2.out" },
+        13.82
+      );
+
+      // Hold on the complete majestic scene until 16.0s
+      tl.to("#dyn-stage", {
+        rotateY: "+=1.5",
+        rotateX: "+=0.8",
+        duration: 2.2,
+        ease: "none"
+      }, 13.80);
+
+      // Register timeline with HyperFrames
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

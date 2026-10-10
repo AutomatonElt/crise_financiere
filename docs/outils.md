@@ -17,7 +17,7 @@
 | **FFmpeg / FFprobe** | `/usr/bin/ffmpeg` & `/usr/bin/ffprobe` (v6.1.1) | Encodage, manipulation vidéo/audio |
 | **Kdenlive** | `flatpak run org.kde.kdenlive` (v26.04.3) | Montage NLE principal |
 | **ImageMagick** | `/usr/bin/convert` | Manipulation d'images |
-| **Cavalry 2D (Motion Design & MCP)** | `cavalry` (ou `~/.local/bin/cavalry`) | Animation 2D procédurale nodale (Wine 9.0 + MCP sur port 6768) |
+| **Cavalry 2D (Motion Design & MCP)** | `cavalry` (ou `~/.local/bin/cavalry`) | Animation 2D procédurale nodale (Wine 9.0 + Pont Stallion HTTP `127.0.0.1:8080` + serveur MCP) |
 
 ---
 
@@ -60,11 +60,14 @@ Toutes ces bibliothèques sont installées et opérationnelles dans `.venv` :
 
 | Élément | Détail |
 |---|---|
-| **Rôle** | Motion design 2D nodal procédural (duplicators, oscillateurs, typographie dynamique) |
-| **Emplacement Wine** | `/home/mbogneng-junior/.cavalry` |
+| **Rôle Spécifique** | Fonds de flux abstraits (400 points ondulants, plexus on-chain, cadrans radar FUI, vortex Fibonacci). **Ne jamais utiliser pour la mise en page de documents ou titres de films (confier cela à Remotion).** |
+| **Emplacement Wine** | `/home/mbogneng-junior/.cavalry` (Wine 9.0 64-bit) |
 | **Commande de lancement** | `cavalry` (ou depuis le menu d'applications Ubuntu) |
-| **Serveur MCP embarqué** | `http://localhost:6768/sse` (automatique au démarrage) |
+| **Pont IA Opérationnel** | Stallion Bridge HTTP (`http://127.0.0.1:8080/post`) via menu **Scripts > Stallion** |
+| **Dossier Scripts Dédiés** | `~/.cavalry/drive_c/users/mbogneng-junior/AppData/Roaming/Cavalry/Scripts/` |
+| **Serveur MCP Antigravity** | `scripts/cavalry-mcp/dist/index.js` (outils `cavalry_*`) |
 | **Documentation complète** | Voir [CAVALRY_LINUX_SETUP_ET_MCP.md](file:///home/mbogneng-junior/Documents/art/Creation_contenus/Youtube/temp/docs/CAVALRY_LINUX_SETUP_ET_MCP.md) |
+| **Skill Agent dédié** | `.agents/skills/cavalry-motion/SKILL.md` |
 
 ---
 
@@ -296,6 +299,42 @@ Crée l'animation interactive YouTube (**Like + S'abonner + Cloche**) avec curse
 * `--duration` *(défaut: 5.0s)* : Durée totale de l'animation en secondes.
 * `--fps` *(défaut: 25)* : Cadence en FPS (standard chaîne: 25).
 * `--out` *(obligatoire)* : Chemin du fichier de sortie (`.mov` ProRes 4444).
+
+---
+
+## 🎥 Génération Vidéo IA — ByteDance Seedance 2.5 via SnapGen API
+
+Permet de générer des plans vidéo cinématiques (5s, 10s, 15s) à partir d'une image de départ (`@image1`) et d'un prompt textuel détaillé.
+
+* **Script principal :** `episodes/02-ftx/scripts/generate_seedance_video.py`
+* **Poller d'arrière-plan résilient :** `episodes/02-ftx/scripts/poll_and_download.py`
+* **Modèle recommandé (faible coût) :** `sd-2-5-lower` (mode `lower`, 720p, 24 fps).
+* **Coût unitaire :** **10 crédits** SnapGen par séquence de 5 secondes.
+
+### Commande type :
+
+```bash
+.venv/bin/python episodes/02-ftx/scripts/generate_seedance_video.py \
+    --prompt "Starting from @image1, locked-off camera, no movement. The rows of ceiling light tubes along the corridor switch off one bank after another..." \
+    --ref "episodes/02-ftx/assets/image-ai/environments/ENV-03.jpg" \
+    --out "episodes/02-ftx/assets/generated-videos/H01_take1.mp4" \
+    --duration 5 \
+    --model "sd-2-5-lower" \
+    --mode "lower"
+```
+
+### Surveillance en arrière-plan d'une tâche déjà soumise :
+
+```bash
+.venv/bin/python episodes/02-ftx/scripts/poll_and_download.py \
+    <UUID_DE_LA_TACHE> \
+    "episodes/02-ftx/assets/generated-videos/<NOM_SORTIE>.mp4"
+```
+
+### Règles d'arbitrage de production (IA vs Réel) :
+1. **Plans d'ambiance et atmosphère (IA recommandée) :** Extinctions de lumières dans des pièces vides, fumée, variations lumineuses lentes, décors sans mouvement temporel critique (ex: Plan H01 couloir de serveurs).
+2. **Plans à cadence physique rigoureuse (Footage réel recommandé) :** Mécanismes d'horlogerie, aiguilles de trotteuse battant à 1 seconde par seconde (ex: Plan H02). L'IA a tendance à accélérer ou lisser le temps de manière imprévisible ; un stock HD réel combiné à un bruitage acoustique calé à la frame garantit un tempo impeccable.
+
 
 
 

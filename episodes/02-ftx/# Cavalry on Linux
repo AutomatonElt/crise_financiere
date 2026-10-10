@@ -1,0 +1,88 @@
+# Cavalry on Linux
+
+Install [Cavalry](https://cavalry.studio) — the procedural animation tool by
+Canva — on Linux, using Wine. This project provides:
+
+- A one-command terminal installer (`./install.sh`) for Debian/Ubuntu/Mint,
+  Fedora/RHEL, Arch (and derivatives), and openSUSE.
+- A graphical installer (`gui/cavalry-gui.py`) for people who prefer buttons
+  to terminals.
+- An optional **patched Wine** build (`./install.sh --build-wine`) that fixes
+  the Cavalry connection-drag bug under Wine.
+- A `cavalry://` URL handler so Canva sign-in opens Cavalry correctly.
+- AUR packages (`cavalry`, `cavalry-wine`) for Arch users.
+
+## Quick start
+
+### Terminal installer (recommended)
+
+```bash
+git clone https://github.com/ruiribeiro04/CavalryOnLinux-Installer.git
+cd CavalryOnLinux-Installer
+./install.sh
+```
+
+Then launch Cavalry from your application menu (or run `./cavalry-launcher`)
+and sign in with a free Canva account.
+
+### Graphical installer (curl one-liner)
+
+Prefer buttons over the terminal? Pipe the GUI installer straight from the
+repo — no clone needed:
+
+```bash
+curl -sSL https://raw.githubusercontent.com/ruiribeiro04/CavalryOnLinux-Installer/main/gui/cavalry-gui.py | python3
+```
+
+The GUI installer auto-detects your distro, offers to install PyQt6 if it is
+missing (falling back to the terminal installer if it cannot), and provides
+**Install / Update / Uninstall / View Logs** buttons with a live progress view.
+
+> **PyQt6 install table** — the GUI auto-installs this for you; manual commands:
+>
+> | Distro family | Command |
+> |---|---|
+> | Arch/Artix/CachyOS/EndeavourOS/XeroLinux/Manjaro | `sudo pacman -S python-pyqt6` |
+> | Fedora/Nobara/RHEL | `sudo dnf install python3-pyqt6 python3-pyqt6-svg` |
+> | openSUSE Tumbleweed | `sudo zypper install python313-PyQt6` |
+> | openSUSE Leap | `sudo zypper install python3-PyQt6` |
+> | Debian/Ubuntu/Mint/Pop!/Zorin/PikaOS | `sudo apt install python3-pyqt6` |
+> | Ubuntu 25.10 / PikaOS (QtSvg) | `sudo apt install python3-pyqt6.qtsvg` |
+
+> First run downloads the official Cavalry installer (~90 MB) from
+> cavalry.studio and sets up a Wine prefix at `~/.cavalry`. You need a GPU
+> with OpenGL 4.1 support (Intel Gen 12+ iGPU, most AMD/NVIDIA GPUs).
+
+## Options
+
+```
+./install.sh              standard install (system Wine)
+./install.sh --build-wine also build the patched Wine (20–60 min, fixes
+                          connection dragging)
+./install.sh --wine PATH   use a specific Wine binary
+./install.sh --prefix DIR  use a custom WINEPREFIX (default ~/.cavalry)
+./install.sh --uninstall   remove launchers + app (keep prefix/data)
+./uninstall.sh             interactive uninstall (prefix + cache optional)
+./cavalry-launcher         launch Cavalry
+```
+
+## Tested
+
+Verified end-to-end on **Arch-based (CachyOS)** with system **Wine 11.15**,
+`winetricks dxvk corefonts fontsmooth=rgb`, and Mesa. Result:
+
+- Wine prefix created at `~/.cavalry` (~1.3 GB).
+- Official installer downloaded (~90 MB) from cavalry.studio and installed
+  silently via `msiexec /i ... /qn /norestart`.
+- `Cavalry.exe` present at `~/.cavalry/drive_c/Program Files/Cavalry/`.
+- Launcher (`Cavalry.desktop`) and `cavalry://` protocol handler installed,
+  verified by triggering `xdg-open cavalry://...` and watching the real
+  handler spawn `Cavalry.exe` under Wine.
+- Full uninstall → reinstall cycle passes (launcher, handler, prefix, cache
+  all removed; everything reinstalls cleanly).
+
+During testing three installer bugs were found and fixed:
+
+1. The MSI path passed to msiexec was polluted by status output (now printed
+   to stderr — `download_msi` emits only the path on stdout).
+2. ms
