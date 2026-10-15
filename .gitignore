@@ -17,6 +17,8 @@ pip-wheel-metadata/
 # Node / Remotion / Web
 # ==============================================================================
 node_modules/
+**/node_modules/
+docs/community-references/
 out/
 dist/
 build/
