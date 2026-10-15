@@ -17,7 +17,8 @@ Le système gère la création de bout en bout : voix off TTS, transcription hor
 | **📸 Fiches Preuves & Suspects** | [`docs/reutilisable/evidence-card/`](docs/reutilisable/evidence-card/README.md) | Guide complet du générateur de photos/suspects transparentes (`clean`/`print`/`soft`), dérive vivante et obturateur photo. |
 | **📰 Affiches & Articles de Presse** | [`docs/reutilisable/magazine-poster/`](docs/reutilisable/magazine-poster/README.md) | Guide complet de mise en scène 3D d'articles et couvertures sur fond bleu dégradé animé, reflet papier glacé et whoosh. |
 | **🎞️ Spécifications Montage** | [`docs/specification_montage.md`](docs/specification_montage.md) | Règles de montage, découpage des scènes et structure de timeline 7 pistes. |
-| **⚙️ Pipeline OTIO** | [`docs/PIPELINE_OTIO.md`](docs/PIPELINE_OTIO.md) | Fonctionnement de l'ingestion automatique de timeline rough cut vers Kdenlive. |
+| **🌐 Google Flow MCP** | [`docs/GOOGLE_FLOW_MCP.md`](docs/GOOGLE_FLOW_MCP.md) | Guide complet de génération d'images (gratuites illimitées) et vidéos (Veo 3.1) via CDP port 9222. |
+| **🎨 EffectCraft (Motion & MCP)** | [`docs/EFFECTCRAFT_MOTION_ET_MCP.md`](docs/EFFECTCRAFT_MOTION_ET_MCP.md) | Studio Motion Design After Effects pur Rust (306 effets, ProRes 4444 Alpha, serveur MCP natif). |
 
 ---
 
@@ -33,6 +34,10 @@ Le système gère la création de bout en bout : voix off TTS, transcription hor
   * `build_cutting_script.py` : Générateur de conducteur de montage reliant la voix, les timecodes et les assets.
   * `transcribe.py` : Transcription Whisper haute précision mot par mot (Groq API).
   * `generate_voiceover.py` : Génération de voix off haute fidélité (ElevenLabs).
+  * `calibrate_video.py` : **Calibrateur universel de vidéos** (mise à l'échelle Full HD 1080p, ré-échantillonnage 25.0 FPS strict, H.264 CRF 18 et audio AAC 48kHz pour Kdenlive).
+  * `google-flow-mcp/` : **Serveur MCP Google Flow** (pilotage IA de flow.google.com via Chrome DevTools Protocol port 9222, images gratuites illimitées et vidéos Veo 3.1).
+* **`tools/`** : Outils créatifs autonomes.
+  * `effectcraft/` : **EffectCraft Studio & CLI** (clone After Effects en pur Rust, GUI AppImage, CLI et serveur MCP natif 22 outils).
 * **`financial-forensics/`** : Projet Motion Design (React 19 + TypeScript + Remotion + Three.js).
 * **`_shared/sfx/`** : Banque d'effets sonores identitaires de la chaîne.
   * `typing/` : Enregistrements réels de frappes de touches mécaniques (`soumages-keyboard-typing-579122.mp3` et échantillons découpés).
@@ -45,6 +50,8 @@ Le système gère la création de bout en bout : voix off TTS, transcription hor
 * **`docs/`** : Documentation technique, stratégique et composants réutilisables.
   * `reutilisable/` : Index et documentations des modules et générateurs réutilisables.
   * `outils.md` : Inventaire complet des outils et dépendances locales.
+  * `GOOGLE_FLOW_MCP.md` : Architecture, outils `flow_*`, port CDP 9222 et sécurité des crédits.
+  * `EFFECTCRAFT_MOTION_ET_MCP.md` : Studio After Effects en Rust, syntaxe `.ecproj`, commandes CLI et serveur MCP.
 
 ---
 
@@ -69,4 +76,17 @@ cd financial-forensics && npm run start
 
 # 4. Conformer une timeline OTIO pour Kdenlive :
 .venv/bin/python scripts/agent_otio.py
+
+# 5. Lancer l'instance Chrome Google Flow sur le port CDP 9222 :
+bash scripts/google-flow-mcp/scripts/ensure-flow-chrome.sh
+
+# 6. Lancer l'interface graphique EffectCraft (Motion Design After Effects) :
+./tools/effectcraft/bin/effectcraft.AppImage &
+
+# 7. Rendre un projet EffectCraft en vidéo (H.264 / ProRes Alpha) via le CLI :
+./tools/effectcraft/bin/effectcraft-0.8.0-linux-x86_64/bin/effectcraft-cli render \
+    --project mon_projet.ecproj \
+    --comp "Ma Comp" \
+    --fps 25 \
+    --out "rendu.mp4"
 ```

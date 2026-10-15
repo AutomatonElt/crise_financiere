@@ -10,6 +10,10 @@
         "EXPECTED_ACCOUNT": "mbognengjunior@gmail.com",
         "CHROME_PATH": "/usr/bin/google-chrome"
       }
+    },
+    "effectcraft": {
+      "command": "/home/mbogneng-junior/Documents/art/Creation_contenus/Youtube/temp/tools/effectcraft/bin/effectcraft-0.8.0-linux-x86_64/bin/effectcraft-cli",
+      "args": ["mcp"]
     }
   }
 }

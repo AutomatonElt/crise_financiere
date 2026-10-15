@@ -70,6 +70,11 @@ _shared/music/*
 *.avi
 *.mkv
 *.m4v
+*.flv
+*.wmv
+*.ts
+*.m2ts
+*.prores
 *.mp3
 *.wav
 *.aac
@@ -77,6 +82,23 @@ _shared/music/*
 *.ogg
 *.m4a
 *.aiff
+
+# Media Files — Images (Frames, AI generations, textures, screenshots)
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.bmp
+*.tiff
+*.tif
+*.tga
+*.exr
+*.psd
+*.ai
+*.hdr
+*.heic
+*.avif
 
 # Sound effects conservés dans le dépôt s'ils sont légers :
 !_shared/sfx/whoosh/whoosh_*.wav
@@ -86,6 +108,10 @@ _shared/music/*
 # ==============================================================================
 # Dossiers lourds d'assets, de rushs, d'enregistrements et de rendus
 # ==============================================================================
+**/assets/generated/*
+**/assets/generated/**
+**/assets/pitaya/*
+**/assets/pitaya/**
 **/assets/footage-reel/*
 **/assets/footage-animated/*
 **/assets/real-footage/*
@@ -113,9 +139,14 @@ _shared/music/*
 
 
 # ==============================================================================
-# Fichiers 3D, Blender & Kdenlive Auto-backs
+# Fichiers 3D, Blender, EffectCraft & Kdenlive Auto-backs
 # ==============================================================================
 *.blend1
 *.blend2
 *.blend@
 *.kdenlive~*
+*.ecproj
+*Auto-Save*
+*auto-save*
+tools/effectcraft/
+

@@ -18,6 +18,7 @@ Chaque composant est conçu pour être invoqué en **1 seule commande** ou impor
 | **Titres de Chapitres & d'Actes (ChapterCard)** | Titres de parties et chapitres avec grand numéro en or, séparateur vertical, typographie blanche et transparence totale. | 🔹 Lancement d'une nouvelle partie / acte<br>🔹 Titre de séquence d'enquête<br>🔹 Transition narrative dans le récit | [Documentation ChapterCard](chapter-card/README.md) |
 | **Fidélisation / Call-To-Action (SubscribeCTA)** | Animation d'engagement YouTube (Like, S'abonner, Cloche) avec curseur réactif, ondes de choc, vibration et audio SFX. | 🔹 Appel à l'action en milieu de vidéo (Mid-roll)<br>🔹 Conversion abonnés en fin d'épisode (Outro)<br>🔹 Superposition transparente sur n'importe quel plan | [Documentation SubscribeCTA](subscribe-cta/README.md) |
 | **Fiche Personnage / Preuve (EvidenceCard)** | Photo d'archive / suspect flottante sans cadre (`clean`), tirage papier ivoire (`print`) ou bords doux fondus (`soft`), ombre cinéma, micro-dérive organique et déclencheur caméra iPhone calé frame 0. | 🔹 Présentation d'un suspect / personnage réel<br>🔹 Photo de bâtiment ou lieu d'archive<br>🔹 Pièce à conviction / document d'enquête | [Documentation EvidenceCard](evidence-card/README.md) |
+| **Carte de Lieu & d'Archive (LocationCard)** | Carte postale d'archive vintage (`postcard`) ou photo adoucie (`feathered`), passe-partout ivoire, badge choc (montant/statut), légende gravée (style *Furtif*). | 🔹 Présentation d'un siège social ou complexe (ex: FTX Arena)<br>🔹 Lieu d'enquête avec chiffre clé ou badge marquant<br>🔹 Overlay transparent V2 ou compositing direct | [Documentation LocationCard](location-card/README.md) |
 | **Affiches, Couvertures & Articles (MagazinePoster)** | Mise en scène 3D d'articles de presse, couvertures de magazines sur fond bleu dégradé animé, particules, reflet papier glacé et son whoosh. | 🔹 Couverture de magazine de presse (*Forbes*, etc.)<br>🔹 Article de presse d'investigation ou publi-reportage<br>🔹 Exhibit d'archive et preuve médiatique | [Documentation MagazinePoster](magazine-poster/README.md) |
 | **Document 3D & Caméra Virtuelle (Forensic3DDocument)** | Pièce à conviction ou dossier d'archives flottant en apesanteur 3D avec biseau papier, reflets de lumière spéculaire et travelling caméra lent. | 🔹 Présentation d'un document clé / bilan fuité<br>🔹 Pièce à conviction en perspective cinématographique<br>🔹 Décor 3D immersif ou overlay alpha ProRes 4444 | [Documentation Forensic3DDocument](forensic-3d-document/README.md) |
 | **Coupe Schématique 3D (Forensic Cross-Section)** | Diorama en coupe transversale (sol, rue, bâtiments, tunnel clandestin néon cyan, piliers de fondation et repères HUD). | 🔹 Visualisation d'un braquage / tunnel souterrain<br>🔹 Coupe technique de bâtiment ou coffre-fort<br>🔹 Schéma d'infiltration ou de fuite | [Documentation Cross-Section](cross-section/README.md) |
@@ -38,6 +39,7 @@ Chaque composant est conçu pour être invoqué en **1 seule commande** ou impor
 graph TD
     A[Nouvelle Séquence à Monter] --> B{Type d'information à afficher}
     B -->|Date, Lieu, Chiffre ou Statut| C[Title Card / Repère Spatio-Temporel]
+    B -->|Bâtiment clé / Siège / Lieu d'enquête| L[Carte de Lieu LocationCard]
     B -->|Photo Suspect / Archive / Preuve| G[Fiche EvidenceCard Flottante]
     B -->|Couverture Presse / Article / Exhibit| H[Affiche MagazinePoster 3D]
     B -->|Trajet d'un suspect / Fuite| D[Map Route Animée]
@@ -45,6 +47,7 @@ graph TD
     B -->|Transition entre 2 chapitres| F[Whoosh SFX + Transition Visuelle]
     
     C --> C1[scripts/generate_title_card.py -> V3_OVERLAYS]
+    L --> L1[scripts/generate_location_card.py -> V2_OVERLAYS]
     G --> G1[scripts/generate_evidence_card.py -> V2_OVERLAYS]
     H --> H1[scripts/generate_magazine_poster.py -> V1_MAIN]
     D --> D1[Remotion Render -> V1_MAIN]

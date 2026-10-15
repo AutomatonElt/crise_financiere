@@ -1,0 +1,51 @@
+[Cold, low, measured voice] December 2010. Des Moines, Iowa. A highway convenience store.
+A surveillance camera captures a man in a hooded sweatshirt. He buys a Hot Lotto ticket. He keeps his head down. He tries to shield his face.
+Not well enough.
+
+The ticket wins. A cash jackpot of more than fourteen million dollars.
+And the man never shows up to claim it. Not himself.
+
+For nearly a year, the ticket sits untouched. Then, right before the deadline expires, a New York attorney walks in on behalf of a company registered in Belize.
+[Cynical, deadpan tone] An offshore trust, trying to cash a lottery ticket bought at an Iowa gas station. Doesn't smell like a scam at all.
+
+Iowa said no. Because Iowa had a simple, stubborn rule: no jackpot gets paid without knowing who bought the ticket.
+Remember that rule. It would accomplish more than every high-tech security system combined.
+
+[Authoritative, intense focus] The man in the hoodie was Eddie Tipton.
+He worked at the Multi-State Lottery Association—the organization running the computer systems that drew winning numbers for more than thirty states. He joined in 2003 as a programmer. By 2013, he was the director of information security.
+They say you shouldn't let the fox guard the henhouse. They made him head of henhouse security.
+
+[Chilling, deliberate narration] Because the numbers weren't random. According to investigators, Tipton had slipped a few lines of unauthorized code into the random number generator. It only activated on specific dates, on specific days of the year. On those exact nights, chance became predictable. For him alone.
+
+Prosecutors demonstrated that the winning numbers on the Des Moines ticket matched what his algorithm produced. He would ultimately confess to fixing games in Colorado in 2005, Wisconsin in 2007, Kansas and Iowa in 2010, and Oklahoma in 2011.
+With help from associates. Including his own brother—a Texas justice of the peace. A judge. Implicated in a rigged lottery ring. You can't make this up.
+
+[Trio cadence, emphatic] Mandel read the rules. The Selbees read the rules. Tipton wrote them.
+
+[Incredulous, mounting tension] And here's the craziest part. It wasn't a brilliant forensic audit that brought him down. Nobody had ever properly audited the software. His own defense attorney admitted it: for ten years, no one had bothered to inspect the code picking the winning numbers.
+What brought him down was that stubborn piece of paperwork. No identity, no payout. The ticket stayed stuck.
+
+So in 2014, investigators released the surveillance footage. And people recognized the man in the hoodie. Among them, his own coworkers.
+In January 2015, Tipton was arrested.
+The director of IT security wasn't betrayed by a computer. He was brought down by a claim form and a convenience store camera.
+
+He denied the charges for two years. In 2017, he pleaded guilty. Sentenced to up to twenty-five years in prison.
+
+Mandel and the Selbees played games where no one touched the random draw. Ginther, at worst—and according to an unproven theory—might have capitalized on a distribution pattern the lottery created itself.
+Tipton didn't exploit a flaw. He manufactured one. He broke the single premise every lottery relies on: that the numbers are genuinely random, and that the person guarding the machine doesn't already know the answer.
+
+[Solemn, quiet pause] Reading the fine print isn't a crime. Rewriting it in secret is.
+
+[Reflective, analytical narration] Which brings us right back to our original question. Why did no one on the inside see the flaw?
+It wasn't a lack of intelligence. Or rules. Or regulators. It was a lack of curiosity.
+
+These games were built for a very specific type of player: a couple of tickets, a dream, zero math. Nobody ever imagined a player would read the rules like a commercial contract. And certainly not that the man guarding the machine would rig it.
+The lottery sells dreams to millions of people. They just never anticipated a customer doing the math for them.
+
+Mandel published his method. The Selbees answered every reporter's question. Ginther said nothing. Tipton hid everything. And he was the only one of the four who ended up in handcuffs.
+
+[Direct, engaging question] So... would you have bought all those tickets?
+The answer was never about courage. It was about reading.
+A four-in-five shot. A state selling every ticket with a smile. And a brochure sitting on a counter that thousands of people tossed out without reading.
+
+[Firm, quiet conviction] All it took was reading.

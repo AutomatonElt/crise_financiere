@@ -16,8 +16,8 @@
 | **Node.js** | `/home/mbogneng-junior/.nvm/versions/node/v22.22.1/bin/node` (v22.22.1) | Runtime Node |
 | **FFmpeg / FFprobe** | `/usr/bin/ffmpeg` & `/usr/bin/ffprobe` (v6.1.1) | Encodage, manipulation vidéo/audio |
 | **Kdenlive** | `flatpak run org.kde.kdenlive` (v26.04.3) | Montage NLE principal |
-| **ImageMagick** | `/usr/bin/convert` | Manipulation d'images |
-| **Cavalry 2D (Motion Design & MCP)** | `cavalry` (ou `~/.local/bin/cavalry`) | Animation 2D procédurale nodale (Wine 9.0 + Pont Stallion HTTP `127.0.0.1:8080` + serveur MCP) |
+| **Google Flow (Images & Vidéos IA MCP)** | `scripts/google-flow-mcp/` & CDP `127.0.0.1:9222` | Génération IA gratuite illimitée (images) & Veo 3.1 (vidéo) via profil Chrome dédié `~/.config/google-chrome-flow` |
+| **EffectCraft (After Effects Rust & MCP)** | `tools/effectcraft/bin/effectcraft-0.8.0-linux-x86_64/bin/` | Studio After Effects en pur Rust (306 effets, ProRes 4444 Alpha, Lottie, serveur MCP natif 22 outils `effectcraft-cli mcp`) |
 
 ---
 
@@ -56,18 +56,56 @@ Toutes ces bibliothèques sont installées et opérationnelles dans `.venv` :
 
 ---
 
-## ⚡ Cavalry 2D — Motion Design Procédural & Serveur MCP
+## ⚡ EffectCraft — Studio After Effects en Pur Rust & Serveur MCP Natif
 
-| Élément | Détail |
-|---|---|
-| **Rôle Spécifique** | Fonds de flux abstraits (400 points ondulants, plexus on-chain, cadrans radar FUI, vortex Fibonacci). **Ne jamais utiliser pour la mise en page de documents ou titres de films (confier cela à Remotion).** |
-| **Emplacement Wine** | `/home/mbogneng-junior/.cavalry` (Wine 9.0 64-bit) |
-| **Commande de lancement** | `cavalry` (ou depuis le menu d'applications Ubuntu) |
-| **Pont IA Opérationnel** | Stallion Bridge HTTP (`http://127.0.0.1:8080/post`) via menu **Scripts > Stallion** |
-| **Dossier Scripts Dédiés** | `~/.cavalry/drive_c/users/mbogneng-junior/AppData/Roaming/Cavalry/Scripts/` |
-| **Serveur MCP Antigravity** | `scripts/cavalry-mcp/dist/index.js` (outils `cavalry_*`) |
-| **Documentation complète** | Voir [CAVALRY_LINUX_SETUP_ET_MCP.md](file:///home/mbogneng-junior/Documents/art/Creation_contenus/Youtube/temp/docs/CAVALRY_LINUX_SETUP_ET_MCP.md) |
-| **Skill Agent dédié** | `.agents/skills/cavalry-motion/SKILL.md` |
+EffectCraft remplace intégralement les anciens workflows After Effects / Cavalry sous Linux. C'est un moteur de Motion Design et compositing moderne écrit à 100 % en pur Rust, sans Wine, sans FFmpeg et sans dépendance propriétaire.
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                              ARCHITECTURE EFFECTCRAFT LINUX                            │
+├────────────────────────────────┬───────────────────────────────────────────────────────┤
+│ 1. INTERFACE GRAPHIQUE (EGUI)  │ 2. MOTEUR HEADLESS & CLI (RUST PUR)                   │
+│ • AppImage : tools/.../AppImage│ • Binaire CLI : tools/.../bin/effectcraft-cli         │
+│ • Panels After Effects natifs  │ • Serveur MCP stdio (22 outils pour Antigravity)      │
+│ • Graph Editor & Timeline      │ • Moteur d'export natif : ProRes 4444 Alpha, H.264...  │
+│ • 306 effets GPU / Expressions │ • Fichier projet JSON diffable (.ecproj)              │
+└────────────────────────────────┴───────────────────────────────────────────────────────┘
+```
+
+### Chemins Absolus & Environnement :
+
+| Élément | Chemin absolu / Valeur | Rôle |
+|---|---|---|
+| **Dossier Outil** | `/home/mbogneng-junior/Documents/art/Creation_contenus/Youtube/temp/tools/effectcraft/` | Répertoire d'installation local |
+| **Application GUI (AppImage)** | `/home/mbogneng-junior/Documents/art/Creation_contenus/Youtube/temp/tools/effectcraft/bin/effectcraft.AppImage` | Lancement de l'interface graphique de bureau |
+| **Application GUI (Binaire)** | `/home/mbogneng-junior/Documents/art/Creation_contenus/Youtube/temp/tools/effectcraft/bin/effectcraft-0.8.0-linux-x86_64/bin/effectcraft` | Binaire natif Linux x86_64 |
+| **CLI & Serveur MCP** | `/home/mbogneng-junior/Documents/art/Creation_contenus/Youtube/temp/tools/effectcraft/bin/effectcraft-0.8.0-linux-x86_64/bin/effectcraft-cli` | Moteur d'exécution, de rendu et d'automatisation IA |
+| **Code Source Officiel** | `/home/mbogneng-junior/Documents/art/Creation_contenus/Logiciels/effectcraft/` | Dépôt Git cloné avec documentation et tests |
+| **Documentation dédiée** | [`docs/EFFECTCRAFT_MOTION_ET_MCP.md`](docs/EFFECTCRAFT_MOTION_ET_MCP.md) | Guide complet de manipulation et d'intégration |
+| **Skill Agent dédié** | `.agents/skills/effectcraft-motion/SKILL.md` | Directive opérationnelle Antigravity |
+
+### Commandes Clés :
+
+```bash
+# 1. Lancer l'interface graphique en arrière-plan :
+./tools/effectcraft/bin/effectcraft.AppImage &
+
+# 2. Inspecter l'état et les commandes disponibles (669 commandes) :
+./tools/effectcraft/bin/effectcraft-0.8.0-linux-x86_64/bin/effectcraft-cli info --demo
+
+# 3. Rendre une frame PNG instantanée (temps moyen : ~160 ms en 1080p) :
+./tools/effectcraft/bin/effectcraft-0.8.0-linux-x86_64/bin/effectcraft-cli render-frame \
+    --project mon_projet.ecproj \
+    --time 1.5 \
+    --out preview.png
+
+# 4. Rendre une vidéo complète (MP4, ProRes 4444 Alpha, AV1, Lottie) :
+./tools/effectcraft/bin/effectcraft-0.8.0-linux-x86_64/bin/effectcraft-cli render \
+    --project mon_projet.ecproj \
+    --comp "NomComp" \
+    --fps 25 \
+    --out master.mp4
+```
 
 ---
 
@@ -334,6 +372,38 @@ Permet de générer des plans vidéo cinématiques (5s, 10s, 15s) à partir d'un
 ### Règles d'arbitrage de production (IA vs Réel) :
 1. **Plans d'ambiance et atmosphère (IA recommandée) :** Extinctions de lumières dans des pièces vides, fumée, variations lumineuses lentes, décors sans mouvement temporel critique (ex: Plan H01 couloir de serveurs).
 2. **Plans à cadence physique rigoureuse (Footage réel recommandé) :** Mécanismes d'horlogerie, aiguilles de trotteuse battant à 1 seconde par seconde (ex: Plan H02). L'IA a tendance à accélérer ou lisser le temps de manière imprévisible ; un stock HD réel combiné à un bruitage acoustique calé à la frame garantit un tempo impeccable.
+
+---
+
+## 🌐 Google Flow MCP — Génération d'Images & Vidéos IA (Google AI Pro)
+
+Permet de piloter la plateforme de pointe **Google Flow** (`flow.google.com`) par intelligence artificielle directement depuis Antigravity / Claude via le protocole MCP et l'automatisation Chrome DevTools Protocol (CDP).
+
+* **Emplacement du serveur :** `scripts/google-flow-mcp/`
+* **Profil Chrome dédié persistant :** `/home/mbogneng-junior/.config/google-chrome-flow`
+* **Port de débogage CDP :** `127.0.0.1:9222`
+* **Lanceur démon :** `scripts/google-flow-mcp/scripts/ensure-flow-chrome.sh`
+* **Compte actif :** `mbognengjunior@gmail.com` (Abonnement **Google AI Pro**)
+* **Documentation exhaustive :** Voir [GOOGLE_FLOW_MCP.md](file:///home/mbogneng-junior/Documents/art/Creation_contenus/Youtube/temp/docs/GOOGLE_FLOW_MCP.md)
+* **Skill Agent dédié :** [`.agents/skills/google-flow-generate/SKILL.md`](file:///home/mbogneng-junior/Documents/art/Creation_contenus/Youtube/temp/.agents/skills/google-flow-generate/SKILL.md)
+
+### Modèles et Coûts :
+* **Images (Nano Banana 2 / Imagen 4) :** **Gratuit & Illimité (0 crédit consommé)** sur Google AI Pro. Génère 2 images simultanées par prompt.
+* **Vidéos (Veo 3.1 Lite / Quality, Omni Flash) :** Consomme les crédits mensuels de Flow (~10 crédits pour Veo Lite, ~100 pour Quality). Par défaut, `auto_confirm: false` pour prévisualiser sans consommer.
+
+### Commandes de base :
+```bash
+# 1. Vérifier ou lancer l'instance Chrome avec CDP 9222 en arrière-plan :
+bash scripts/google-flow-mcp/scripts/ensure-flow-chrome.sh
+
+# 2. Vérifier la connectivité CDP :
+curl -s http://127.0.0.1:9222/json/version
+
+# 3. Calibrer une vidéo générée pour la timeline standard 1080p 25fps :
+.venv/bin/python episodes/02-ftx/scripts/calibrate_h01_google_flow.py \
+    --clip-a "episodes/02-ftx/assets/flow/shot_aerial.mp4" \
+    --out "episodes/02-ftx/assets/generated-videos/H01_calibrated_1080p25.mp4"
+```
 
 
 

@@ -32,10 +32,10 @@ if not API_KEY or not VOICE_ID:
 
 client = ElevenLabs(api_key=API_KEY)
 
-MAX_CHARS = 10_000  # limite dure d'Eleven Multilingual v2 par requête
+MAX_CHARS = 10_000  # limite d'Eleven v4 par requête
 
 
-def generate_chunk(text: str, previous_request_ids: list, chunk_path: str):
+def generate_chunk(text: str, previous_request_ids: list, chunk_path: str, model_id: str = "eleven_v4", output_format: str = "mp3_44100_128"):
     if len(text) > MAX_CHARS:
         raise SystemExit(
             f"Bloc trop long ({len(text)} caractères > {MAX_CHARS}) : {chunk_path}"
@@ -44,9 +44,9 @@ def generate_chunk(text: str, previous_request_ids: list, chunk_path: str):
     with client.text_to_speech.with_raw_response.convert(
         text=text,
         voice_id=VOICE_ID,
-        model_id="eleven_multilingual_v2",
-        output_format="mp3_44100_192",
-        previous_request_ids=previous_request_ids[-3:],  # max 3 acceptés par l'API
+        model_id=model_id,
+        output_format=output_format,
+        previous_request_ids=previous_request_ids[-3:] if previous_request_ids else None,
     ) as response:
         request_id = response._response.headers.get("request-id")
         audio_data = b"".join(chunk for chunk in response.data)
@@ -64,6 +64,8 @@ def main():
         help="Fichiers texte, dans l'ordre de lecture (un par bloc < 10 000 caractères)",
     )
     parser.add_argument("--out", default="voiceover_en.mp3", help="Fichier de sortie final")
+    parser.add_argument("--model", default="eleven_v4", help="Modèle ElevenLabs (défaut: eleven_v4)")
+    parser.add_argument("--format", default="mp3_44100_128", help="Format audio de sortie (défaut: mp3_44100_128)")
     parser.add_argument(
         "--keep-chunks", action="store_true",
         help="Ne pas supprimer les fichiers MP3 intermédiaires après concaténation",
@@ -84,7 +86,10 @@ def main():
         chunk_path = f"_voiceover_chunk_{i:02d}.mp3"
         print(f"[{i + 1}/{len(args.blocks)}] Génération de {block_path} ({len(text)} caractères)...")
 
-        request_id = generate_chunk(text, request_ids, chunk_path)
+        request_id = generate_chunk(
+            text, request_ids, chunk_path,
+            model_id=args.model, output_format=args.format
+        )
         if request_id:
             request_ids.append(request_id)
 

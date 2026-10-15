@@ -12,7 +12,7 @@ Grâce aux fichiers `.gitkeep` suivis par Git, un simple `git clone` sur une nou
 temp/
 ├── .agents/                               # Compétences et agents IA (Blender, Remotion, etc.)
 ├── docs/                                  # Documentation technique, charts et guides
-│   ├── CAVALRY_LINUX_SETUP_ET_MCP.md      # Guide Cavalry 2D & configuration MCP
+│   ├── EFFECTCRAFT_MOTION_ET_MCP.md       # Guide EffectCraft (After Effects Rust) & MCP
 │   ├── GUIDE_MOTION_DESIGN_REMOTION.md    # Guide Remotion React / Three.js
 │   ├── PIPELINE_OTIO.md                   # Normes timelines OpenTimelineIO
 │   ├── outils.md                          # Inventaire des environnements et outils
@@ -85,6 +85,9 @@ temp/
 │   ├── generate_voiceover.py              # Synthèse vocale ElevenLabs
 │   ├── transcribe.py                      # Transcription Whisper word-level
 │   └── ...                                # Générateurs d'evidence, stamps, posters
+│
+├── tools/                                 # Outils binaires et moteurs de rendu natifs
+│   └── effectcraft/                       # EffectCraft (AppImage, CLI & Serveur MCP pur Rust)
 │
 ├── .gitignore                             # Règles d'exclusion des médias lourds
 └── README.md                              # Présentation du projet

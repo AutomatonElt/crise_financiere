@@ -18,12 +18,12 @@ Set `FLOW_MCP_DIR` below to wherever you cloned this repo.
 
 ## STEP 0 — Ensure the dedicated Chrome is up (always run first)
 
-```
-powershell -NoProfile -ExecutionPolicy Bypass -File "<FLOW_MCP_DIR>/scripts/ensure-flow-chrome.ps1"
+```bash
+bash scripts/google-flow-mcp/scripts/ensure-flow-chrome.sh
 ```
 
 - `READY` / `LAUNCHED` → proceed.
-- `LAUNCHED`: if labs.google shows the marketing landing instead of the app, the user
+- `LAUNCHED`: if flow.google.com shows the landing page, the user
   must click **"Sign in to Flow"** once in that Chrome window, then continue.
 - `FAILED` → report; do not proceed.
 
@@ -77,6 +77,16 @@ waits ~1 min and downloads the mp4.
 - Confirm with the user before spending credits if not already authorized.
 - `auto_confirm:false` stages without spending.
 
+## STEP 4 — Video Conformation (Mandatory for Kdenlive timeline)
+
+Always conform generated videos to the channel's standard (1080p, 25.0 FPS strict, H.264 CRF 18):
+
+```bash
+.venv/bin/python scripts/calibrate_video.py <downloaded_video.mp4>
+```
+
+Output: `<downloaded_video>_25fps_1080p.mp4` ready for Kdenlive track `V1_MAIN`.
+
 ## Fallback map (error → action)
 
 | Error | Action |
@@ -91,3 +101,15 @@ waits ~1 min and downloads the mp4.
 Image fallback: Flow → Gemini API (`fallback/gemini_image_fallback.py`, needs
 `GEMINI_API_KEY`) → any per-credit generator you use. Video fallback: Flow → your
 per-credit generator directly.
+
+## FAST TRACK: 1-Click Image Generator (ProseMirror Certified)
+
+To generate images reliably in seconds without CDP friction:
+
+```bash
+python3 scripts/generate_flow_image.py \
+  --prompt "Your detailed prompt here..." \
+  --name "asset_name" \
+  --category "characters" # or "biomes", "b-roll"
+```
+Handles CDP attachment, ProseMirror keystroke typing, Agent approval, and downloads the PNG directly into `assets/generated/<category>/`.
